@@ -1,3 +1,4 @@
-MR doc comming soon
+MR doc coming soon
 
-use http://www.sphinx-doc.org/en/master/usage/quickstart.html ?
+I am actively working on the google docs --> reStructuredText conversion before moving to github.
+This requires some changes in the current document structure.
