@@ -1,0 +1,2263 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Complete Node List &#8212; Meshroom 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Supported Formats" href="../supported_formats/supported_formats.html" />
+    <link rel="prev" title="Test Meshroom" href="../test/test.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="complete-node-list">
+<h1>Complete Node List<a class="headerlink" href="#complete-node-list" title="Permalink to this headline">¶</a></h1>
+<p>Note: Some parameters are exposed for development purposes.</p>
+<p>Nodes/features marked with an # are not supported/implemented in the current release</p>
+<ul class="simple">
+<li><p>in default pipeline <a href="#id1"><span class="problematic" id="id2">**</span></a>tested and working ? not tested</p></li>
+</ul>
+<div class="section" id="cameracalibration">
+<h2>CameraCalibration (#)<a class="headerlink" href="#cameracalibration" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description</strong></p>
+<p>Note: This node requires AliceVision compiled with opencv. Not included in the MR 2019.1 binary.</p>
+<p>The internal camera parameters can be calibrated from multiple views of a checkerboard. This allows to retrieve focal length, principal point and distortion parameters. A detailed explanation is presented in [opencvCameraCalibration].</p>
+<p>[opencvCameraCalibration] <a class="reference external" href="http://docs.opencv.org/3.0-beta/doc/tutorials/calib3d/camera_calibration/camera_calibration.html">http://docs.opencv.org/3.0-beta/doc/tutorials/calib3d/camera_calibration/camera_calibration.html</a></p>
+<table class="docutils align-center" id="id3">
+<caption><span class="caption-text">settings</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Input</p></td>
+<td><p>Input images in one of the following form:
+– folder containing images
+– image sequence like “/path/to/seq.&#64;.jpg”
+– video file</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pattern</p></td>
+<td><p>Type of pattern (camera calibration patterns)
+- CHESSBOARD
+- CIRCLES
+- ASYMMETRIC_CIRCLES
+- ASYMMETRIC_CCTAG</p></td>
+</tr>
+<tr class="row-even"><td><p>Size</p></td>
+<td><p>(Size of the Pattern) - Number of inner corners per one of board dimension like Width Height</p></td>
+</tr>
+<tr class="row-odd"><td><p>Square Size</p></td>
+<td><p>Size of the grid’s square cells (0-100mm)</p></td>
+</tr>
+<tr class="row-even"><td><p>Nb Distortion Coef</p></td>
+<td><p>Number of distortion coefficient (0-5)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Max Frames</p></td>
+<td><p>Maximal number of frames to extract from the video file (0-5)</p></td>
+</tr>
+<tr class="row-even"><td><p>Calib Grid Size</p></td>
+<td><p>Define the number of cells per edge (0-50)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Max Calib Frames</p></td>
+<td><p>Maximal number of frames to use to calibrate from the selected frames (0-1000)</p></td>
+</tr>
+<tr class="row-even"><td><p>Min Input Frames</p></td>
+<td><p>Minimal number of frames to limit the refinement loop  (0-100)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Max Total Average Error</p></td>
+<td><p>Max Total Average Error (0-1)</p></td>
+</tr>
+<tr class="row-even"><td><p>Debug Rejected Img Folder</p></td>
+<td><p>Folder to export delete images during the refinement loop</p></td>
+</tr>
+<tr class="row-odd"><td><p>Debug Selected Img Folder</p></td>
+<td><p>Folder to export debug images</p></td>
+</tr>
+<tr class="row-even"><td><p>Output</p></td>
+<td><p>Output filename for intrinsic [and extrinsic] parameters (default filename cameraCalibration.cal)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="camerainit">
+<h2>CameraInit<a class="headerlink" href="#camerainit" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>load image metadata and sensor information</p></li>
+</ul>
+<p>You can mix multiple cameras and focal lengths.
+The CameraInit will create groups of intrinsics based on the images metadata.
+It is still good to have multiple images with the same camera and same focal lengths as it adds constraints on the internal cameras parameters.
+But you can combine multiple groups of images, it will not decrease the quality of the final model.1</p>
+<p>Note: In some cases, some image(s) have no serial number to identify the camera/lens device. This makes it impossible to correctly group the images by device if you have used multiple identical (same model) camera devices.
+The reconstruction will assume that only one device has been used, so if 2 images share the same focal length approximation they will share the same internal camera parameters.
+If you want to use multiple cameras, add a corresponding serialnumber to the EXIF data.</p>
+<table class="docutils align-center" id="id4">
+<caption><span class="caption-text">settings</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Viewpoints Input viewpoints</p></td>
+<td><blockquote>
+<div><dl class="simple">
+<dt>(1 Element for each loaded image)</dt><dd><p>ID
+Pose ID
+Image Path
+Intrinsic: Internal Camera Parameters (Intrinsic ID)
+Rig (-1 - 200)
+Rig Sub-Pose: Rig Sub-Pose Parameters (-1 - 200)
+Image Metadata: (list of metadata elements)</p>
+</dd>
+</dl>
+</div></blockquote>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Intrinsic Camera Intrinsics</p></td>
+<td><p>(1 Element for each loaded image)
+ID
+Initial Focal Length: Initial Guess on the Focal Length
+Focal Length: Known/Calibrated Focal Length
+Camera Type: pinhole’, ‘radial1’, ‘radial3’, ‘brown’, ‘fisheye4’
+#Make: Camera Make (not included in this build, commented out)
+#Model: Camera Model
+#Sensor Width: Camera Sensor Width
+Width: Image Width (0-10000)
+Height: Image Height (0-10000)
+Serial Number: Device Serial Number (camera and lens combined)
+Principal Point: X (0-10000) Y(0-10000)
+DistortionParams: Distortion Parameters
+Locked(True/False): If the camera has been calibrated, the internal camera parameters (intrinsics) can be locked. It should improve robustness and speedup the reconstruction.</p></td>
+</tr>
+<tr class="row-even"><td><p>Sensor Database</p></td>
+<td><p>Camera sensor width database path</p></td>
+</tr>
+<tr class="row-odd"><td><p>Default Field Of View</p></td>
+<td><p>Empirical value for the field of view in degree 45° (0°-180°)</p></td>
+</tr>
+<tr class="row-even"><td><p>Verbose Level</p></td>
+<td><p>verbosity level (fatal, error, warning, info, debug, trace)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Output SfMData File</p></td>
+<td><p>…/cameraInit.sfm</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes</strong></p>
+<p>Issue: structure from motion reconstruction appears distorted, and has failed to aligned some groups of cameras when loading images without focallength</p>
+<p>Solution: Keep the ” Focal Length” init value but set the “Initial Focal Length” to -1 if you are not sure of the value.</p>
+<p><a class="reference external" href="https://github.com/alicevision/meshroom/issues/434">https://github.com/alicevision/meshroom/issues/434</a></p>
+</div>
+<div class="section" id="cameralocalization">
+<h2>CameraLocalization (?)<a class="headerlink" href="#cameralocalization" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description</strong></p>
+<p>Based on the SfM results, we can perform camera localization and retrieve the motion of an animated camera in the scene of the 3D reconstruction.
+This is very useful for doing texture reprojection in other software as part of a texture clean up pipeline.
+Could also be used to leverage Meshroom as a 3D camera tracker as part of a VFX pipeline</p>
+<p><a class="reference external" href="https://alicevision.github.io/#photogrammetry/localization">https://alicevision.github.io/#photogrammetry/localization</a></p>
+<table class="docutils align-center" id="id5">
+<caption><span class="caption-text">settings</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SfM Data</p></td>
+<td><p>The sfm_data.json kind of file generated by AliceVision</p></td>
+</tr>
+<tr class="row-odd"><td><p>Media File</p></td>
+<td><p>The folder path or the filename for the media to track</p></td>
+</tr>
+<tr class="row-even"><td><p>Visual Debug Folder</p></td>
+<td><p>If a folder is provided it enables visual debug and saves all the debugging info in that folder</p></td>
+</tr>
+<tr class="row-odd"><td><p>Descriptor Path</p></td>
+<td><p>Folder containing the descriptors for all the images (ie the .desc.)</p></td>
+</tr>
+<tr class="row-even"><td><p>Match Desc Types</p></td>
+<td><p>Describer types to use for the matching:
+sift’, ‘sift_float’, ‘sift_upright’, ‘akaze’, ‘akaze_liop’, ‘akaze_mldb’, ‘cctag3’, ‘cctag4’, ‘sift_ocv’, ‘akaze_ocv</p></td>
+</tr>
+<tr class="row-odd"><td><p>Preset</p></td>
+<td><p>Preset for the feature extractor when localizing a new image (low, medium, normal, high, ultra)</p></td>
+</tr>
+<tr class="row-even"><td><p>Resection Estimator</p></td>
+<td><p>The type of /sac framework to use for resection (acransac, loransac)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Matching Estimator</p></td>
+<td><p>The type of /sac framework to use for matching (acransac, loransac)</p></td>
+</tr>
+<tr class="row-even"><td><p>Calibration</p></td>
+<td><p>Calibration file</p></td>
+</tr>
+<tr class="row-odd"><td><p>Refine Intrinsics</p></td>
+<td><p>Enable/Disable camera intrinsics refinement for each localized image</p></td>
+</tr>
+<tr class="row-even"><td><p>Reprojection Error</p></td>
+<td><p>Maximum reprojection error (in pixels) allowed for resectioning. If set to 0 it lets the ACRansac select an optimal value (0.1 - 50)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Nb Image Match</p></td>
+<td><p>[voctree] Number of images to retrieve in database (1 - 1000)</p></td>
+</tr>
+<tr class="row-even"><td><p>Max Results</p></td>
+<td><p>[voctree] For algorithm AllResults, it stops the image matching when this number of matched images is reached. If 0 it is ignored (1 - 100)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Commonviews</p></td>
+<td><p>[voctree] Number of minimum images in which a point must be seen to be used in cluster tracking (2 - 50)</p></td>
+</tr>
+<tr class="row-even"><td><p>Voctree</p></td>
+<td><p>[voctree] Filename for the vocabulary tree</p></td>
+</tr>
+<tr class="row-odd"><td><p>Voctree Weights</p></td>
+<td><p>[voctree] Filename for the vocabulary tree weights</p></td>
+</tr>
+<tr class="row-even"><td><p>Algorithm</p></td>
+<td><p>[voctree] Algorithm type: (FirstBest, AllResults)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Matching Error</p></td>
+<td><p>[voctree] Maximum matching error (in pixels) allowed for image matching with geometric verification. If set to 0 it lets the ACRansac select an optimal value (0 - 50)</p></td>
+</tr>
+<tr class="row-even"><td><p>Nb Frame Buffer Matching</p></td>
+<td><p>[voctree] Number of previous frame of the sequence to use for matching (0 = Disable) (0 - 100)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Robust Matching</p></td>
+<td><p>[voctree] Enable/Disable the robust matching between query and database images, all putative matches will be considered</p></td>
+</tr>
+<tr class="row-even"><td><p>N Nearest Key Frames</p></td>
+<td><p>[cctag] Number of images to retrieve in the database Parameters specific for final (optional) bundle adjustment optimization of the sequence: (1-100)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Global Bundle</p></td>
+<td><p>[bundle adjustment] If –refineIntrinsics is not set, this option allows to run a final global bundle adjustment to refine the scene</p></td>
+</tr>
+<tr class="row-even"><td><p>No Distortion</p></td>
+<td><p>[bundle adjustment] It does not take into account distortion during the BA, it consider the distortion coefficients all equal to 0</p></td>
+</tr>
+<tr class="row-odd"><td><p>No BA Refine Intrinsics</p></td>
+<td><p>[bundle adjustment] It does not refine intrinsics during BA</p></td>
+</tr>
+<tr class="row-even"><td><p>Min Point Visibility</p></td>
+<td><p>[bundle adjustment] Minimum number of observation that a point must have in order to be considered for bundle adjustment (2-50)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Output Alembic</p></td>
+<td><p>Filename for the SfMData export file (where camera poses will be stored)
+desc.Node.internalFolder + ‘trackedCameras.abc</p></td>
+</tr>
+<tr class="row-even"><td><p>Output JSON</p></td>
+<td><p>Filename for the localization results as .json desc.Node.internalFolder + ‘trackedCameras.json</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="camerarigcalibration">
+<h2>CameraRigCalibration (?)<a class="headerlink" href="#camerarigcalibration" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description</strong></p>
+<p>If a rig of cameras is used, we can perform the rig calibration. We localize cameras individually on the whole sequence. Then we use all valid poses to compute the relative poses between cameras of the rig and choose the more stable value across the images. Then we initialize the rig relative pose with this value and perform a global Bundle Adjustment on all the cameras of the rig. When the rig is calibrated, we can use it to directly localize the rig pose from the synchronized multi-cameras system with [Kneip2014] approaches.</p>
+<p>“Given the position of the tracked reference frame relative to the motion capture system and the optical reference frames it is possible to retrieve the transformation between the tracked and the optical reference frames”1 “In practice, it is particularly difficult to make the tracked
+frame coincident with the camera optical frame, thus a calibration procedure is needed to estimate this transformation and achieve the millimetric accuracy” [Chiodini et al. 2018]</p>
+<p>[Chiodini et al. 2018] Chiodini, Sebastiano &amp; Pertile, Marco &amp; Giubilato, Riccardo &amp; Salvioli, Federico &amp; Barrera, Marco &amp; Franceschetti, Paola &amp; Debei, Stefano. (2018). Camera Rig Extrinsic Calibration Using a Motion Capture System. 10.1109/MetroAeroSpace.2018.8453603.
+<a class="reference external" href="https://www.researchgate.net/publication/327513182_Camera_Rig_Extrinsic_Calibration_Using_a_Motion_Capture_System">https://www.researchgate.net/publication/327513182_Camera_Rig_Extrinsic_Calibration_Using_a_Motion_Capture_System</a></p>
+<p><a class="reference external" href="https://alicevision.github.io/#photogrammetry/localization">https://alicevision.github.io/#photogrammetry/localization</a></p>
+<p>[Kneip2011]     A Novel Parametrization of the Perspective-Three-Point Problem for a Direct Computation of Absolute Camera Position and Orientation. L. Kneip, D. Scaramuzza, R. Siegwart. June 2011</p>
+<p>[Kneip2013]     Using Multi-Camera Systems in Robotics: Efficient Solutions to the NPnP ProblemL. Kneip, P. Furgale, R. Siegwart. May 2013</p>
+<p>[Kneip2014]     OpenGV: A unified and generalized approach to real-time calibrated geometric vision, L. Kneip, P. Furgale. May 2014.</p>
+<p>[Kneip2014]     Efficient Computation of Relative Pose for Multi-Camera Systems. L. Kneip, H. Li. June 2014</p>
+<table class="docutils align-center" id="id6">
+<caption><span class="caption-text">settings</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SfM Data</p></td>
+<td><p>The sfmData file</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Media Path</p></td>
+<td><p>The path to the video file</p></td>
+<td><p>the folder of the image sequence or a text file (one image path per line) for each camera of the rig (eg. –mediapath /path/to/cam1.mov /path/to/cam2.mov)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Camera Intrinsics</p></td>
+<td><p>The intrinsics calibration file for each camera of the rig. (eg. –cameraIntrinsics /path/to/calib1.txt /path/to/calib2.txt)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Export</p></td>
+<td><p>Filename for the alembic file containing the rig poses with the 3D points. It also saves a file for each camera named ‘filename.cam##.abc (trackedcameras.abc)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Descriptor Path</p></td>
+<td><p>Folder containing the .desc</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Match Describer Types</p></td>
+<td><p>The describer types to use for the matching sift’</p></td>
+<td><p>‘sift_float’</p></td>
+<td><p>‘sift_upright’</p></td>
+<td><p>‘akaze’</p></td>
+<td><p>‘akaze_liop’</p></td>
+<td><p>‘akaze_mldb’</p></td>
+<td><p>‘cctag3’</p></td>
+<td><p>‘cctag4’</p></td>
+<td><p>‘sift_ocv’</p></td>
+<td><p>‘akaze_ocv’</p></td>
+</tr>
+<tr class="row-even"><td><p>Preset</p></td>
+<td><p>Preset for the feature extractor when localizing a new image (low</p></td>
+<td><p>medium</p></td>
+<td><p>normal</p></td>
+<td><p>high</p></td>
+<td><p>ultra)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Resection Estimator</p></td>
+<td><p>The type of /sac framework to use for resection (acransac</p></td>
+<td><p>loransac)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Matching Estimator</p></td>
+<td><p>The type of /sac framework to use for matching (acransac</p></td>
+<td><p>loransac)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Refine Intrinsics</p></td>
+<td><p>Enable/Disable camera intrinsics refinement for each localized image</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Reprojection Error</p></td>
+<td><p>Maximum reprojection error (in pixels) allowed for resectioning. If set to 0 it lets the ACRansac select an optimal value. (0 - 10)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Max Input Frames</p></td>
+<td><p>Maximum number of frames to read in input. 0 means no limit (0 - 1000)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Voctree</p></td>
+<td><p>[voctree] Filename for the vocabulary tree</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Voctree Weights</p></td>
+<td><p>[voctree] Filename for the vocabulary tree weights</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Algorithm</p></td>
+<td><p>[voctree] Algorithm type: {FirstBest</p></td>
+<td><p>AllResults}</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Nb Image Match</p></td>
+<td><p>[voctree] Number of images to retrieve in the database (0 - 50)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Max Results</p></td>
+<td><p>[voctree] For algorithm AllResults</p></td>
+<td><p>it stops the image matching when this number of matched images is reached. If 0 it is ignored (0 - 100)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Matching Error</p></td>
+<td><p>[voctree] Maximum matching error (in pixels) allowed for image matching with geometric verification. If set to 0 it lets the ACRansac select an optimal value (0 - 10)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>N Nearest Key Frames</p></td>
+<td><p>[cctag] Number of images to retrieve in database (0 - 50)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Output File</p></td>
+<td><p>The name of the file where to store the calibration data (desc.Node.internalFolder + ‘cameraRigCalibration.rigCal)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Voctree Weights</strong>: <a class="reference external" href="http://www.ipol.im/pub/art/2018/199/">http://www.ipol.im/pub/art/2018/199/</a>
+voctree (optional): For larger datasets (&gt;200 images), greatly improves image matching performances. It can be downloaded here.
+<a class="reference external" href="https://github.com/fragofer/voctree">https://github.com/fragofer/voctree</a> You need to specify the path to vlfeat_K80L3.SIFT.tree in <strong>Voctree</strong>.</p>
+</div>
+<div class="section" id="camerariglocalization">
+<h2>CameraRigLocalization (?)<a class="headerlink" href="#camerariglocalization" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description</strong></p>
+<p>This node retrieves the transformation between the tracked and the optical reference frames.(?)
+<a class="reference external" href="https://alicevision.github.io/#photogrammetry/localization">https://alicevision.github.io/#photogrammetry/localization</a></p>
+<table class="docutils align-center" id="id7">
+<caption><span class="caption-text">settings</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SfM Data</p></td>
+<td><p>The sfmData file</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Media Path</p></td>
+<td><p>The path to the video file</p></td>
+<td><p>the folder of the image sequence or a text file (one image path per line) for each camera of the rig (eg. –mediapath /path/to/cam1.mov /path/to/cam2.mov)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Rig Calibration File</p></td>
+<td><p>The file containing the calibration data for the rig (subposes)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Camera Intrinsics</p></td>
+<td><p>The intrinsics calibration file for each camera of the rig. (eg. –cameraIntrinsics /path/to/calib1.txt /path/to/calib2.txt)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Descriptor Path</p></td>
+<td><p>Folder containing the .desc</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Match Describer Types</p></td>
+<td><p>The describer types to use for the matching (sift’</p></td>
+<td><p>‘sift_float’</p></td>
+<td><p>‘sift_upright’</p></td>
+<td><p>‘akaze’</p></td>
+<td><p>‘akaze_liop’</p></td>
+<td><p>‘akaze_mldb’</p></td>
+<td><p>‘cctag3’</p></td>
+<td><p>‘cctag4’</p></td>
+<td><p>‘sift_ocv’</p></td>
+<td><p>‘akaze_ocv’)</p></td>
+</tr>
+<tr class="row-even"><td><p>Preset</p></td>
+<td><p>Preset for the feature extractor when localizing a new image (low</p></td>
+<td><p>medium</p></td>
+<td><p>normal</p></td>
+<td><p>high</p></td>
+<td><p>ultra)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Resection Estimator</p></td>
+<td><p>The type of /sac framework to use for resection (acransac</p></td>
+<td><p>loransac)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Matching Estimator</p></td>
+<td><p>The type of /sac framework to use for matching (acransac</p></td>
+<td><p>loransac)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Refine Intrinsics</p></td>
+<td><p>Enable/Disable camera intrinsics refinement for each localized image</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Reprojection Error</p></td>
+<td><p>Maximum reprojection error (in pixels) allowed for resectioning. If set to 0 it lets the ACRansac select an optimal value (0 - 10)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Use Localize Rig Naive</p></td>
+<td><p>Enable/Disable the naive method for rig localization: naive method tries to localize each camera separately</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Angular Threshold</p></td>
+<td><p>The maximum angular threshold in degrees between feature bearing vector and 3D point direction. Used only with the opengv method (0 - 10)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Voctree</p></td>
+<td><p>[voctree] Filename for the vocabulary tree</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Voctree Weights</p></td>
+<td><p>[voctree] Filename for the vocabulary tree weights</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Algorithm</p></td>
+<td><p>[voctree] Algorithm type: {FirstBest</p></td>
+<td><p>AllResults}</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Nb Image Match</p></td>
+<td><p>[voctree] Number of images to retrieve in the database</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Max Results</p></td>
+<td><p>[voctree] For algorithm AllResults</p></td>
+<td><p>it stops the image matching when this number of matched images is reached. If 0 it is ignored (0 - 100)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Matching Error</p></td>
+<td><p>[voctree] Maximum matching error (in pixels) allowed for image matching with geometric verification. If set to 0 it lets the ACRansac select an optimal value (0 - 10)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>N Nearest Key Frames</p></td>
+<td><p>[cctag] Number of images to retrieve in database (0 - 50)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Output Alembic</p></td>
+<td><p>Filename for the SfMData export file (where camera poses will be stored) desc.Node.internalFolder + ‘trackedcameras.abc</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="convertsfmformat">
+<h2>ConvertSfMFormat<a class="headerlink" href="#convertsfmformat" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>creates abc’, ‘sfm’, ‘json’, ‘ply’, ‘baf SfM File from SfMData file</p></li>
+</ul>
+<table class="docutils align-center" id="id8">
+<caption><span class="caption-text">settings</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Input</p></td>
+<td><p>SfMData file</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>SfM File Format</p></td>
+<td><p>SfM File Format (output file extension: abc’</p></td>
+<td><p>‘sfm’</p></td>
+<td><p>‘json’</p></td>
+<td><p>‘ply’</p></td>
+<td><p>‘baf)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Describer Types</p></td>
+<td><p>Describer types to keep.’sift’</p></td>
+<td><p>‘sift_float’</p></td>
+<td><p>‘sift_upright’</p></td>
+<td><p>‘akaze’</p></td>
+<td><p>‘akaze_liop’</p></td>
+<td><p>‘akaze_mldb’</p></td>
+<td><p>‘cctag3’</p></td>
+<td><p>‘cctag4’</p></td>
+<td><p>‘sift_ocv’</p></td>
+<td><p>‘akaze_ocv’</p></td>
+</tr>
+<tr class="row-odd"><td><p>Image id</p></td>
+<td><p>Image id</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Image White List</p></td>
+<td><p>image white list (uids or image paths).</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Views</p></td>
+<td><p>Export views</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Intrinsics</p></td>
+<td><p>Export intrinsics</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Extrinsics</p></td>
+<td><p>Export extrinsics</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Structure</p></td>
+<td><p>Export structure</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Observations</p></td>
+<td><p>Export observations</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Verbose Level</p></td>
+<td><p>verbosity level (fatal</p></td>
+<td><p>error</p></td>
+<td><p>warning</p></td>
+<td><p>info</p></td>
+<td><p>debug</p></td>
+<td><p>trace)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Output</p></td>
+<td><p>Path to the output SfM Data file. (desc.Node.internalFolder + ‘sfm.{fileExtension})</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Input nodes: StructureFromMotion:output-&gt;input:ConvertSfMFormat</strong></p>
+<img alt="../_images/convert_sfm_format.png" src="../_images/convert_sfm_format.png" />
+<p><strong>Can I convert between Openmvg and alicevision SfM formats?</strong></p>
+<p>OpenMVG and AliceVision json formats are very similar in the structure but not compatible right away as openmvg is a data serialization file among other things. <a class="reference external" href="https://github.com/alicevision/AliceVision/issues/600">https://github.com/alicevision/AliceVision/issues/600</a></p>
+</div>
+<div class="section" id="depthmap">
+<h2>DepthMap<a class="headerlink" href="#depthmap" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description</strong></p>
+<hr class="docutils" />
+<table class="docutils align-center" id="id9">
+<caption><span class="caption-text">settings</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>MVS Configuration File:</p></td>
+<td><p>SfMData file.</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Images Folder</p></td>
+<td><p>Use images from a specific folder instead of those specify in the SfMData file.Filename should be the image uid.</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Downscale</p></td>
+<td><p>Image downscale factor (1</p></td>
+<td><p>2</p></td>
+<td><p>4</p></td>
+<td><p>8</p></td>
+<td><ol class="arabic simple" start="16">
+<li></li>
+</ol>
+</td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Min View Angle</p></td>
+<td><p>Minimum angle between two views. (0.0</p></td>
+<td><p>10.0</p></td>
+<td><p>0.1)</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Max View Angle</p></td>
+<td><p>Maximum angle between two views. (10.0</p></td>
+<td><p>120.0</p></td>
+<td><ol class="arabic simple">
+<li></li>
+</ol>
+</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>SGM: Nb Neighbour Cameras</p></td>
+<td><p>Semi Global Matching: Number of neighbour cameras (1 - 100)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>SGM: WSH: Semi Global Matching</p></td>
+<td><p>Half-size of the patch used to compute the similarity (1 - 20)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>SGM: GammaC</p></td>
+<td><p>Semi Global Matching: GammaC Threshold (0 - 30)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>SGM: GammaP</p></td>
+<td><p>Semi Global Matching: GammaP Threshold (0 - 30)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Refine: Number of samples</p></td>
+<td><p>(1 - 500)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Refine: Number of Depths</p></td>
+<td><p>(1 - 100)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Refine: Number of Iterations</p></td>
+<td><p>(1 - 500)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Refine: Nb Neighbour Cameras</p></td>
+<td><p>Refine: Number of neighbour cameras. (1 - 20)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Refine: WSH</p></td>
+<td><p>Refine: Half-size of the patch used to compute the similarity. (1 - 20)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Refine: Sigma</p></td>
+<td><p>Refine: Sigma Threshold (0 - 30)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Refine: GammaC</p></td>
+<td><p>Refine: GammaC Threshold. (0 - 30)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Refine: GammaP</p></td>
+<td><p>Refine: GammaP threshold. (0 - 30)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Refine: Tc or Rc pixel size</p></td>
+<td><p>Use minimum pixel size of neighbour cameras (Tc) or current camera pixel size (Rc)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Verbose Level</p></td>
+<td><p>verbosity level (fatal</p></td>
+<td><p>error</p></td>
+<td><p>warning</p></td>
+<td><p>info</p></td>
+<td><p>debug</p></td>
+<td><p>trace)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Output</p></td>
+<td><p>Output folder for generated depth maps</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>default:</strong></p>
+<img alt="../_images/depth_map.png" src="../_images/depth_map.png" />
+</div>
+<div class="section" id="depthmapfilter">
+<h2>DepthMapFilter<a class="headerlink" href="#depthmapfilter" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description</strong></p>
+<p>The original depth maps will not be entirely consistent. Certain depth maps will claim to see areas that are occluded by other depth maps. The DepthMapFilter step isolates these areas and forces depth consistency.</p>
+<table class="docutils align-center" id="id10">
+<caption><span class="caption-text">settings</span><a class="headerlink" href="#id10" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Input</p></td>
+<td><p>SfMData file</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Depth Map Folder</p></td>
+<td><p>Input depth map folder</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Number of Nearest Cameras</p></td>
+<td><p>Number of nearest cameras used for filtering 10 (0 - 20)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Min Consistent Cameras</p></td>
+<td><p>Min Number of Consistent Cameras 3 (0 - 10)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Min Consistent Cameras Bad Similarity</p></td>
+<td><p>Min Number of Consistent Cameras for pixels with weak similarity value 4 (0 - 10)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Filtering Size in Pixels</p></td>
+<td><p>Filtering size in Pixels (0 - 10)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Filtering Size in Pixels Bad Similarity</p></td>
+<td><p>Filtering size in pixels (0 - 10)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Verbose Level</p></td>
+<td><p>verbosity level (fatal</p></td>
+<td><p>error</p></td>
+<td><p>warning</p></td>
+<td><p>info</p></td>
+<td><p>debug</p></td>
+<td><p>trace)</p></td>
+</tr>
+<tr class="row-even"><td><p>Output</p></td>
+<td><p>Output folder for generated depth maps</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Min Consistent Cameras</strong>
+lower this value if the Meshing node has 0 depth samples input</p>
+<p><strong>View Output</strong>
+open output folder and view EXR files</p>
+</div>
+<div class="section" id="exportanimatedcamera">
+<h2>ExportAnimatedCamera<a class="headerlink" href="#exportanimatedcamera" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description</strong></p>
+<p>creates an Alembic  animatedCamera.abc file from SFMData (e.g. for use in 3D Compositing software)</p>
+<table class="docutils align-center" id="id11">
+<caption><span class="caption-text">settings</span><a class="headerlink" href="#id11" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Input SfMData</p></td>
+<td><p>SfMData file containing a complete SfM</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>SfMData Filter</p></td>
+<td><p>A SfMData file use as filter</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Export Undistorted Images</p></td>
+<td><p>Export Undistorted Images value=True</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Undistort Image Format</p></td>
+<td><p>Image file format to use for undistorted images (jpg / png / tif / exr (half))</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Verbose Level</p></td>
+<td><p>Verbosity level (fatal</p></td>
+<td><p>error</p></td>
+<td><p>warning</p></td>
+<td><p>info</p></td>
+<td><p>debug</p></td>
+<td><p>trace)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Output filepath</p></td>
+<td><p>Output filepath for the alembic animated camera</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Output Camera Filepath</p></td>
+<td><p>Output filename for the alembic animated camera  internalFolder + ‘camera.abc’</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>SFM-&gt;ExportAnimatedCamera
+.. details <a class="reference external" href="https://www.youtube.com/watch?v=1dhdEmGLZhY">https://www.youtube.com/watch?v=1dhdEmGLZhY</a></p>
+</div>
+<div class="section" id="exportmaya">
+<h2>ExportMaya<a class="headerlink" href="#exportmaya" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description</strong></p>
+<p>Mode for use with MeshroomMaya plugin.</p>
+<p>The node “ExportMaya” exports the undistorted images. This node has nothing dedicated to Maya but was used to import the data into our MeshroomMaya plugin. You can use the same to export to Blender.</p>
+<table class="docutils align-center" id="id12">
+<caption><span class="caption-text">settings</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Input SfM Data</p></td>
+<td><p>sfm.sfm or sfm.abc</p></td>
+</tr>
+<tr class="row-odd"><td><p>Output Folder</p></td>
+<td><p>Folder for MeshroomMaya output: undistorted images and thumbnails</p></td>
+</tr>
+</tbody>
+</table>
+<p>ExportMaya: requires .sfm or .abc as input from ConvertSfMFormat</p>
+<img alt="../_images/export_maya.png" src="../_images/export_maya.png" />
+</div>
+<div class="section" id="featureextraction">
+<h2>FeatureExtraction<a class="headerlink" href="#featureextraction" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description</strong></p>
+<hr class="docutils" />
+</div>
+<hr class="docutils" />
+<div class="section" id="featurematching">
+<h2>FeatureMatching<a class="headerlink" href="#featurematching" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description</strong></p>
+<hr class="docutils" />
+<table class="docutils align-center" id="id13">
+<caption><span class="caption-text">settings</span><a class="headerlink" href="#id13" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Input</p></td>
+<td><p>SfMData file</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Features Folder</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Features Folders</p></td>
+<td><p>Folder(s) containing the extracted features and descriptors</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Image Pairs List</p></td>
+<td><p>Path to a file which contains the list of image pairs to match</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Describer Types</p></td>
+<td><p>Describer types used to describe an image <strong>sift</strong>’/ ‘sift_float’/ ‘sift_upright’/ ‘akaze’/ ‘akaze_liop’/ ‘akaze_mldb’/ ‘cctag3’/ ‘cctag4’/ ‘sift_ocv’/ ‘akaze_ocv</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Photometric Matching Method</p></td>
+<td><p>For Scalar based regions descriptor ‘ * BRUTE_FORCE_L2: L2 BruteForce matching’ ‘ * ANN_L2: L2 Approximate Nearest Neighbor matching ‘ * CASCADE_HASHING_L2: L2 Cascade Hashing matching ‘ * FAST_CASCADE_HASHING_L2: L2 Cascade Hashing with precomputed hashed regions (faster than CASCADE_HASHING_L2 but use more memory) ‘For Binary based descriptor  ‘ * BRUTE_FORCE_HAMMING: BruteForce Hamming matching’</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Geometric Estimator</p></td>
+<td><p>Geometric estimator: (acransac:  A-Contrario Ransac //  loransac: LO-Ransac (only available for fundamental_matrix model)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Geometric Filter Type</p></td>
+<td><p>Geometric validation method to filter features matches: <strong>fundamental_matrix</strong> // essential_matrix // homography_matrix /// homography_growing // no_filtering’</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Distance Ratio</p></td>
+<td><p>Distance ratio to discard non meaningful matches 0.8 (0.0 - 1)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Max Iteration</p></td>
+<td><p>Maximum number of iterations allowed in ransac step 2048 (1 - 20000)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Max Matches</p></td>
+<td><p>Maximum number of matches to keep (0 - 10000)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Save Putative Matches</p></td>
+<td><p>putative matches (True/False)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Guided Matching</p></td>
+<td><p>the found model to improve the pairwise correspondences (True/False)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Export Debug Files</p></td>
+<td><p>debug files (svg/ dot) (True/False)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Verbose Level</p></td>
+<td><p>verbosity level (fatal/ error</p></td>
+<td><p>warning</p></td>
+<td><p>info</p></td>
+<td><p>debug</p></td>
+<td><p>trace)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Output Folder</p></td>
+<td><p>Path to a folder in which computed matches will be stored</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<img alt="../_images/feature_matching.png" src="../_images/feature_matching.png" />
+</div>
+<div class="section" id="imagematching">
+<h2>ImageMatching<a class="headerlink" href="#imagematching" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description</strong></p>
+<hr class="docutils" />
+<table class="docutils align-center" id="id14">
+<caption><span class="caption-text">settings</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Image</p></td>
+<td><p>SfMData file</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Features Folders</p></td>
+<td><p>Folder(s) containing the extracted features and descriptors</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Tree</p></td>
+<td><p>Input name for the vocabulary tree file ALICEVISION_VOCTREE</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Weights</p></td>
+<td><p>Input name for the weight file</p></td>
+<td><p>if not provided the weights will be computed on the database built with the provided set</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Minimal Number of Images</p></td>
+<td><p>Minimal number of images to use the vocabulary tree. If we have less features than this threshold</p></td>
+<td><p>we will compute all matching combinations</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Max Descriptors</p></td>
+<td><p>Limit the number of descriptors you load per image. Zero means no limit</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Nb Matches</p></td>
+<td><p>The number of matches to retrieve for each image (If 0 it will retrieve all the matches) 50 (0-1000)</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Verbose Level</p></td>
+<td><p>verbosity level (fatal</p></td>
+<td><p>error</p></td>
+<td><p>warning</p></td>
+<td><p>info</p></td>
+<td><p>debug</p></td>
+<td><p>trace)</p></td>
+</tr>
+<tr class="row-even"><td><p>Output List File</p></td>
+<td><p>Filepath to the output file with the list of selected image pairs</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<img alt="../_images/image_matching.png" src="../_images/image_matching.png" />
+</div>
+<div class="section" id="imagematchingmultisfm">
+<h2>ImageMatchingMultiSfM<a class="headerlink" href="#imagematchingmultisfm" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description</strong></p>
+<p>This node can combine image matching between two input SfMData.</p>
+<p>Used for <strong>Live Reconstructin</strong> and <strong>Augmentation</strong></p>
+<table class="docutils align-center" id="id15">
+<caption><span class="caption-text">settings</span><a class="headerlink" href="#id15" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Input A</p></td>
+<td><p>SfMData file</p></td>
+</tr>
+<tr class="row-odd"><td><p>Input B</p></td>
+<td><p>SfMData file</p></td>
+</tr>
+<tr class="row-even"><td><p>Features Folders</p></td>
+<td><p>Folder(s) containing the extracted features and descriptors</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tree</p></td>
+<td><p>Input name for the vocabulary tree file ALICEVISION_VOCTREE</p></td>
+</tr>
+<tr class="row-even"><td><p>Weights</p></td>
+<td><p>Input name for the weight file if not provided the weights will be computed on the database built with the provided set</p></td>
+</tr>
+<tr class="row-odd"><td><p>Matching Mode</p></td>
+<td><p>The mode to combine image matching between the input SfMData A and B: a/a+a/b for A with A + A with B. a/ab [‘a/a+a/b’ // ‘a/ab’ // ‘a/b’]</p></td>
+</tr>
+<tr class="row-even"><td><p>Minimal Number of Images</p></td>
+<td><p>Minimal number of images to use the vocabulary tree. If we have less features than this threshold we will compute all matching combinations</p></td>
+</tr>
+<tr class="row-odd"><td><p>Max Descriptors</p></td>
+<td><p>Limit the number of descriptors you load per image. Zero means no limit 500 (0-100000)</p></td>
+</tr>
+<tr class="row-even"><td><p>Nb Matches</p></td>
+<td><p>The number of matches to retrieve for each image (If 0 it will retrieve all the matches) 50 (0-1000)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Verbose Level</p></td>
+<td><p>verbosity level (fatal // error // warning // info // debug // trace)</p></td>
+</tr>
+<tr class="row-even"><td><p>Output List File</p></td>
+<td><p>Filepath to the output file with the list of selected image pairs</p></td>
+</tr>
+<tr class="row-odd"><td><p>Output Combined SfM</p></td>
+<td><p>Path for the combined SfMData file internalFolder + ‘combineSfM.sfm</p></td>
+</tr>
+</tbody>
+</table>
+<img alt="../_images/image_matching_multi.png" src="../_images/image_matching_multi.png" />
+</div>
+<div class="section" id="keyframeselection">
+<h2>KeyframeSelection<a class="headerlink" href="#keyframeselection" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description</strong>
+Note: This is an experimental node for keyframe selection in a video, which removes too similar or too blurry images. This node is not yet provided in the binaries as it introduces many dependencies.
+So if you built it by yourself, you can test the KeyframeSelection node. It is not yet fully integrated into Meshroom, so you have to manually drag&amp;drop the exported frames to launch the reconstruction (instead of just adding a connection in the graph) <a class="reference external" href="https://github.com/alicevision/meshroom/issues/232">https://github.com/alicevision/meshroom/issues/232</a></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="meshdecimate">
+<h2>MeshDecimate<a class="headerlink" href="#meshdecimate" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description</strong></p>
+<p>Simplify your mesh to reduce mesh size without changing visual appearance of the model.</p>
+<table class="docutils align-center" id="id16">
+<caption><span class="caption-text">settings</span><a class="headerlink" href="#id16" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Input Mesh (OBJ file format)</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Simplification factor</p></td>
+<td><p>Simplification factor 0.5 (0 - 1)</p></td>
+</tr>
+<tr class="row-even"><td><p>Fixed Number of Vertice</p></td>
+<td><p>Fixed number of output vertices 0 (0 - 1 000 000)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Min Vertices</p></td>
+<td><p>Min number of output vertices 0 (0 - 1 000 000)</p></td>
+</tr>
+<tr class="row-even"><td><p>Max Vertices</p></td>
+<td><p>Max number of output vertices 0 (0 - 1 000 000)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Flip Normals</p></td>
+<td><p>Option to flip face normals ‘It can be needed as it depends on the vertices order in triangles and the convention change from one software to another. (True/False)</p></td>
+</tr>
+<tr class="row-even"><td><p>Verbose Level</p></td>
+<td><p>verbosity level (fatal // error // warning // info // debug // trace)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Output mesh</p></td>
+<td><p>Output mesh (OBJ file format) internalFolder + ‘mesh.obj</p></td>
+</tr>
+</tbody>
+</table>
+<img alt="../_images/mesh_decimate.png" src="../_images/mesh_decimate.png" />
+<p>or Meshing-&gt;MeshDecimate-&gt;MeshFiltering?</p>
+<p><strong>Comparison MeshDecimate and MeshResampling</strong></p>
+<img alt="../_images/compare_resampling_decimate.jpg" src="../_images/compare_resampling_decimate.jpg" />
+<p><strong>Flip Normals</strong></p>
+<img alt="../_images/flip_normals.jpg" src="../_images/flip_normals.jpg" />
+</div>
+<div class="section" id="meshdenoising">
+<h2>MeshDenoising<a class="headerlink" href="#meshdenoising" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description</strong></p>
+<p>Denoise your mesh
+Mesh models generated by 3D scanner always contain noise. It is necessary to remove the noise from the meshes.
+Mesh denoising: remove noises, feature-preserving
+<a class="reference external" href="https://www.cs.cf.ac.uk/meshfiltering/index_files/Doc/Random%20Walks%20for%20Mesh%20Denoising.ppt">https://www.cs.cf.ac.uk/meshfiltering/index_files/Doc/Random%20Walks%20for%20Mesh%20Denoising.ppt</a></p>
+<table class="docutils align-center" id="id17">
+<caption><span class="caption-text">settings</span><a class="headerlink" href="#id17" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>input</p></td>
+<td><p>Input Mesh (OBJ file format)</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Denoising Iterations</p></td>
+<td><p>Number of denoising iterations (0 // 30 // 1) 5</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Mesh Update Closeness Weight</p></td>
+<td><p>Closeness weight for mesh update</p></td>
+<td><p>must be positive.(0.0 // 0.1 // 0.001) 0.001</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lambda</p></td>
+<td><p>Regularization weight. (0.0 // 10.0 // 0.01) 2</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Eta</p></td>
+<td><p>Gaussian standard deviation for spatial weight</p></td>
+<td><p>scaled by the average distance between adjacent face centroids.Must be positive.(0.0 // 20.0 // 0.01) 1.5</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mu</p></td>
+<td><p>Gaussian standard deviation for guidance weight (0.0 // 10.0 // 0.01) 1.5</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Nu</p></td>
+<td><p>Gaussian standard deviation for signal weight. (0.0 // 5.0 // 0.01) 0.3</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Mesh Update Method</p></td>
+<td><p>Mesh Update Method * ITERATIVE_UPDATE (default): ShapeUp styled iterative solver * POISSON_UPDATE: Poisson-based update from [Want et al. 2015] (0 // 1)</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Verbose Level</p></td>
+<td><p>[‘fatal’ // ‘error’ // ‘warning’ // ‘info’ // ‘debug’ // ‘trace’]</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Output</p></td>
+<td><p>Output mesh (OBJ file format).</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<img alt="../_images/mesh_denoising.png" src="../_images/mesh_denoising.png" />
+<p>Mesh Update Method
+<a class="reference external" href="https://www.researchgate.net/publication/275104101_Poisson-driven_seamless_completion_of_triangular_meshes">https://www.researchgate.net/publication/275104101_Poisson-driven_seamless_completion_of_triangular_meshes</a></p>
+</div>
+<div class="section" id="meshfiltering">
+<h2>MeshFiltering<a class="headerlink" href="#meshfiltering" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description</strong></p>
+<p>Filter out unwanted elements of your mesh</p>
+<table class="docutils align-center" id="id18">
+<caption><span class="caption-text">settings</span><a class="headerlink" href="#id18" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Input</p></td>
+<td><p>Input Mesh (OBJ file format)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Filter Large Triangles Factor</p></td>
+<td><p>Remove all large triangles. We consider a triangle as large if one edge is bigger than N times the average edge length. Put zero to disable it. 60 (1 - 100)</p></td>
+</tr>
+<tr class="row-even"><td><p>Keep Only the Largest Mesh</p></td>
+<td><p>Keep only the largest connected triangles group (True/False)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Nb Iterations</p></td>
+<td><p>5 (0 - 50)</p></td>
+</tr>
+<tr class="row-even"><td><p>Lambda</p></td>
+<td><p>1 (0-10</p></td>
+</tr>
+<tr class="row-odd"><td><p>Verbose Level</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Verbose Level</p></td>
+<td><p>[‘fatal’ // ‘error’ // ‘warning’ // ‘info’ // ‘debug’ // ‘trace’]</p></td>
+</tr>
+<tr class="row-odd"><td><p>Output mesh</p></td>
+<td><p>Output mesh (OBJ file format) internalFolder + ‘mesh.obj</p></td>
+</tr>
+</tbody>
+</table>
+<img alt="../_images/mesh_filtering.png" src="../_images/mesh_filtering.png" />
+<p>Note: “Keep Only The Largest Mesh”. This is disabled by default in the 2019.1.0 release to avoid that the environment is being meshed, but not the object of interest. The largest Mesh is in some cases the reconstructed background. When the object of interest is not connected to the large background mesh it will be removed.
+You should place your object of interest on a well structured non transparent or reflecting surface (e.g. a newspaper).</p>
+</div>
+<div class="section" id="meshresampling">
+<h2>MeshResampling<a class="headerlink" href="#meshresampling" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description</strong></p>
+<p>Reducing number of faces while trying to keep overall shape, volume and boundaries
+You can specify a fixed, min, max Vertices number.</p>
+<p>This is different from MeshDecimate!</p>
+<p>Resampling <a class="reference external" href="https://users.cg.tuwien.ac.at/stef/seminar/MeshResamplingMerge1901.pdf">https://users.cg.tuwien.ac.at/stef/seminar/MeshResamplingMerge1901.pdf</a></p>
+<table class="docutils align-center" id="id19">
+<caption><span class="caption-text">settings</span><a class="headerlink" href="#id19" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Input</p></td>
+<td><p>Input Mesh (OBJ file format)</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Simplification factor</p></td>
+<td><p>Simplification factor 0.5 (0 - 1)</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Fixed Number of Vertice</p></td>
+<td><p>Fixed number of output vertices 0 (0 - 1 000 000)</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Min Vertices</p></td>
+<td><p>Min number of output vertices 0 (0 - 1 000 000)</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Max Vertices</p></td>
+<td><p>Max number of output vertices 0 (0 - 1 000 000)</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Number of Pre-Smoothing Iteration</p></td>
+<td><p>Number of iterations for Lloyd pre-smoothing 40 (0 - 100)</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Flip Normals</p></td>
+<td><p>Option to flip face normals</p></td>
+<td><p>‘It can be needed as it depends on the vertices order in triangles and the convention change from one software to another.  (True/False)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Verbose Level</p></td>
+<td><p>[‘fatal’ // ‘error’ // ‘warning’ // ‘info’ // ‘debug’ // ‘trace’]</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Output mesh</p></td>
+<td><p>Output mesh (OBJ file format) internalFolder + ‘mesh.obj</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<img alt="../_images/mesh_resampling.png" src="../_images/mesh_resampling.png" />
+<p><strong>Comparison MeshDecimate and MeshResampling</strong></p>
+<img alt="../_images/compare_resampling_decimate.jpg" src="../_images/compare_resampling_decimate.jpg" />
+<p><strong>Flip Normals</strong></p>
+<img alt="../_images/flip_normals.jpg" src="../_images/flip_normals.jpg" />
+</div>
+<div class="section" id="meshing">
+<h2>Meshing<a class="headerlink" href="#meshing" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description</strong></p>
+<hr class="docutils" />
+<img alt="../_images/meshing.png" src="../_images/meshing.png" />
+</div>
+<div class="section" id="preparedensescene">
+<h2>PrepareDenseScene<a class="headerlink" href="#preparedensescene" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>This node undistorts the images and generates EXR images</p></li>
+</ul>
+<table class="docutils align-center" id="id20">
+<caption><span class="caption-text">settings</span><a class="headerlink" href="#id20" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Input</p></td>
+<td><p>SfMData file</p></td>
+</tr>
+<tr class="row-odd"><td><p>Verbose Level</p></td>
+<td><p>[‘fatal’ // ‘error’ // ‘warning’ // ‘info’ // ‘debug’ // ‘trace’]</p></td>
+</tr>
+<tr class="row-even"><td><p>Output</p></td>
+<td><p>MVS Configuration file (desc.Node.internalFolder + ‘mvs.ini)</p></td>
+</tr>
+</tbody>
+</table>
+<img alt="../_images/prepare_dense_scene.png" src="../_images/prepare_dense_scene.png" />
+</div>
+<div class="section" id="publish">
+<h2>Publish<a class="headerlink" href="#publish" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description</strong></p>
+<ul class="simple">
+<li><p>A copy of the Input files are placed in the Output Folder</p></li>
+</ul>
+<p>Can be used to save SfM, Mesh or textured Model to a specific folder</p>
+<table class="docutils align-center" id="id21">
+<caption><span class="caption-text">settings</span><a class="headerlink" href="#id21" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Input Files</p></td>
+<td><p>Input Files to publish</p></td>
+</tr>
+<tr class="row-odd"><td><p>Output Folder</p></td>
+<td><p>Folder to publish files to</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sfmalingnment">
+<h2>SfMAlingnment<a class="headerlink" href="#sfmalingnment" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description</strong>
+align SfM file to a scene</p>
+<table class="docutils align-center" id="id22">
+<caption><span class="caption-text">settings</span><a class="headerlink" href="#id22" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Input</p></td>
+<td><p>SfMData file</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reference</p></td>
+<td><p>Path to the scene used as the reference coordinate system</p></td>
+</tr>
+<tr class="row-even"><td><p>Verbose Level</p></td>
+<td><p>[‘fatal’ // ‘error’ // ‘warning’ // ‘info’ // ‘debug’ // ‘trace’]</p></td>
+</tr>
+<tr class="row-odd"><td><p>Output</p></td>
+<td><p>Aligned SfMData file internalFolder + ‘alignedSfM.abc</p></td>
+</tr>
+</tbody>
+</table>
+<img alt="../_images/sfm_align.png" src="../_images/sfm_align.png" />
+</div>
+<div class="section" id="sfmtransform">
+<h2>SfMTransform<a class="headerlink" href="#sfmtransform" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description</strong></p>
+<p>Apply a given transformation camera as the origin of the coordinate system</p>
+<p>With the SfMTransform node, you can rescale the scene based on the bounding box of CCTAG markers.</p>
+<hr class="docutils" />
+<img alt="../_images/sfm_transform.png" src="../_images/sfm_transform.png" />
+</div>
+<div class="section" id="structurefrommotion">
+<h2>StructureFromMotion<a class="headerlink" href="#structurefrommotion" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description</strong></p>
+<hr class="docutils" />
+<hr class="docutils" />
+<img alt="../_images/sfm.png" src="../_images/sfm.png" />
+</div>
+<div class="section" id="texturing">
+<h2>Texturing<a class="headerlink" href="#texturing" title="Permalink to this headline">¶</a></h2>
+<p><strong>Description</strong></p>
+<p>Texturing creates UVs and projects the textures</p>
+<p>change quality and size/ file type of texture</p>
+<hr class="docutils" />
+<img alt="../_images/texturing.png" src="../_images/texturing.png" />
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Meshroom</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Welcome</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../titlepage.html">Manual</a></li>
+</ul>
+<p class="caption"><span class="caption-text">First Steps</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install/install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gui/gui.html">The Graphical User Interface (GUI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../test/test.html">Test Meshroom</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Feature Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Complete Node List</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#cameracalibration">CameraCalibration (#)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#camerainit">CameraInit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cameralocalization">CameraLocalization (?)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#camerarigcalibration">CameraRigCalibration (?)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#camerariglocalization">CameraRigLocalization (?)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#convertsfmformat">ConvertSfMFormat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#depthmap">DepthMap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#depthmapfilter">DepthMapFilter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exportanimatedcamera">ExportAnimatedCamera</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exportmaya">ExportMaya</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#featureextraction">FeatureExtraction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#featurematching">FeatureMatching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#imagematching">ImageMatching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#imagematchingmultisfm">ImageMatchingMultiSfM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#keyframeselection">KeyframeSelection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#meshdecimate">MeshDecimate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#meshdenoising">MeshDenoising</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#meshfiltering">MeshFiltering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#meshresampling">MeshResampling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#meshing">Meshing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#preparedensescene">PrepareDenseScene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#publish">Publish</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sfmalingnment">SfMAlingnment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sfmtransform">SfMTransform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#structurefrommotion">StructureFromMotion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#texturing">Texturing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../supported_formats/supported_formats.html">Supported Formats</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../capturing/capturing.html">capturing WIP</a></li>
+</ul>
+<p class="caption"><span class="caption-text">More</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cli/cli.html">The Command-line interface (CLI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../more/more.html">More</a></li>
+</ul>
+<p class="caption"><span class="caption-text">FAQ</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../faq/faq.html">faq from wiki</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../references/references.html">References</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/about.html">About</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../test/test.html" title="previous chapter">Test Meshroom</a></li>
+      <li>Next: <a href="../supported_formats/supported_formats.html" title="next chapter">Supported Formats</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Meshroom Contributors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/node_reference/node_reference.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

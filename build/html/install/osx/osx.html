@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>OSX &#8212; Meshroom 0.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Docker" href="../docker/docker.html" />
+    <link rel="prev" title="Linux" href="../linux/linux.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="osx">
+<h1>OSX<a class="headerlink" href="#osx" title="Permalink to this headline">¶</a></h1>
+<p>Originally published on 2018-08-17 by
+<a class="reference external" href="https://ryanfb.github.io/">Ryan Baumann</a>
+on
+<a class="reference external" href="https://ryanfb.github.io/etc/2018/08/17/alicevision_and_meshroom_on_mac_os_x.html">ryanfb.github.io</a></p>
+<p><a class="reference external" href="https://alicevision.github.io/">AliceVision</a>
+and its Meshroom program are an exciting new free and open-source pipeline for photogrammetry processing. Unfortunately, compiling and using either of these programs on Mac OS X is
+<a class="reference external" href="https://github.com/alicevision/AliceVision/issues/444">not exactly straightforward</a>
+. As a result, I’ve compiled
+<a class="reference external" href="http://github.com/ryanfb/homebrew-alicevision">a Homebrew tap</a>
+which includes the necessary formulae, and will use this post to outline how to use them to get up and running.
+<em>Note that this is intended as a first step for Mac users wishing to experiment with and improve the AliceVision/Meshroom software, and as a result these instructions may become outdated with time</em>
+.
+<a href="#id7"><span class="problematic" id="id8">|1000000000000400000002C9C86DF538CB3F24E1_jpg|</span></a></p>
+<p>The following instructions assume a working
+<a class="reference external" href="https://brew.sh/">Homebrew</a>
+install.</p>
+<div class="section" id="system-requirements">
+<h2>System Requirements<a class="headerlink" href="#system-requirements" title="Permalink to this headline">¶</a></h2>
+<p>First off, your Mac will currently need an nVidia GPU with a CUDA compute capability of 2.0 or greater. This is probably a pretty small portion of all Macs sold, but you can check your GPU by looking in “About This Mac” from the Apple icon in the top left corner of the screen, under “Graphics”. If you have an nVidia GPU listed there, you can check its compute capability on
+<a class="reference external" href="https://developer.nvidia.com/cuda-gpus">the nVidia CUDA GPUs page</a>
+.</p>
+<p>Second, you’re going to need to install
+<a class="reference external" href="https://developer.nvidia.com/cuda-downloads">the latest CUDA toolkit</a>
+. As of this writing, that’s CUDA 9.2, which is only officially compatible with OS X 10.13 (High Sierra), so you may also need to upgrade to the latest version of High Sierra if you haven’t already. Alongside this I would also suggest installing the latest nVidia CUDA GPU webdriver, which as of this writing is
+<a class="reference external" href="https://www.nvidia.com/download/driverResults.aspx/136062/en-us">387.10.10.10.40.105</a>
+.</p>
+<p>Third,
+<a class="reference external" href="https://docs.nvidia.com/cuda/cuda-installation-guide-mac-os-x/index.html">CUDA 9.2 is</a>
+<a class="reference external" href="https://docs.nvidia.com/cuda/cuda-installation-guide-mac-os-x/index.html">only</a>
+` compatible with the version of  &lt;<a class="reference external" href="https://docs.nvidia.com/cuda/cuda-installation-guide-mac-os-x/index.html">https://docs.nvidia.com/cuda/cuda-installation-guide-mac-os-x/index.html</a>&gt;`_
+<a class="reference external" href="https://docs.nvidia.com/cuda/cuda-installation-guide-mac-os-x/index.html">clang</a>
+` distributed with Xcode 9.2 &lt;<a class="reference external" href="https://docs.nvidia.com/cuda/cuda-installation-guide-mac-os-x/index.html">https://docs.nvidia.com/cuda/cuda-installation-guide-mac-os-x/index.html</a>&gt;`_
+, and will refuse to compile against anything else. You may have an older or newer version of Xcode installed. As of this writing, if you fully update Xcode within a fully updated OS X install, you’ll have Xcode 9.4.1. To get back to Xcode 9.2, what you can do is go to
+<a class="reference external" href="https://developer.apple.com/download/more/">Apple’s Developer Downloads page</a>
+(for which you’ll need a free Apple developer account), then search for “Xcode 9.2”, then install the Command Line Tools for Xcode 9.2 package for your OS version. After installing, run</p>
+<p><em>sudo xcode-select –switch /Library/Developer/CommandLineTools</em>
+and then verify that</p>
+<p><em>clang –version</em>
+* *
+shows
+<em>Apple LLVM version 9.0.0</em></p>
+<p>Once you’ve done all this, you can verify a working CUDA install by going to
+<em>/Developer/NVIDIA/CUDA-9.2/samples/1_Utilities/deviceQuery</em>
+and running
+<em>sudo make &amp;&amp; ./deviceQuery</em>
+, which should output your GPU information. If it doesn’t build correctly, or
+deviceQuery
+errors or doesn’t list your GPU, you may need to look over the steps above and check that everything is up to date (you can also check the CUDA panel in System Preferences).
+<a href="#id9"><span class="problematic" id="id10">|1000000000000278000001A7B87958291166168F_jpg|</span></a></p>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>If you’ve followed all the above setup instructions and requirements, installing the AliceVision libraries/framework should be as easy as:</p>
+<p>brew install ryanfb/alicevision/alicevision</p>
+</div>
+<div class="section" id="meshroom-installation-usage">
+<h2>Meshroom Installation &amp; Usage<a class="headerlink" href="#meshroom-installation-usage" title="Permalink to this headline">¶</a></h2>
+<p>I haven’t yet created a Homebrew formula for the
+<a class="reference external" href="https://github.com/alicevision/meshroom">Meshroom package itself</a>
+, as it’s all Python and doesn’t seem particularly difficult to install/use once AliceVision is installed and working correctly. Just follow the install instructions there (for my specific Python configuration/installation I used
+pip</p>
+<p>3
+instead of
+pip
+and
+python3
+instead of
+python
+):</p>
+<p>git clone –recursive git://github.com/alicevision/meshroom</p>
+<p>cd meshroom</p>
+<p>pip install -r requirements.txt</p>
+<p>You can report an issue on
+<a class="reference external" href="https://github.com/ryanfb/homebrew-alicevision/issues">https://github.com/ryanfb/homebrew-alicevision/issues</a></p>
+<p>One gotcha I ran into is that the CUDA-linked AliceVision binaries invoked by Meshroom don’t automatically find the CUDA libraries on the
+DYLD_LIBRARY_PATH
+, and setting the
+DYLD_LIBRARY_PATH
+from the shell launching Meshroom doesn’t seem to get the variable passed into the shell environment Meshroom uses to spawn commands. Without this, you’ll get an error like:</p>
+<p>dyld: Library not loaded: &#64;rpath/libcudart.9.2.dylib</p>
+<p>Referenced from: /usr/local/bin/aliceVision_depthMapEstimation</p>
+<p>Reason: image not found</p>
+<p>In order to get around this, you can symlink the CUDA libraries into
+/usr/local/lib
+(most of the other workarounds I found for permanently modifying the
+DYLD_LIBRARY_PATH
+seemed more confusing or fragile than this simpler approach):
+<a class="reference external" href="https://ryanfb.github.io/etc/2018/08/17/alicevision_and_meshroom_on_mac_os_x.html#fn:dyldpath">1</a></p>
+<p>for i in /Developer/NVIDIA/CUDA-9.2/lib/<em>.a /Developer/NVIDIA/CUDA-9.2/lib/</em>.dylib; do ln -sv “$i” “/usr/local/lib/$(basename “$i”)”; done</p>
+<p>You can undo/uninstall this with:</p>
+<p>for i in /Developer/NVIDIA/CUDA-9.2/lib/<em>.a /Developer/NVIDIA/CUDA-9.2/lib/</em>.dylib; do rm -v “/usr/local/lib/$(basename “$i”)”; done</p>
+<p>You may also want to download the voctree dataset:</p>
+<p>curl ‘<a class="reference external" href="https://gitlab.com/alicevision/trainedVocabularyTreeData/raw/master/vlfeat_K80L3.SIFT.tree">https://gitlab.com/alicevision/trainedVocabularyTreeData/raw/master/vlfeat_K80L3.SIFT.tree</a>’ -o /usr/local/Cellar/alicevision/2.0.0/share/aliceVision/vlfeat_K80L3.SIFT.tree</p>
+<p>Then launch with:</p>
+<p>ALICEVISION_SENSOR_DB=/usr/local/Cellar/alicevision/2.0.0/share/aliceVision/cameraSensors.db ALICEVISION_VOCTREE=/usr/local/Cellar/alicevision/2.0.0/share/aliceVision/vlfeat_K80L3.SIFT.tree PYTHONPATH=$PWD python meshroom/ui</p>
+<p>Import some photos, click “Start”, wait a while, and hopefully you should end up with a reconstructed and textured mesh
+.
+By default, the output will be in
+MeshroomCache/Texturing/
+(relative to where you saved the project file).</p>
+<p>When you launch Meshroom
+<a href="#id3"><span class="problematic" id="id4">*</span></a>without *
+sudo, the temp path will be something like this:</p>
+<p><a href="#id11"><span class="problematic" id="id12">|100000000000024A0000007238E2E46A3C4F9C61_png|</span></a></p>
+<p>When starting with sudo, it will be /tmp/MeshroomCache by default</p>
+<p><strong>Footnotes:</strong></p>
+<ol class="arabic simple">
+<li><p>Previously, I suggested modifying
+meshroom/core/desc.py
+so that
+<a class="reference external" href="https://github.com/alicevision/meshroom/blob/develop/meshroom/core/desc.py#L368">the return value at the end of the</a>
+<a class="reference external" href="https://github.com/alicevision/meshroom/blob/develop/meshroom/core/desc.py#L368">buildCommandLine</a>
+` method &lt;<a class="reference external" href="https://github.com/alicevision/meshroom/blob/develop/meshroom/core/desc.py#L368">https://github.com/alicevision/meshroom/blob/develop/meshroom/core/desc.py#L368</a>&gt;`_
+instead reads:</p></li>
+</ol>
+<p>return ‘DYLD_LIBRARY_PATH=”/Developer/NVIDIA/CUDA-9.2/lib” ‘ + cmdPrefix + chunk.node.nodeDesc.commandLine.format(<a href="#id5"><span class="problematic" id="id6">**</span></a>chunk.node._cmdVars) + cmdSuffix</p>
+<p>Baumann, Ryan. “AliceVision and Meshroom on Mac OS X.”
+<em>Ryan Baumann - /etc</em>
+(blog), 17 Aug 2018,
+<a class="reference external" href="https://ryanfb.github.io/etc/2018/08/17/alicevision_and_meshroom_on_mac_os_x.html">https://ryanfb.github.io/etc/2018/08/17/alicevision_and_meshroom_on_mac_os_x.html</a>
+(accessed 10 Oct 2018).</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Meshroom</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Welcome</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../titlepage.html">Manual</a></li>
+</ul>
+<p class="caption"><span class="caption-text">First Steps</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../install.html">Install</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../requirements/requirements.html">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../download/download.html">Get Meshroom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../windows/windows.html">Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linux/linux.html">Linux</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">OSX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docker/docker.html">Docker</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../gui/gui.html">The Graphical User Interface (GUI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../test/test.html">Test Meshroom</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Feature Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../node_reference/node_reference.html">Complete Node List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../supported_formats/supported_formats.html">Supported Formats</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../capturing/capturing.html">capturing WIP</a></li>
+</ul>
+<p class="caption"><span class="caption-text">More</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cli/cli.html">The Command-line interface (CLI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../more/more.html">More</a></li>
+</ul>
+<p class="caption"><span class="caption-text">FAQ</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/faq.html">faq from wiki</a></li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../references/references.html">References</a></li>
+</ul>
+<p class="caption"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/about.html">About</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../install.html">Install</a><ul>
+      <li>Previous: <a href="../linux/linux.html" title="previous chapter">Linux</a></li>
+      <li>Next: <a href="../docker/docker.html" title="next chapter">Docker</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Meshroom Contributors.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/install/osx/osx.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
