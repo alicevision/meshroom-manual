@@ -17,9 +17,10 @@ https://creativecommons.org/licenses/by-sa/4.0/
 
 # How to build
 
-- pip install sphinx
-- navigate to meshroom_doc DIR
-- make html (this will re-/build the html doc)
+- (install pip)
+- **pip install sphinx**
+- in your cli, navigate to the meshroom_doc directory 
+- type **make html** (this will re-/build the html doc)
 
 # FAQ
 
