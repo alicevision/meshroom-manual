@@ -33,3 +33,6 @@ Why Github?
 
 Why Restructured Text?
 - can be converted to various formats, including html and pdf using Sphinx
+
+How to edit and preview Restructured Text?
+- You can use [Atom](https://atom.io/) with the [RestructuredText Preview Pandoc](https://atom.io/packages/rst-preview-pandoc) Plugin
