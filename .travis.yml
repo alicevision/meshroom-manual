@@ -1,3 +1,5 @@
+dist: xenial
+
 language: python
 
 python:
@@ -5,25 +7,49 @@ python:
 
 install:
   - pip install sphinx
+  - source ./ci/texlive/texlive_install.sh
+
+cache:
+  directories:
+    - /tmp/texlive
+    - $HOME/.texlive
 
 script: 
+  - cd ${TRAVIS_BUILD_DIR}
   - make html
+  - make latexpdf
+
+  # in case there are other latex packages to install texliveonfly will do the
+  # installation of the required packages automatically
+  # - make latex
+  # - cd build
+  # - cd latex
+  # - texliveonfly meshroom.tex
+  # or add them to the list in ci/texlive/texlive_packages
 
 before_deploy:
   - BUILD_DIR=${TRAVIS_BUILD_DIR}/build
   - ARCHIVE_BASE_PATH=${BUILD_DIR}
   - TARGET_VERSION=$(echo ${TRAVIS_TAG} | cut -d "v" -f2)
+  # deploy the html
   - TARGET_NAME=html
-  - TARGET_FULL_NAME=doc-${TARGET_NAME}-${TARGET_VERSION}
+  - TARGET_FULL_NAME=meshroom_doc-${TARGET_NAME}-${TARGET_VERSION}
   - INSTALL_ARCHIVE_FILENAME=${TARGET_FULL_NAME}.tgz
   - cd ${BUILD_DIR}
   - tar -czvf ${INSTALL_ARCHIVE_FILENAME} ${TARGET_NAME}
+  # deploy the pdf
+  - TARGET_NAME=pdf
+  - TARGET_FULL_NAME=meshroom_doc-${TARGET_VERSION}
+  - INSTALL_PDF_FILENAME=${TARGET_FULL_NAME}.pdf
+  - cp latex/meshroom.pdf ${INSTALL_PDF_FILENAME}
 
 deploy:
   provider: releases
   api_key:
     secure: ${GITHUB_RELEASE_API_KEY}
-  file: ${ARCHIVE_BASE_PATH}/${INSTALL_ARCHIVE_FILENAME}
+  file: 
+   - ${ARCHIVE_BASE_PATH}/${INSTALL_ARCHIVE_FILENAME}
+   - ${ARCHIVE_BASE_PATH}/${INSTALL_PDF_FILENAME}
   skip_cleanup: true
   on:
     tags: true
