@@ -15,12 +15,14 @@ I am new to Restructured text and open to suggestions.
 https://creativecommons.org/licenses/by-sa/4.0/
 
 
-# How to build
+# How to build on windows
 
 - (install pip)
 - **pip install sphinx**
 - in your cli, navigate to the meshroom_doc directory 
 - type **make html** (this will re-/build the html doc)
+
+For other build methods read the sphinx documentation
 
 # FAQ
 
@@ -31,3 +33,6 @@ Why Github?
 
 Why Restructured Text?
 - can be converted to various formats, including html and pdf using Sphinx
+
+How to edit and preview Restructured Text?
+- You can use [Atom](https://atom.io/) with the [RestructuredText Preview Pandoc](https://atom.io/packages/rst-preview-pandoc) Plugin
