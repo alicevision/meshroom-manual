@@ -4,83 +4,82 @@ CLI Parameters
 Default pipeline:
 -----------------
 
- `aliceVision_cameraInit`_ ->
- `aliceVision_featureExtraction`_ -> `aliceVision_imageMatching`_ -> `aliceVision_featureMatching`_ -> `aliceVision_incrementalSfM`_ -> `aliceVision_prepareDenseScene`_ -> `aliceVision_depthMapEstimation`_ -> `aliceVision_depthMapFiltering`_ -> `aliceVision_meshing`_ -> `aliceVision_depthMapFiltering`_ -> `aliceVision_texturing`_
+`aliceVision_cameraInit`_ -> `aliceVision_featureExtraction`_ -> `aliceVision_imageMatching`_ -> `aliceVision_featureMatching`_ -> `aliceVision_incrementalSfM`_ -> `aliceVision_prepareDenseScene`_ -> `aliceVision_depthMapEstimation`_ -> `aliceVision_depthMapFiltering`_ -> `aliceVision_meshing`_ -> `aliceVision_depthMapFiltering`_ -> `aliceVision_texturing`_
 
 aliceVision_cameraInit
 ======================
 
- **Required parameters:**
- ------------------------
+**Required parameters:**
+------------------------
 
-  -i [ --input ] arg
-  ------------------
+-i [ --input ] arg
+------------------
 
-  A SfMData file 	(\*.sfm) [if specified,--imageFolder cannot be used].
+A SfMData file 	(\*.sfm) [if specified,--imageFolder cannot be used].
 
-  --imageFolder arg
-  -----------------
+--imageFolder arg
+-----------------
 
-  Input images folder [if specified, --input cannot be used].
+Input images folder [if specified, --input cannot be used].
 
-  -s [ --sensorDatabase ] arg
-  ---------------------------
+-s [ --sensorDatabase ] arg
+---------------------------
 
-  Camera sensor width database path.
+Camera sensor width database path.
 
-  -o [ --output ] arg (=cameraInit.sfm)
-  -------------------------------------
+-o [ --output ] arg (=cameraInit.sfm)
+-------------------------------------
 
-  Output file path for the new SfMData file
+Output file path for the new SfMData file
 
- **Optional parameters:**
- ------------------------
+**Optional parameters:**
+------------------------
 
-  --defaultFocalLengthPix arg (=-1)
-  ---------------------------------
+--defaultFocalLengthPix arg (=-1)
+---------------------------------
 
-  Focal length in pixels. (or '-1' to unset)
+Focal length in pixels. (or '-1' to unset)
 
-  --defaultFieldOfView arg (=-1)
-  ------------------------------
+--defaultFieldOfView arg (=-1)
+------------------------------
 
-  Empirical value for the field of view in degree. (or '-1' to unset)
+Empirical value for the field of view in degree. (or '-1' to unset)
 
-  --defaultIntrinsic arg
-  ----------------------
+--defaultIntrinsic arg
+----------------------
 
-  Intrinsics Kmatrix "f;0;ppx;0;f;ppy;0;0;1".
+Intrinsics Kmatrix "f;0;ppx;0;f;ppy;0;0;1".
 
-  --defaultCameraModel arg
-  ------------------------
+--defaultCameraModel arg
+------------------------
 
-  Camera model type (pinhole, radial1, radial3, brown, fisheye4, fisheye1).
+Camera model type (pinhole, radial1, radial3, brown, fisheye4, fisheye1).
 
-  --groupCameraFallback arg (=folder)
-  -----------------------------------
+--groupCameraFallback arg (=folder)
+-----------------------------------
 
-  When there is no serial number in the image metadata, we cannot know if the images come from the same camera. This is problematic for grouping images sharing the same internal camera settings and we have to decide on a fallback strategy:
+When there is no serial number in the image metadata, we cannot know if the images come from the same camera. This is problematic for grouping images sharing the same internal camera settings and we have to decide on a fallback strategy:
 
-  - global: all images may come from a single device (make/model/focal will still be a differentiator).
+- global: all images may come from a single device (make/model/focal will still be a differentiator).
 
-  - folder: different folders will be considered as different devices
+- folder: different folders will be considered as different devices
 
-  - image: consider that each image has different internal camera parameters
+- image: consider that each image has different internal camera parameters
 
-  --allowSingleView arg (=0)
-  --------------------------
+--allowSingleView arg (=0)
+--------------------------
 
-  Allow the program to process a single view.
+Allow the program to process a single view.
 
-  Warning: if a single view is process, the output file can't be use in many other programs.
+Warning: if a single view is process, the output file can't be use in many other programs.
 
-  **Log parameters:**
-  -------------------
+**Log parameters:**
+-------------------
 
-  -v [ --verboseLevel ] arg (=info)
-  ---------------------------------
+-v [ --verboseLevel ] arg (=info)
+---------------------------------
 
-  verbosity level (fatal, error, warning, info, debug, trace).
+verbosity level (fatal, error, warning, info, debug, trace).
 
 
 aliceVision_cameraLocalization
@@ -88,718 +87,720 @@ aliceVision_cameraLocalization
 
 .. note::
 
-  **This program takes as input a media (image, image sequence, video) and a database (vocabulary tree, 3D scene data)
-  and returns for each frame a pose estimation for the camera.**
+**This program takes as input a media (image, image sequence, video) and a database (vocabulary tree, 3D scene data)
+and returns for each frame a pose estimation for the camera.**
 
- **Required input parameters:**
- ------------------------------
+**Required input parameters:**
+------------------------------
 
-  --sfmdata arg
-  -------------
+--sfmdata arg
+-------------
 
-  The sfm_data.json kind of file generated by AliceVision.
+The sfm_data.json kind of file generated by AliceVision.
 
-  --mediafile arg
-  ---------------
+--mediafile arg
+---------------
 
-  The folder path or the filename for the media to track
+The folder path or the filename for the media to track
 
-  Options for the output of the localizer:
-  ----------------------------------------
+Options for the output of the localizer:
+----------------------------------------
 
-  -h [ --help ]
-  -------------
+-h [ --help ]
+-------------
 
-  --visualDebug arg
-  -----------------
+--visualDebug arg
+-----------------
 
-  If a folder is provided it enables visual debug and saves all the debugging info in that folder
+If a folder is provided it enables visual debug and saves all the debugging info in that folder
 
-  --outputAlembic arg (=trackedcameras.abc)
-  -----------------------------------------
+--outputAlembic arg (=trackedcameras.abc)
+-----------------------------------------
 
-  Filename for the SfMData export file (where camera poses will be stored).
+Filename for the SfMData export file (where camera poses will be stored).
 
-  Default : trackedcameras.abc.
+Default : trackedcameras.abc.
 
-  --outputJSON arg
-  ----------------
+--outputJSON arg
+----------------
 
-  Filename for the localization results (raw data) as .json
+Filename for the localization results (raw data) as .json
 
- **Common optional parameters for the localizer:**
- -------------------------------------------------
+**Common optional parameters for the localizer:**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  --descriptorPath arg
-  --------------------
+--descriptorPath arg
+--------------------
 
-  Folder containing the descriptors for all the images (ie the \*.desc.)
+Folder containing the descriptors for all the images (ie the \*.desc.)
 
-  --matchDescTypes arg (=sift)
-  ----------------------------
+--matchDescTypes arg (=sift)
+----------------------------
 
-  The describer types to use for the matching
+The describer types to use for the matching
 
-  --preset arg (=normal)
-  ----------------------
+--preset arg (=normal)
+----------------------
 
-  Preset for the feature extractor when localizing a new image {LOW,MEDIUM,NORMAL,HIGH,ULTRA}
+Preset for the feature extractor when localizing a new image {LOW,MEDIUM,NORMAL,HIGH,ULTRA}
 
-  --resectionEstimator arg (=acransac)
-  ------------------------------------
+--resectionEstimator arg (=acransac)
+------------------------------------
 
-  The type of \*sac framework to use for resection (acransac, loransac)
+The type of \*sac framework to use for resection (acransac, loransac)
 
-  --matchingEstimator arg (=acransac)
-  -----------------------------------
+--matchingEstimator arg (=acransac)
+-----------------------------------
 
-  The type of \*sac framework to use for matching (acransac, loransac)
+The type of \*sac framework to use for matching (acransac, loransac)
 
-  --calibration arg
-  -----------------
+--calibration arg
+-----------------
 
-  Calibration file
+Calibration file
 
-  --refineIntrinsics arg
-  ----------------------
+--refineIntrinsics arg
+----------------------
 
-  Enable/Disable camera intrinsics refinement for each localized image
+Enable/Disable camera intrinsics refinement for each localized image
 
-  --reprojectionError arg (=4)
-  ----------------------------
+--reprojectionError arg (=4)
+----------------------------
 
-  Maximum reprojection error (in pixels) allowed for resectioning. If set to 0 it lets the ACRansac select an optimal value.
+Maximum reprojection error (in pixels) allowed for resectioning. If set to 0 it lets the ACRansac select an optimal value.
 
- **Parameters specific for the vocabulary tree-based localizer:**
- ----------------------------------------------------------------
+**Parameters specific for the vocabulary tree-based localizer:**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  --nbImageMatch arg (=4)
-  -----------------------
+--nbImageMatch arg (=4)
+-----------------------
 
-  [voctree] Number of images to retrieve in database
+[voctree] Number of images to retrieve in database
 
-  --maxResults arg (=10)
-  ----------------------
+--maxResults arg (=10)
+----------------------
 
-  [voctree] For algorithm AllResults, it stops the image matching when this number of matched images is reached. If 0 it is ignored.
+[voctree] For algorithm AllResults, it stops the image matching when this number of matched images is reached. If 0 it is ignored.
 
-  --commonviews arg (=3)
-  ----------------------
+--commonviews arg (=3)
+----------------------
 
-  [voctree] Number of minimum images in which a point must be seen to be used in cluster tracking
+[voctree] Number of minimum images in which a point must be seen to be used in cluster tracking
 
-  --voctree arg
-  -------------
+--voctree arg
+-------------
 
-  [voctree] Filename for the vocabulary tree
+[voctree] Filename for the vocabulary tree
 
-  --voctreeWeights arg
-  --------------------
+--voctreeWeights arg
+--------------------
 
-  [voctree] Filename for the vocabulary tree weights
+[voctree] Filename for the vocabulary tree weights
 
-  --algorithm arg (=AllResults)
-  -----------------------------
+--algorithm arg (=AllResults)
+-----------------------------
 
-  [voctree] Algorithm type: FirstBest, AllResults
+[voctree] Algorithm type: FirstBest, AllResults
 
-  --matchingError arg (=4)
-  ------------------------
+--matchingError arg (=4)
+------------------------
 
-  [voctree] Maximum matching error (in pixels) allowed for image matching with geometric verification. If set to 0 it lets the ACRansac select an optimal value.
+[voctree] Maximum matching error (in pixels) allowed for image matching with geometric verification. If set to 0 it lets the ACRansac select an optimal value.
 
-  --nbFrameBufferMatching arg (=10)
-  ---------------------------------
+--nbFrameBufferMatching arg (=10)
+---------------------------------
 
-  [voctree] Number of previous frame of the sequence to use for matching (0 = Disable)
+[voctree] Number of previous frame of the sequence to use for matching (0 = Disable)
 
-  --robustMatching arg (=1)
-  -------------------------
+--robustMatching arg (=1)
+-------------------------
 
-  [voctree] Enable/Disable the robust matching between query and database images, all putative matches will be considered.
+[voctree] Enable/Disable the robust matching between query and database images, all putative matches will be considered.
 
- **Parameters specific for final (optional) bundle adjustment optimization of the sequence:**
- ----------------------------------------------------------------------------------------------
+**Parameters specific for final (optional) bundle adjustment optimization of the sequence:**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  --globalBundle arg
-  ------------------
+--globalBundle arg
+------------------
 
-  [bundle adjustment] If --refineIntrinsics is not set, this option allows to run a final global bundle adjustment to refine the scene
+[bundle adjustment] If --refineIntrinsics is not set, this option allows to run a final global bundle adjustment to refine the scene
 
-  --noDistortion arg
-  ------------------
+--noDistortion arg
+------------------
 
-  [bundle adjustment] It does not take into account distortion during the BA, it consider the distortion coefficients all equal to 0
+[bundle adjustment] It does not take into account distortion during the BA, it consider the distortion coefficients all equal to 0
 
-  --noBArefineIntrinsics arg
-  --------------------------
+--noBArefineIntrinsics arg
+--------------------------
 
-  [bundle adjustment] It does not refine intrinsics during BA
+[bundle adjustment] It does not refine intrinsics during BA
 
-  --minPointVisibility arg (=0)
-  -----------------------------
+--minPointVisibility arg (=0)
+-----------------------------
 
-  [bundle adjustment] Minimum number of observation that a point must have in order to be considered for bundle adjustment
+[bundle adjustment] Minimum number of observation that a point must have in order to be considered for bundle adjustment
 
 aliceVision_computeSfMColor
 ===========================
 
- Required parameters:
- --------------------
+Required parameters:
+--------------------
 
-  -i [ --input ] arg
-  ------------------
+-i [ --input ] arg
+------------------
 
-  SfMData file.
+SfMData file.
 
-  -o [ --output ] arg
-  -------------------
+-o [ --output ] arg
+-------------------
 
-  Output SfMData filename (.json, .bin, .xml, .ply, .baf, .abc).
+Output SfMData filename (.json, .bin, .xml, .ply, .baf, .abc).
 
-  Log parameters:
-  ---------------
+Log parameters:
+---------------
 
-  -v [ --verboseLevel ] arg (=info)  verbosity level (fatal, error, warning, info, debug, trace).
+-v [ --verboseLevel ] arg (=info) verbosity level (fatal, error, warning, info, debug, trace).
 
 
 aliceVision_ComputeStructureFromKnownPoses
 ==========================================
 
- Required parameters:
- --------------------
+Required parameters:
+--------------------
 
-  -i [ --input ] arg
-  ------------------
+-i [ --input ] arg
+------------------
 
-  SfMData file.
+SfMData file.
 
-  -o [ --output ] arg
-  -------------------
-  Output path for the features and descriptors files (\*.feat, \*.desc).
+-o [ --output ] arg
+-------------------
+Output path for the features and descriptors files (\*.feat, \*.desc).
 
-  -f [ --featuresFolders ] arg
-  ----------------------------
+-f [ --featuresFolders ] arg
+----------------------------
 
-  Path to folder(s) containing the extracted features.
+Path to folder(s) containing the extracted features.
 
- Optional parameters:
- --------------------
+Optional parameters:
+--------------------
 
-  -d [ --describerTypes ] arg (=sift)
-  -----------------------------------
+-d [ --describerTypes ] arg (=sift)
+-----------------------------------
 
-  Describer types used to describe an image:
+Describer types used to describe an image:
 
-  - sift: Scale-invariant feature transform.
-  - sift_float: SIFT stored as float.
-  - sift_upright: SIFT with upright feature.
-  - akaze: A-KAZE with floating point descriptors.
-  - akaze_liop: A-KAZE with Local Intensity Order Pattern descriptors.
-  - akaze_mldb: A-KAZE with Modified-Local Difference Binary descriptors.
+- sift: Scale-invariant feature transform.
+- sift_float: SIFT stored as float.
+- sift_upright: SIFT with upright feature.
+- akaze: A-KAZE with floating point descriptors.
+- akaze_liop: A-KAZE with Local Intensity Order Pattern descriptors.
+- akaze_mldb: A-KAZE with Modified-Local Difference Binary descriptors.
 
-  -m [ --matchesFolders ] arg
-  ---------------------------
+-m [ --matchesFolders ] arg
+---------------------------
 
-  Path to folder(s) in which computed matches are stored.
+Path to folder(s) in which computed matches are stored.
 
- Log parameters:
- ---------------
+Log parameters:
+---------------
 
-  -v [ --verboseLevel ] arg (=info)
-  ---------------------------------
+-v [ --verboseLevel ] arg (=info)
+---------------------------------
 
-  verbosity level (fatal, error, warning, info, debug, trace).
+verbosity level (fatal, error, warning, info, debug, trace).
 
 
 aliceVision_convertRAW
 ======================
 
- Required parameters:
- --------------------
+Required parameters:
+--------------------
 
-  -i [ --input ] arg
-  ------------------
+-i [ --input ] arg
+------------------
 
-  Input folder containing the sift in *float* format.
+Input folder containing the sift in *float* format.
 
-  -o [ --output ] arg
-  -------------------
+-o [ --output ] arg
+-------------------
 
-  Output folder that stores the sift in *uchar* format.
+Output folder that stores the sift in *uchar* format.
 
- Optional parameters:
- --------------------
+Optional parameters:
+--------------------
 
-  -s [ --sanityCheck ] arg (=0)
-  -----------------------------
+-s [ --sanityCheck ] arg (=0)
+-----------------------------
 
-  Perform a sanity check to check that the conversion and the generated files are the same.
+Perform a sanity check to check that the conversion and the generated files are the same.
 
- Log parameters:
- ---------------
+Log parameters:
+---------------
 
-  -v [ --verboseLevel ] arg (=info)
-  ---------------------------------
+-v [ --verboseLevel ] arg (=info)
+---------------------------------
 
-  verbosity level (fatal,  error, warning, info, debug, trace).
+verbosity level (fatal, error, warning, info, debug, trace).
 
 
 aliceVision_convertSfMFormat
 ============================
 
- Required parameters:
- --------------------
+Required parameters:
+--------------------
 
-  -i [ --input ] arg
-  ------------------
+-i [ --input ] arg
+------------------
 
-  SfMData file.
+SfMData file.
 
-  -o [ --output ] arg
-  -------------------
+-o [ --output ] arg
+-------------------
 
-  Path to the output Alembic file.
+Path to the output Alembic file.
 
- Optional parameters:
- --------------------
+Optional parameters:
+--------------------
 
-  -d [ --describerTypes ] arg (=sift)
-  -----------------------------------
+-d [ --describerTypes ] arg (=sift)
+-----------------------------------
 
-  Describer types used to describe an image:
+Describer types used to describe an image:
 
-  - sift: Scale-invariant feature transform.
-  - sift_float: SIFT stored as float.
-  - sift_upright: SIFT with upright feature.
-  -  akaze: A-KAZE with floating point descriptors.
-  - akaze_liop: A-KAZE with Local Intensity Order Pattern descriptors.
-  - akaze_mldb: A-KAZE with Modified-Local Difference Binary descriptors.
+- sift: Scale-invariant feature transform.
+- sift_float: SIFT stored as float.
+- sift_upright: SIFT with upright feature.
+- akaze: A-KAZE with floating point descriptors.
+- akaze_liop: A-KAZE with Local Intensity Order Pattern descriptors.
+- akaze_mldb: A-KAZE with Modified-Local Difference Binary descriptors.
 
-  --imageWhiteList arg (=[])
-  --------------------------
+--imageWhiteList arg (=[])
+--------------------------
 
-  image white list (uids or image paths).
+image white list (uids or image paths).
 
-  --views arg (=1)
-  ----------------
+--views arg (=1)
+----------------
 
-  Export views.
+Export views.
 
-  --intrinsics arg (=1)
-  ---------------------
+--intrinsics arg (=1)
+---------------------
 
-  Export intrinsics.
+Export intrinsics.
 
-  --extrinsics arg (=1)
-  ---------------------
+--extrinsics arg (=1)
+---------------------
 
-  Export extrinsics.
+Export extrinsics.
 
-  --structure arg (=1)
-  --------------------
+--structure arg (=1)
+--------------------
 
-  Export structure.
+Export structure.
 
-  --observations arg (=1)
-  -----------------------
+--observations arg (=1)
+-----------------------
 
-  Export observations.
+Export observations.
 
- Log parameters:
- ---------------
+Log parameters:
+---------------
 
-  -v [ --verboseLevel ] arg (=info)
-  ---------------------------------
+-v [ --verboseLevel ] arg (=info)
+---------------------------------
 
-  verbosity level (fatal,  error, warning, info, debug, trace).
+verbosity level (fatal, error, warning, info, debug, trace).
 
 aliceVision_depthMapEstimation
 ==============================
 
 .. note::
 
-  **Estimate depth map for each input image.**
+**Estimate depth map for each input image.**
 
  Required parameters:
-  -i [ --input ] arg
-  ------------------
+-i [ --input ] arg
+------------------
 
-  SfMData file.
+SfMData file.
 
-  --imagesFolder arg
-  ------------------
+--imagesFolder arg
+------------------
 
-  Images folder. Filename should be the image uid.
+Images folder. Filename should be the image uid.
 
-  -o [ --output ] arg
-  -------------------
+-o [ --output ] arg
+-------------------
 
-  Output folder for generated depth maps.
+Output folder for generated depth maps.
 
- Optional parameters:
- --------------------
+Optional parameters:
+--------------------
 
-  --rangeStart arg (=-1)
-  ----------------------
+--rangeStart arg (=-1)
+----------------------
 
-  Compute a sub-range of images from index rangeStart to rangeStart+rangeSize.
+Compute a sub-range of images from index rangeStart to rangeStart+rangeSize.
 
-  --rangeSize arg (=-1)
-  ---------------------
+--rangeSize arg (=-1)
+---------------------
 
-  Compute a sub-range of N images (N=rangeSize).
+Compute a sub-range of N images (N=rangeSize).
 
-  --downscale arg (=2)
-  --------------------
+--downscale arg (=2)
+--------------------
 
-  Image downscale factor.
+Image downscale factor.
 
-  --minViewAngle arg (=2)
-  -----------------------
+--minViewAngle arg (=2)
+-----------------------
 
-   minimum angle between two views.
+minimum angle between two views.
 
-  --maxViewAngle arg (=70)
-  ------------------------
+--maxViewAngle arg (=70)
+------------------------
 
-  maximum angle between two views.
+maximum angle between two views.
 
-  --sgmMaxTCams arg (=10)
-  -----------------------
+--sgmMaxTCams arg (=10)
+-----------------------
 
-  Semi Global Matching: Number of neighbour cameras.
+Semi Global Matching: Number of neighbour cameras.
 
-  --sgmWSH arg (=4)
-  -----------------
+--sgmWSH arg (=4)
+-----------------
 
-  Semi Global Matching: Size of the patch used to compute the similarity.
+Semi Global Matching: Size of the patch used to compute the similarity.
 
-  --sgmGammaC arg (=5.5)
-  ----------------------
+--sgmGammaC arg (=5.5)
+----------------------
 
-  Semi Global Matching: GammaC threshold.
+Semi Global Matching: GammaC threshold.
 
-  --sgmGammaP arg (=8)
-  --------------------
+--sgmGammaP arg (=8)
+--------------------
 
-  Semi Global Matching: GammaP threshold.
+Semi Global Matching: GammaP threshold.
 
-  --refineMaxTCams arg (=6)
-  -------------------------
+--refineMaxTCams arg (=6)
+-------------------------
 
-  Refine: Number of neighbour cameras.
+Refine: Number of neighbour cameras.
 
-  --refineNSamplesHalf arg (=150)
-  -------------------------------
+--refineNSamplesHalf arg (=150)
+-------------------------------
 
-  Refine: Number of samples.
+Refine: Number of samples.
 
-  --refineNDepthsToRefine arg (=31)
-  ---------------------------------
+--refineNDepthsToRefine arg (=31)
+---------------------------------
 
-  Refine: Number of depths.
+Refine: Number of depths.
 
-  --refineNiters arg (=100)
-  -------------------------
+--refineNiters arg (=100)
+-------------------------
 
-  Refine: Number of iterations.
+Refine: Number of iterations.
 
-  --refineWSH arg (=3)
-  --------------------
+--refineWSH arg (=3)
+--------------------
 
-  Refine: Size of the patch used to compute the similarity.
+Refine: Size of the patch used to compute the similarity.
 
-  --refineSigma arg (=15)
-  -----------------------
+--refineSigma arg (=15)
+-----------------------
 
-  Refine: Sigma threshold.
+Refine: Sigma threshold.
 
-  --refineGammaC arg (=15.5)
-  --------------------------
+--refineGammaC arg (=15.5)
+--------------------------
 
-  Refine: GammaC threshold.
+Refine: GammaC threshold.
 
-  --refineGammaP arg (=8)
-  -----------------------
+--refineGammaP arg (=8)
+-----------------------
 
-  Refine: GammaP threshold.
+Refine: GammaP threshold.
 
-  --refineUseTcOrRcPixSize arg (=0)
-  ---------------------------------
+--refineUseTcOrRcPixSize arg (=0)
+---------------------------------
 
-  Refine: Use current camera pixel size or minimum pixel size of neighbour cameras.
+Refine: Use current camera pixel size or minimum pixel size of neighbour cameras.
 
-  --exportIntermediateResults arg (=0)
-  ------------------------------------
+--exportIntermediateResults arg (=0)
+------------------------------------
 
-  Export intermediate results from the SGM and Refine steps.
+Export intermediate results from the SGM and Refine steps.
 
-  --nbGPUs arg (=0)
-  -----------------
+--nbGPUs arg (=0)
+-----------------
 
-   Number of GPUs to use (0 means use all GPUs).
+ Number of GPUs to use (0 means use all GPUs).
 
- Log parameters:
- ---------------
+Log parameters:
+---------------
 
-  -v [ --verboseLevel ] arg (=info)
-  ---------------------------------
+-v [ --verboseLevel ] arg (=info)
+---------------------------------
 
-  verbosity level (fatal, error, warning, info, debug, trace).
+verbosity level (fatal, error, warning, info, debug, trace).
 
 aliceVision_depthMapFiltering
 =============================
 
 .. note::
 
-  **Filter depth map to remove values that are not consistent with other depth maps.**
+**Filter depth map to remove values that are not consistent with other depth maps.**
 
- Required parameters:
- --------------------
+Required parameters:
+--------------------
 
-  -i [ --input ] arg
-  ------------------
+-i [ --input ] arg
+------------------
 
-  SfMData file.
+SfMData file.
 
-  --depthMapsFolder arg
-  ---------------------
+--depthMapsFolder arg
+---------------------
 
-  Input depth map folder.
+Input depth map folder.
 
-  -o [ --output ] arg
-  -------------------
+-o [ --output ] arg
+-------------------
 
-  Output folder for filtered depth maps.
+Output folder for filtered depth maps.
 
- Optional parameters:
- --------------------
+Optional parameters:
+--------------------
 
-  --rangeStart arg (=-1)
-  ----------------------
+--rangeStart arg (=-1)
+----------------------
 
-  Compute only a sub-range of images from index rangeStart to rangeStart+rangeSize.
+Compute only a sub-range of images from index rangeStart to rangeStart+rangeSize.
 
-  --rangeSize arg (=-1)
-  ---------------------
+--rangeSize arg (=-1)
+---------------------
 
-  Compute only a sub-range of N images (N=rangeSize).
+Compute only a sub-range of N images (N=rangeSize).
 
-  --minViewAngle arg (=2)
-  -----------------------
+--minViewAngle arg (=2)
+-----------------------
 
-  minimum angle between two views.
+minimum angle between two views.
 
-  --maxViewAngle arg (=70)
-  ------------------------
+--maxViewAngle arg (=70)
+------------------------
 
-  maximum angle between two views.
+maximum angle between two views.
 
-  --minNumOfConsistentCams arg (=3)
-  ---------------------------------
+--minNumOfConsistentCams arg (=3)
+---------------------------------
 
-  Minimal number of consistent cameras to consider the pixel.
+Minimal number of consistent cameras to consider the pixel.
 
-  --minNumOfConsistentCamsWithLowSimilarity arg (=4)
-  --------------------------------------------------
+--minNumOfConsistentCamsWithLowSimilarity arg (=4)
+--------------------------------------------------
 
-  Minimal number of consistent cameras to consider the pixel when the similarity is weak or ambiguous.
+Minimal number of consistent cameras to consider the pixel when the similarity is weak or ambiguous.
 
-  --pixSizeBall arg (=0)
-  ----------------------
+--pixSizeBall arg (=0)
+----------------------
 
-  Filter ball size (in px).
+Filter ball size (in px).
 
-  --pixSizeBallWithLowSimilarity arg (=0)
-  ---------------------------------------
+--pixSizeBallWithLowSimilarity arg (=0)
+---------------------------------------
 
-  Filter ball size (in px) when the similarity is weak or ambiguous.
+Filter ball size (in px) when the similarity is weak or ambiguous.
 
-  --nNearestCams arg (=10)
-  ------------------------
+--nNearestCams arg (=10)
+------------------------
 
-  Number of nearest cameras.
+Number of nearest cameras.
 
- Log parameters:
- ---------------
+Log parameters:
+---------------
 
-  -v [ --verboseLevel ] arg (=info)
-  ---------------------------------
+-v [ --verboseLevel ] arg (=info)
+---------------------------------
 
-  verbosity level (fatal, error, warning, info, debug, trace).
+verbosity level (fatal, error, warning, info, debug, trace).
 
 aliceVision_exportAnimatedCamera
 ================================
 
- Required parameters:
- --------------------
+Required parameters:
+--------------------
 
-  -i [ --input ] arg
-  ------------------
+-i [ --input ] arg
+------------------
 
-  SfMData file containing a complete SfM.
+SfMData file containing a complete SfM.
 
-  -o [ --output ] arg
-  -------------------
+-o [ --output ] arg
+-------------------
 
-  Output folder.
+Output folder.
 
- Optional parameters:
- --------------------
-  --exportUndistortedImages arg (=1)
-  ----------------------------------
-  Export undistorted images for the animated camera(s). If false, animated camera(s) exported with original frame paths.
+Optional parameters:
+--------------------
 
-  --viewFilter arg
-  ----------------
+--exportUndistortedImages arg (=1)
+----------------------------------
 
-  Path to the output SfMData file (with only views and poses).
+Export undistorted images for the animated camera(s). If false, animated camera(s) exported with original frame paths.
 
-  --undistortedImageType arg (=jpg)
-  ---------------------------------
+--viewFilter arg
+----------------
 
-  Image file type:
-  * .jpg
-  * .png
-  * .tif
-  * .exr (half)
+Path to the output SfMData file (with only views and poses).
 
- Log parameters:
- ---------------
+--undistortedImageType arg (=jpg)
+---------------------------------
 
-  -v [ --verboseLevel ] arg (=info)
-  ---------------------------------
+Image file type:
+* .jpg
+* .png
+* .tif
+* .exr (half)
 
-  verbosity level (fatal,  error, warning, info, debug, trace).
+Log parameters:
+---------------
+
+-v [ --verboseLevel ] arg (=info)
+---------------------------------
+
+verbosity level (fatal, error, warning, info, debug, trace).
 
 aliceVision_exportCameraFrustums
 ================================
 
 .. note::
 
-  **Export camera frustrums as a triangle PLY file**
+**Export camera frustrums as a triangle PLY file**
 
- Required parameters:
- --------------------
+Required parameters:
+--------------------
 
-  -i [ --input ] arg
-  ------------------
+-i [ --input ] arg
+------------------
 
-  SfMData file.
+SfMData file.
 
-  -o [ --output ] arg
-  -------------------
+-o [ --output ] arg
+-------------------
 
-  PLY file to store the camera frustums as triangle meshes.
+PLY file to store the camera frustums as triangle meshes.
 
- Log parameters:
- ---------------
+Log parameters:
+---------------
 
-  -v [ --verboseLevel ] arg (=info)  verbosity level (fatal,  error, warning, info, debug, trace).
+-v [ --verboseLevel ] arg (=info) verbosity level (fatal,  error, warning, info, debug, trace).
 
 aliceVision_exportKeypoints
 ===========================
 
- Required parameters:
- --------------------
+Required parameters:
+--------------------
 
-  -i [ --input ] arg
-  ------------------
+-i [ --input ] arg
+------------------
 
-   SfMData file.
+ SfMData file.
 
-  -o [ --output ] arg
-  -------------------
+-o [ --output ] arg
+-------------------
 
-  Output path for keypoints.
+Output path for keypoints.
 
-  -f [ --featuresFolders ] arg
-  ----------------------------
+-f [ --featuresFolders ] arg
+----------------------------
 
-  Path to folder(s) containing the extracted features.
+Path to folder(s) containing the extracted features.
 
- Optional parameters
- -------------------
+Optional parameters
+-------------------
 
-  -d [ --describerTypes ] arg (=sift)
-  -----------------------------------
+-d [ --describerTypes ] arg (=sift)
+-----------------------------------
 
-  Describer types used to describe an image:
+Describer types used to describe an image:
 
-  - sift: Scale-invariant feature transform.
-  - sift_float: SIFT stored as float.
-  - sift_upright: SIFT with upright feature.
-  - akaze: A-KAZE with floating point descriptors.
-  - akaze_liop: A-KAZE with Local Intensity Order Pattern descriptors.
-  - akaze_mldb: A-KAZE with Modified-Local Difference Binary descriptors.
+- sift: Scale-invariant feature transform.
+- sift_float: SIFT stored as float.
+- sift_upright: SIFT with upright feature.
+- akaze: A-KAZE with floating point descriptors.
+- akaze_liop: A-KAZE with Local Intensity Order Pattern descriptors.
+- akaze_mldb: A-KAZE with Modified-Local Difference Binary descriptors.
 
 
- Log parameters:
- ---------------
+Log parameters:
+---------------
 
-  -v [ --verboseLevel ] arg (=info)
-  ---------------------------------
+-v [ --verboseLevel ] arg (=info)
+---------------------------------
 
-  verbosity level (fatal,  error, warning, info, debug, trace).
+verbosity level (fatal, error, warning, info, debug, trace).
 
 
 aliceVision_exportMatches
 =========================
 
- Required parameters:
- --------------------
+Required parameters:
+--------------------
 
-  -i [ --input ] arg
-  ------------------
+-i [ --input ] arg
+------------------
 
-  SfMData file.
+SfMData file.
 
-  -o [ --output ] arg
-  -------------------
+-o [ --output ] arg
+-------------------
 
-  Output path for matches.
+Output path for matches.
 
-  -f [ --featuresFolders ] arg
-  ----------------------------
+-f [ --featuresFolders ] arg
+----------------------------
 
-  Path to folder(s) containing the extracted features.
+Path to folder(s) containing the extracted features.
 
-  -m [ --matchesFolders ] arg
-  ---------------------------
+-m [ --matchesFolders ] arg
+---------------------------
 
-  Path to folder(s) in which computed matches are stored.
+Path to folder(s) in which computed matches are stored.
 
- Optional parameters:
- --------------------
+Optional parameters:
+--------------------
 
-  -d [ --describerTypes ] arg (=sift)
-  -----------------------------------
+-d [ --describerTypes ] arg (=sift)
+-----------------------------------
 
-  Describer types used to describe an image:
+Describer types used to describe an image:
 
-  - sift: Scale-invariant feature transform.
-  - sift_float: SIFT stored as float.
-  - sift_upright: SIFT with upright feature.
-  - akaze: A-KAZE with floating point descriptors.
-  - akaze_liop: A-KAZE with Local Intensity Order Pattern descriptors.
-  - akaze_mldb: A-KAZE with Modified-Local Difference Binary descriptors.
+- sift: Scale-invariant feature transform.
+- sift_float: SIFT stored as float.
+- sift_upright: SIFT with upright feature.
+- akaze: A-KAZE with floating point descriptors.
+- akaze_liop: A-KAZE with Local Intensity Order Pattern descriptors.
+- akaze_mldb: A-KAZE with Modified-Local Difference Binary descriptors.
 
 
- Log parameters:
- ---------------
+Log parameters:
+---------------
 
-  -v [ --verboseLevel ] arg (=info)
-  ---------------------------------
+-v [ --verboseLevel ] arg (=info)
+---------------------------------
 
-  verbosity level (fatal,  error, warning, info, debug, trace).
+verbosity level (fatal, error, warning, info, debug, trace).
 
 
 aliceVision_exportMatlab
 ========================
 
 Required parameters:
--i [ --input ] arg                 SfMData file.
+-i [ --input ] arg               SfMData file.
 -o [ --output ] arg                Output folder.
 
 Log parameters:
