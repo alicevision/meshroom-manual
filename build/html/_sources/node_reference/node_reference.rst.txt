@@ -148,6 +148,10 @@ CameraRigCalibration (?)
 
 If a rig of cameras is used, we can perform the rig calibration. We localize cameras individually on the whole sequence. Then we use all valid poses to compute the relative poses between cameras of the rig and choose the more stable value across the images. Then we initialize the rig relative pose with this value and perform a global Bundle Adjustment on all the cameras of the rig. When the rig is calibrated, we can use it to directly localize the rig pose from the synchronized multi-cameras system with [Kneip2014] approaches.
 
+..The rig calibration find the relative poses between all cameras used. It takes a point cloud as input and can
+use both CCTag and SIFT features for localization. The implication is that all cameras must see features
+(either SIFT or CCTag) that are part of the point cloud, but they do not have to observe overlapping regions. (See:POPART: Previz for Onset Production Adaptive Realtime Tracking)
+
 “Given the position of the tracked reference frame relative to the motion capture system and the optical reference frames it is possible to retrieve the transformation between the tracked and the optical reference frames”1 “In practice, it is particularly difficult to make the tracked
 frame coincident with the camera optical frame, thus a calibration procedure is needed to estimate this transformation and achieve the millimetric accuracy” [Chiodini et al. 2018]
 
