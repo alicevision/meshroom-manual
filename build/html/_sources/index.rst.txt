@@ -41,6 +41,7 @@ Welcome to Meshroom's documentation!
    :caption: More
    
    cli/cli
+   cli/cli-reference
    more/more
 
 .. toctree::
@@ -56,6 +57,8 @@ Welcome to Meshroom's documentation!
    :caption: References  
     
    references/references
+   
+   glossary/glossary
 	
 .. toctree::
    :maxdepth: 2

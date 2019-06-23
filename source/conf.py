@@ -17,6 +17,9 @@
 
 # -- Project information -----------------------------------------------------
 
+# The master toctree document.
+master_doc = 'index'
+
 project = 'Meshroom'
 copyright = '2019, Meshroom Contributors'
 author = 'Meshroom Contributors'
