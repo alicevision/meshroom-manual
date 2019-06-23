@@ -420,7 +420,9 @@ aliceVision_depthMapEstimation
 
 **Estimate depth map for each input image.**
 
- Required parameters:
+Required parameters:
+--------------------
+
 -i [ --input ] arg
 ------------------
 
