@@ -5,7 +5,7 @@ Note: Some parameters are exposed for development purposes.
 
 Nodes/features marked with an # are not supported/implemented in the current release
 
-/* in default pipeline /**tested and working ? not tested
+\* in default pipeline \**tested and working ? not tested
 
 CameraCalibration (#)
 ---------------------
@@ -176,7 +176,7 @@ https://alicevision.github.io/#photogrammetry/localization
   Camera Intrinsics,The intrinsics calibration file for each camera of the rig. (eg. --cameraIntrinsics /path/to/calib1.txt /path/to/calib2.txt)
   Export,Filename for the alembic file containing the rig poses with the 3D points. It also saves a file for each camera named 'filename.cam##.abc (trackedcameras.abc)
   Descriptor Path,Folder containing the .desc
-  Match Describer Types,The describer types to use for the matching sift', 'sift_float', 'sift_upright', 'akaze', 'akaze_liop', 'akaze_mldb', 'cctag3', 'cctag4', 'sift_ocv', 'akaze_ocv'
+  Match Describer Types,The describer types to use for the matching ``'sift', 'sift_float', 'sift_upright', 'akaze', 'akaze_liop', 'akaze_mldb', 'cctag3', 'cctag4', 'sift_ocv', 'akaze_ocv'``
   Preset,Preset for the feature extractor when localizing a new image (low, medium, normal, high, ultra)
   Resection Estimator,The type of /sac framework to use for resection (acransac,loransac)
   Matching Estimator,The type of /sac framework to use for matching (acransac,loransac)
@@ -213,17 +213,17 @@ https://alicevision.github.io/#photogrammetry/localization
   Rig Calibration File,The file containing the calibration data for the rig (subposes)
   Camera Intrinsics,The intrinsics calibration file for each camera of the rig. (eg. --cameraIntrinsics /path/to/calib1.txt /path/to/calib2.txt)
   Descriptor Path,Folder containing the .desc
-  Match Describer Types,The describer types to use for the matching (sift', 'sift_float', 'sift_upright', 'akaze', 'akaze_liop', 'akaze_mldb', 'cctag3', 'cctag4', 'sift_ocv', 'akaze_ocv')
-  Preset,Preset for the feature extractor when localizing a new image (low, medium, normal, high, ultra)
-  Resection Estimator,The type of /sac framework to use for resection (acransac, loransac)
-  Matching Estimator,The type of /sac framework to use for matching (acransac, loransac)
+  Match Describer Types,The describer types to use for the matching ``(sift', 'sift_float', 'sift_upright', 'akaze', 'akaze_liop', 'akaze_mldb', 'cctag3', 'cctag4', 'sift_ocv', 'akaze_ocv')``
+  Preset,Preset for the feature extractor when localizing a new image ``(low, medium, normal, high, ultra)``
+  Resection Estimator,The type of /sac framework to use for resection ``(acransac, loransac)``
+  Matching Estimator,The type of /sac framework to use for matching ``(acransac, loransac)``
   Refine Intrinsics,Enable/Disable camera intrinsics refinement for each localized image
   Reprojection Error,Maximum reprojection error (in pixels) allowed for resectioning. If set to 0 it lets the ACRansac select an optimal value (0 - 10)
   Use Localize Rig Naive,Enable/Disable the naive method for rig localization: naive method tries to localize each camera separately
   Angular Threshold,The maximum angular threshold in degrees between feature bearing vector and 3D point direction. Used only with the opengv method (0 - 10)
   Voctree,[voctree] Filename for the vocabulary tree
   Voctree Weights,[voctree] Filename for the vocabulary tree weights
-  Algorithm,[voctree] Algorithm type: {FirstBest,AllResults}
+  Algorithm,[voctree] Algorithm type: ``{FirstBest,AllResults}``
   Nb Image Match,[voctree] Number of images to retrieve in the database
   Max Results,[voctree] For algorithm AllResults, it stops the image matching when this number of matched images is reached. If 0 it is ignored (0 - 100)
   Matching Error,[voctree] Maximum matching error (in pixels) allowed for image matching with geometric verification. If set to 0 it lets the ACRansac select an optimal value (0 - 10)
@@ -241,8 +241,8 @@ ConvertSfMFormat
   :header: Name, Description
 
   Input	,	SfMData file
-  SfM File Format	,	SfM File Format (output file extension: abc', 'sfm', 'json', 'ply', 'baf)
-  Describer Types	,	Describer types to keep.'sift', 'sift_float', 'sift_upright', 'akaze', 'akaze_liop', 'akaze_mldb', 'cctag3', 'cctag4', 'sift_ocv', 'akaze_ocv'
+  SfM File Format	,	SfM File Format ``(output file extension: abc', 'sfm', 'json', 'ply', 'baf)``
+  Describer Types	,	Describer types to keep.``'sift', 'sift_float', 'sift_upright', 'akaze', 'akaze_liop', 'akaze_mldb', 'cctag3', 'cctag4', 'sift_ocv', 'akaze_ocv'``
   Image id	,	Image id
   Image White List	,	image white list (uids or image paths).
   Views	,	Export views
@@ -250,7 +250,7 @@ ConvertSfMFormat
   Extrinsics	,	Export extrinsics
   Structure	,	Export structure
   Observations	,	Export observations
-  Verbose Level	,	verbosity level (fatal, error, warning, info, debug, trace)
+  Verbose Level	,	verbosity level ``(fatal, error, warning, info, debug, trace)``
   Output	,	Path to the output SfM Data file. (desc.Node.internalFolder + 'sfm.{fileExtension})
 
 **Input nodes: StructureFromMotion:output->input:ConvertSfMFormat**
@@ -276,9 +276,9 @@ DepthMap
 
   MVS Configuration File:	,	SfMData file.
   Images Folder	,	Use images from a specific folder instead of those specify in the SfMData file.Filename should be the image uid.
-  Downscale	,	Image downscale factor (1, 2, 4, 8, 16)
-  Min View Angle	,	Minimum angle between two views. (0.0, 10.0, 0.1)
-  Max View Angle	,	Maximum angle between two views. (10.0, 120.0, 1)
+  Downscale	,	Image downscale factor ``(1, 2, 4, 8, 16)``
+  Min View Angle	,	Minimum angle between two views. ``(0.0, 10.0, 0.1)``
+  Max View Angle	,	Maximum angle between two views. ``(10.0, 120.0, 1)``
   SGM: Nb Neighbour Cameras	,	Semi Global Matching: Number of neighbour cameras (1 - 100)
   SGM: WSH: Semi Global Matching	,	Half-size of the patch used to compute the similarity (1 - 20)
   SGM: GammaC	,	Semi Global Matching: GammaC Threshold (0 - 30)
@@ -338,8 +338,8 @@ creates an Alembic  animatedCamera.abc file from SFMData (e.g. for use in 3D Com
   Input SfMData	,	SfMData file containing a complete SfM
   SfMData Filter	,	A SfMData file use as filter
   Export Undistorted Images	,	Export Undistorted Images value=True
-  Undistort Image Format	,	Image file format to use for undistorted images (jpg / png / tif / exr (half))
-  Verbose Level	,	Verbosity level (fatal, error, warning, info, debug, trace)
+  Undistort Image Format	,	Image file format to use for undistorted images ``(*.jpg , *.png, *.tif, *.exr (half))``
+  Verbose Level	,	Verbosity level ``(fatal, error, warning, info, debug, trace)``
   Output filepath	,	Output filepath for the alembic animated camera
   Output Camera Filepath	,	Output filename for the alembic animated camera  internalFolder + 'camera.abc'
 
@@ -387,22 +387,22 @@ FeatureMatching
 .. csv-table:: settings
   :header: Name, Description
 
-  Input	,	SfMData file
-  Features Folder	,
-  Features Folders	,	Folder(s) containing the extracted features and descriptors
-  Image Pairs List	,	Path to a file which contains the list of image pairs to match
-  Describer Types	,	Describer types used to describe an image **sift**'/ 'sift_float'/ 'sift_upright'/ 'akaze'/ 'akaze_liop'/ 'akaze_mldb'/ 'cctag3'/ 'cctag4'/ 'sift_ocv'/ 'akaze_ocv
-  Photometric Matching Method	,	For Scalar based regions descriptor ' * BRUTE_FORCE_L2: L2 BruteForce matching' ' * ANN_L2: L2 Approximate Nearest Neighbor matching ' * CASCADE_HASHING_L2: L2 Cascade Hashing matching ' * FAST_CASCADE_HASHING_L2: L2 Cascade Hashing with precomputed hashed regions (faster than CASCADE_HASHING_L2 but use more memory) 'For Binary based descriptor  ' * BRUTE_FORCE_HAMMING: BruteForce Hamming matching'
-  Geometric Estimator	,	Geometric estimator: (acransac:  A-Contrario Ransac //  loransac: LO-Ransac (only available for fundamental_matrix model)
-  Geometric Filter Type	,	Geometric validation method to filter features matches: **fundamental_matrix** // essential_matrix // homography_matrix /// homography_growing // no_filtering'
-  Distance Ratio	,	Distance ratio to discard non meaningful matches 0.8 (0.0 - 1)
-  Max Iteration	,	Maximum number of iterations allowed in ransac step 2048 (1 - 20000)
-  Max Matches	,	Maximum number of matches to keep (0 - 10000)
-  Save Putative Matches	,	putative matches (True/False)
-  Guided Matching	,	the found model to improve the pairwise correspondences (True/False)
-  Export Debug Files	,	debug files (svg/ dot) (True/False)
-  Verbose Level	,	verbosity level (fatal/ error, warning, info, debug, trace)
-  Output Folder	,	Path to a folder in which computed matches will be stored
+  Input,SfMData file
+  Features Folder,
+  Features Folders, Folder(s) containing the extracted features and descriptors
+  Image Pairs List,	Path to a file which contains the list of image pairs to match
+  Describer Types,	Describer types used to describe an image ``**sift**'/ 'sift_float'/ 'sift_upright'/ 'akaze'/ 'akaze_liop'/ 'akaze_mldb'/ 'cctag3'/ 'cctag4'/ 'sift_ocv'/ 'akaze_ocv``
+  Photometric Matching Method,	``For Scalar based regions descriptor ' * BRUTE_FORCE_L2: L2 BruteForce matching' ' * ANN_L2: L2 Approximate Nearest Neighbor matching ' * CASCADE_HASHING_L2: L2 Cascade Hashing matching ' * FAST_CASCADE_HASHING_L2: L2 Cascade Hashing with precomputed hashed regions (faster than CASCADE_HASHING_L2 but use more memory) 'For Binary based descriptor  ' * BRUTE_FORCE_HAMMING: BruteForce Hamming matching'``
+  Geometric Estimator,	Geometric estimator: ``(acransac:  A-Contrario Ransac //  loransac: LO-Ransac (only available for fundamental_matrix model)``
+  Geometric Filter Type,	Geometric validation method to filter features matches: ``**fundamental_matrix** // essential_matrix // homography_matrix /// homography_growing // no_filtering'``
+  Distance Ratio,	``Distance ratio to discard non meaningful matches 0.8 (0.0 - 1)``
+  Max Iteration,	Maximum number of iterations allowed in ransac step 2048 ``(1 - 20000)``
+  Max Matches,	Maximum number of matches to keep ``(0 - 10000)``
+  Save Putative Matches,	putative matches (True/False)
+  Guided Matching,	the found model to improve the pairwise correspondences (True/False)
+  Export Debug Files,	debug files (svg/ dot) (True/False)
+  Verbose Level,	verbosity level (fatal/ error, warning, info, debug, trace)
+  Output Folder,	Path to a folder in which computed matches will be stored
 
 .. image:: feature_matching.png
 
@@ -516,14 +516,14 @@ https://www.cs.cf.ac.uk/meshfiltering/index_files/Doc/Random%20Walks%20for%20Mes
 
   input, Input Mesh (OBJ file format)
   Denoising Iterations, Number of denoising iterations (0 // 30 // 1) 5
-  Mesh Update Closeness Weight, Closeness weight for mesh update, must be positive.(0.0 // 0.1 // 0.001) 0.001
-  Lambda, Regularization weight. (0.0 // 10.0 // 0.01) 2
-  Eta, Gaussian standard deviation for spatial weight, scaled by the average distance between adjacent face centroids.Must be positive.(0.0 // 20.0 // 0.01) 1.5
-  Mu, Gaussian standard deviation for guidance weight (0.0 // 10.0 // 0.01) 1.5
-  Nu, Gaussian standard deviation for signal weight. (0.0 // 5.0 // 0.01) 0.3
-  Mesh Update Method, Mesh Update Method * ITERATIVE_UPDATE (default): ShapeUp styled iterative solver * POISSON_UPDATE: Poisson-based update from [Want et al. 2015] (0 // 1)
-  Verbose Level, ['fatal' // 'error' // 'warning' // 'info' // 'debug' // 'trace']
-  Output, Output mesh (OBJ file format).
+  Mesh Update Closeness Weight, ``Closeness weight for mesh update, must be positive.(0.0 // 0.1 // 0.001) 0.001``
+  Lambda, ``Regularization weight. (0.0 // 10.0 // 0.01) 2``
+  Eta, ``Gaussian standard deviation for spatial weight``,`` scaled by the average distance between adjacent face centroids. Must be positive.(0.0 // 20.0 // 0.01) 1.5``
+  Mu, ``Gaussian standard deviation for guidance weight (0.0 // 10.0 // 0.01) 1.5``
+  Nu, ``Gaussian standard deviation for signal weight. (0.0 // 5.0 // 0.01) 0.3``
+  Mesh Update Method, ``Mesh Update Method * ITERATIVE_UPDATE (default): ShapeUp styled iterative solver * POISSON_UPDATE: Poisson-based update from [Want et al. 2015] (0 // 1)``
+  Verbose Level, ``['fatal' // 'error' // 'warning' // 'info' // 'debug' // 'trace']``
+  Output, ``Output mesh (OBJ file format).``
 
 .. image:: mesh_denoising.png
 
@@ -575,7 +575,7 @@ Resampling https://users.cg.tuwien.ac.at/stef/seminar/MeshResamplingMerge1901.pd
   Min Vertices, Min number of output vertices 0 (0 - 1 000 000)
   Max Vertices, Max number of output vertices 0 (0 - 1 000 000)
   Number of Pre-Smoothing Iteration, Number of iterations for Lloyd pre-smoothing 40 (0 - 100)
-  Flip Normals,  Option to flip face normals,  'It can be needed as it depends on the vertices order in triangles and the convention change from one software to another.  (True/False)
+  Flip Normals,  ``Option to flip face normals,  'It can be needed as it depends on the vertices order in triangles and the convention change from one software to another.  (True/False)``
   Verbose Level, ['fatal' // 'error' // 'warning' // 'info' // 'debug' // 'trace']
   Output mesh, Output mesh (OBJ file format) internalFolder + 'mesh.obj
 

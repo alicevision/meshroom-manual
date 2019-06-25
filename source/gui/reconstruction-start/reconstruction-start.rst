@@ -1,4 +1,4 @@
-SStart Reconstruction
+Start Reconstruction
 =====================
 
 Click the green **Start** button to start processing. 

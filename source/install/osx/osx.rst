@@ -153,7 +153,7 @@ When starting with sudo, it will be /tmp/MeshroomCache by default
 
 
 
-return 'DYLD_LIBRARY_PATH="/Developer/NVIDIA/CUDA-9.2/lib" ' + cmdPrefix + chunk.node.nodeDesc.commandLine.format(**chunk.node._cmdVars) + cmdSuffix
+``return 'DYLD_LIBRARY_PATH="/Developer/NVIDIA/CUDA-9.2/lib" ' + cmdPrefix + chunk.node.nodeDesc.commandLine.format(/**chunk.node._cmdVars) + cmdSuffix``
 
 Baumann, Ryan. “AliceVision and Meshroom on Mac OS X.”
 *Ryan Baumann - /etc*

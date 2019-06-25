@@ -100,16 +100,11 @@ https://www.youtube.com/watch?v=RmMDFydHeso
 Meshroom2Blender Blender Plugin
 -------------------------------
 
-`Blender <https://www.blender.org/>`_
-importer of
-`  <https://alicevision.github.io/#meshroom>`_
-`AliceVision Meshroom <https://alicevision.github.io/#meshroom>`_
+Blender importer for AliceVision Meshroom
+
 datafiles: cameras, images, sparse pointcloud and obj's.
 
-Basic implementation of Meshroom importer. If you have s
-o
-phisticated node t
-ree it will use only the first nodes from the file. Addon assumes you did compute each stages/nodes, and the output is same. Visit
+Basic implementation of Meshroom importer. If you have sophisticated node tree it will use only the first nodes from the file. Addon assumes you did compute each stages/nodes, and the output is same. Visit
 `the Github project site <https://github.com/tibicen/meshroom2blender>`_
 for details.
 
@@ -325,16 +320,19 @@ Set locator as origin of scene
 
 
 - **Thumbnail size**
+
 Camera thumbnail size
 
 
 
 - **Display point cloud**
+
 Show/hide pointcloud in plugin views.
 
 
 
 - **Active synchronisation**
+
 Activate/Deactivate synchronisation on selection (meshes and cameras) between Maya and plugin
 
 
@@ -346,11 +344,13 @@ Remap images paths from alembic project file (if project as been moved for examp
 
 
 - **Camera Near & Far**
+
 Set Near/Far Clip Planes for all cameras
 
 
 
 - **Camera Locator Scale**
+
 Set camera locator size in viewport.
 
 

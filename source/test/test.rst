@@ -9,7 +9,7 @@ This might be different when using your own image dataset.
 Import the images in Meshroom by dropping them in the Images pane. There are different folders in the Monstree dataset: 
 full (all images), mini6 (6 images) and mini3 (3 images) to test out.
 
-.. image:: monstree1.png
+.. image:: monstree-1.png
 
 You can preview selected images in the Image Viewer pane. To display the image metadata click the (i) icon in the bottom right corner. For images with embedded GPS information an additional openstreetmap frame will be displayed.
 

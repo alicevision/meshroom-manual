@@ -36,17 +36,17 @@ Alembic is the preferred choice for intermediate storage of points clouds, becau
 Other file formats
 ------------------
 
-**.bin ** denseReconstruction: The bin format is only useful to get the visibility information of each vertex (no color information)
+**.bin** denseReconstruction: The bin format is only useful to get the visibility information of each vertex (no color information)
 
-**.cal ** calibration file
+**.cal** calibration file
 
-**.desc ** describer file
+**.desc** describer file
 
-**.EXR ** OpenEXR image format: for depth map images
+**.EXR** OpenEXR image format: for depth map images
 
-**.txt ** text file list to describer image parameters
+**.txt** text file list to describer image parameters
 **.ini** A configuration file
 
-**.json ** describes the used image dataset
+**.json** describes the used image dataset
 
-**.baf (sfm) ** Bundle Adjustment File Export SfM data (Intrinsics/Poses/Landmarks)
+**.baf (sfm)** Bundle Adjustment File Export SfM data (Intrinsics/Poses/Landmarks)

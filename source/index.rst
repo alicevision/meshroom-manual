@@ -17,13 +17,26 @@ Welcome to Meshroom's documentation!
 
    install/install
    gui/gui
+   gui/add-images/add-images
+   gui/3dviewer/3dviewer
+   gui/advanced-node/advanced-node
+   gui/reconstruction-start/reconstruction-start
+   gui/augment-reconstruction/augment-reconstruction
+   gui/live-reconstruction/live-reconstruction
+   gui/external-reconstruction/external-reconstruction
+   gui/import-old/import-old
+   
+   gui/import-old/import-old
+   
    test/test
+   test/reconstruction-eval/reconstruction-eval
 
 .. toctree::
    :maxdepth: 2
    :hidden:
    :caption: Feature Documentation
-	
+
+   node_reference/connect-nodes/connect-nodes
    node_reference/node_reference
    supported_formats/supported_formats
 
@@ -45,7 +58,7 @@ Welcome to Meshroom's documentation!
    more/more
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :hidden:
    :caption: FAQ	
 
