@@ -12,9 +12,9 @@ and its Meshroom program are an exciting new free and open-source pipeline for p
 . As a result, I’ve compiled
 `a Homebrew tap <http://github.com/ryanfb/homebrew-alicevision>`_
 which includes the necessary formulae, and will use this post to outline how to use them to get up and running.
-*Note that this is intended as a first step for Mac users wishing to experiment with and improve the AliceVision/Meshroom software, and as a result these instructions may become outdated with time*
-.
-|1000000000000400000002C9C86DF538CB3F24E1_jpg|
+*Note that this is intended as a first step for Mac users wishing to experiment with and improve the AliceVision/Meshroom software, and as a result these instructions may become outdated with time.*
+
+.. image:: homebrew.jpg
 
 The following instructions assume a working
 `Homebrew <https://brew.sh/>`_
@@ -58,7 +58,7 @@ and running
 , which should output your GPU information. If it doesn’t build correctly, or
 deviceQuery
 errors or doesn’t list your GPU, you may need to look over the steps above and check that everything is up to date (you can also check the CUDA panel in System Preferences).
-|1000000000000278000001A7B87958291166168F_jpg|
+.. image:: homebrew-inst.jpg
 
 Installation
 ^^^^^^^^^^^^
@@ -134,10 +134,10 @@ MeshroomCache/Texturing/
 (relative to where you saved the project file).
 
 When you launch Meshroom
-*without *
+*without*
 sudo, the temp path will be something like this:
 
-|100000000000024A0000007238E2E46A3C4F9C61_png|
+.. image:: cache-folder.png
 
 When starting with sudo, it will be /tmp/MeshroomCache by default
 

@@ -5,7 +5,7 @@ Note: Some parameters are exposed for development purposes.
 
 Nodes/features marked with an # are not supported/implemented in the current release
 
-* in default pipeline **tested and working ? not tested
+/* in default pipeline /**tested and working ? not tested
 
 CameraCalibration (#)
 ---------------------
@@ -46,7 +46,7 @@ CameraInit
 ----------------
 **Description**
 
-- load image metadata and sensor information
+-load image metadata and sensor information
 You can mix multiple cameras and focal lengths.
 The CameraInit will create groups of intrinsics based on the images metadata.
 It is still good to have multiple images with the same camera and same focal lengths as it adds constraints on the internal cameras parameters.
@@ -198,7 +198,7 @@ https://github.com/fragofer/voctree You need to specify the path to vlfeat_K80L3
 
 
 CameraRigLocalization (?)
-------------------------
+-------------------------
 
 **Description**
 
@@ -374,6 +374,7 @@ FeatureExtraction
 
 .. csv-table:: settings
   :header: Name, Description
+
 #########
 
 FeatureMatching
@@ -487,8 +488,8 @@ Simplify your mesh to reduce mesh size without changing visual appearance of the
   Verbose Level	,	verbosity level (fatal // error // warning // info // debug // trace)
   Output mesh	,	Output mesh (OBJ file format) internalFolder + 'mesh.obj
 
-
 .. image:: mesh_decimate.png
+
 or Meshing->MeshDecimate->MeshFiltering?
 
 **Comparison MeshDecimate and MeshResampling**
@@ -501,7 +502,7 @@ or Meshing->MeshDecimate->MeshFiltering?
 
 
 MeshDenoising
-------------
+-------------
 
 **Description**
 

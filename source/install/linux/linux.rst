@@ -28,7 +28,7 @@ You need to have `AliceVision <https://github.com/alicevision/AliceVision>`_ ins
 
 On some distributions (e.g Ubuntu), you may have conflicts between native drivers and mesa drivers, resulting in an empty black window. In that case, you need to force usage of native drivers by adding them to the
 
-*LD_LIBRARY_PATH: *
+*LD_LIBRARY_PATH:*
 
 *LD_LIBRARY_PATH=/usr/lib/nvidia-340 ./Meshroom*
 
@@ -40,7 +40,7 @@ with the correct driver version.
 
 On Ubuntu, you may have conflicts between native drivers and mesa drivers. In that case, you need to force usage of native drivers by adding them to the
 
-*LD_LIBRARY_PATH: *
+*LD_LIBRARY_PATH:*
 
 *LD_LIBRARY_PATH=/usr/lib/nvidia-340 PYTHONPATH=$PWD python meshroom/ui*
 
