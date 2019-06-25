@@ -1,4 +1,2 @@
-D:\Github\meshroom_doc\source\faq\graph-external\graph-external.rst:24: WARNING: Unknown target name: "nodes".
-D:\Github\meshroom_doc\source\index.rst:13: WARNING: toctree contains reference to nonexisting document 'import-old\\import-old'
-D:\Github\meshroom_doc\source\install\osx\osx.rst:156: WARNING: Inline strong start-string without end-string.
-D:\Github\meshroom_doc\source\more\view_edit\view_edit.rst:2: WARNING: Duplicate explicit target name: "blender".
+cli\cli-reference.rst
+node_reference\node_reference.rst

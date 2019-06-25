@@ -3,11 +3,12 @@ Welcome to Meshroom's documentation!
 
 
 
+
 .. toctree::
    :maxdepth: 1
    :hidden:
    :caption: Welcome
-   
+
    titlepage
 
 .. toctree::
@@ -25,9 +26,9 @@ Welcome to Meshroom's documentation!
    gui/live-reconstruction/live-reconstruction
    gui/external-reconstruction/external-reconstruction
    gui/import-old/import-old
-   
+
    gui/import-old/import-old
-   
+
    test/test
    test/reconstruction-eval/reconstruction-eval
 
@@ -52,7 +53,7 @@ Welcome to Meshroom's documentation!
    :maxdepth: 2
    :hidden:
    :caption: More
-   
+
    cli/cli
    cli/cli-reference
    more/more
@@ -60,24 +61,24 @@ Welcome to Meshroom's documentation!
 .. toctree::
    :maxdepth: 2
    :hidden:
-   :caption: FAQ	
+   :caption: FAQ
 
    faq/faq
 
 .. toctree::
    :maxdepth: 1
    :hidden:
-   :caption: References  
-    
+   :caption: References
+
    references/references
-   
+
    glossary/glossary
-	
+
 .. toctree::
    :maxdepth: 2
    :hidden:
    :caption: About
-	
+
    about/about
 
 
