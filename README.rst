@@ -50,4 +50,4 @@ Why Restructured Text?
 
 How to edit and preview Restructured Text?
 
-- You can use [Atom](https://atom.io/) with the [RestructuredText Preview Pandoc](https://atom.io/packages/rst-preview-pandoc) Plugin
+- You can use `Atom <https://atom.io/>`_ with the `RestructuredText Preview Pandoc <https://atom.io/packages/rst-preview-pandoc>`_ Plugin
