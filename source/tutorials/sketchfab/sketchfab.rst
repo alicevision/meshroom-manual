@@ -184,6 +184,7 @@ Image selection is synchronized between “Images” and “3D Viewer” panels.
    -  alternative: **Alt+Right-Click and Move Left/Right**
 
 |image10|
+
 `Buddha –
 Structure-from-Motion <https://sketchfab.com/3d-models/buddha-structure-from-motion-0983e6ab444f47789ca3ce2a5fcdf2b9?utm_campaign=0983e6ab444f47789ca3ce2a5fcdf2b9&utm_medium=embed&utm_source=oembed>`__
 by
@@ -205,6 +206,7 @@ are already available on disk. You can right-click on a media and select
 we get access to the folder containing the OBJ and texture files.
 
 |image11|
+
 `Buddha – Default
 Pipeline <https://sketchfab.com/3d-models/buddha-default-pipeline-65ed60e8d72645ce83017d848611be32?utm_campaign=65ed60e8d72645ce83017d848611be32&utm_medium=embed&utm_source=oembed>`__
 by
@@ -278,7 +280,9 @@ parameters if needed, and start the computation.
 |image6|
 
 Retexture the decimated mesh using a second Texturing node
+
 |image12|
+
 `Buddha – 100K Vertices
 Decimation <https://sketchfab.com/3d-models/buddha-100k-vertices-decimation-7648dd79fc294bba85f1bd4ff629c1d1?utm_campaign=7648dd79fc294bba85f1bd4ff629c1d1&utm_medium=embed&utm_source=oembed>`__
 by
@@ -353,7 +357,9 @@ datasets that can produce enough points in the sparse point cloud. In
 all cases, it won’t reach the level of quality and precision of the
 default pipeline, but it can be very useful to produce a preview during
 the acquisition or to get the 3D measurements before photo-modeling.
+
 |image13|
+
 `Buddha – Draft Meshing from
 SfM <https://sketchfab.com/3d-models/buddha-draft-meshing-from-sfm-4c4219b78c804deb95f7ef3b456c721c?utm_campaign=4c4219b78c804deb95f7ef3b456c721c&utm_medium=embed&utm_source=oembed>`__
 by
