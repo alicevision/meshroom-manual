@@ -466,11 +466,11 @@ want us to see your work!
    :target: image4-1.gif
 .. |image9| image:: image3-5.png
    :target: image3-5.png
-.. |image10| image:: 1.jpg
-   :target: 1.jpg
-.. |image11| image:: 2.jpg
-   :target: 2.jpg
-.. |image12| image:: 3.jpg
-   :target: 3.jpg
-.. |image13| image:: 4.jpg
-   :target: 4.jpg
+.. |image10| image:: 1.JPG
+   :target: 1.JPG
+.. |image11| image:: 2.JPG
+   :target: 2.JPG
+.. |image12| image:: 3.JPG
+   :target: 3.JPG
+.. |image13| image:: 4.JPG
+   :target: 4.JPG
