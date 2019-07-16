@@ -17,7 +17,9 @@ cache:
 script: 
   - cd ${TRAVIS_BUILD_DIR}
   - make html
-  - make latexpdf
+  - make latex
+  - cd build/latex
+  - latex -interaction nonstopmode -halt-on-error -file-line-error  meshroom.tex
 
   # in case there are other latex packages to install texliveonfly will do the
   # installation of the required packages automatically
