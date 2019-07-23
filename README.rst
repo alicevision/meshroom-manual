@@ -1,3 +1,6 @@
+.. image:: https://travis-ci.org/natowi/meshroom_doc.svg?branch=master
+    :target: https://travis-ci.org/natowi/meshroom_doc
+
 About
 =====
 
