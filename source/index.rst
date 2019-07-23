@@ -54,8 +54,6 @@ Welcome to Meshroom's documentation!
    :hidden:
    :caption: More
 
-   cli/cli
-   cli/cli-reference
    more/more
 
 .. toctree::
