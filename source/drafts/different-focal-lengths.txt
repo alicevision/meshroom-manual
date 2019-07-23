@@ -1,0 +1,16 @@
+Different focal length
+======================
+
+(For the FAQ)
+
+
+Taking pictures with different focal lengths or lenses should be avoided.
+
+Meshroom can handle different focal lengths or lenses, but you need to make sure that:
+- the focal length is stored in the EXIF
+- the lense serial number is stored in the EXIF when using differnt lenses on the same camera
+
+
+When using multiple camera models, make sure the EXIF is complete, so Meshroom can distinct them.
+
+https://github.com/alicevision/meshroom/issues/536

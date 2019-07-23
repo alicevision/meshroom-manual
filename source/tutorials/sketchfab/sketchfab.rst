@@ -450,20 +450,20 @@ want us to see your work!
    :target: image8-3.png
 .. |image1| image:: image5-3.png
    :target: image5-3.png
-.. |image2| image:: image7-2.gif
-   :target: image7-2.gif
+.. |image2| image:: image7-2.jpg
+   :target: image7-2.jpg
 .. |image3| image:: image6-3.png
    :target: image6-3.png
 .. |image4| image:: image1-6.png
    :target: image1-6.png
-.. |image5| image:: image2-2.gif
-   :target: image2-2.gif
-.. |image6| image:: image11-1.gif
-   :target: image11-1.gif
+.. |image5| image:: image2-2.jpg
+   :target: image2-2.jpg
+.. |image6| image:: image11-1.jpg
+   :target: image11-1.jpg
 .. |image7| image:: image10-2.png
    :target: image10-2.png
-.. |image8| image:: image4-1.gif
-   :target: image4-1.gif
+.. |image8| image:: image4-1.jpg
+   :target: image4-1.jpg
 .. |image9| image:: image3-5.png
    :target: image3-5.png
 .. |image10| image:: 1.JPG
