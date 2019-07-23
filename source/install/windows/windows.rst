@@ -5,6 +5,8 @@ Windows
 
 2. extract ZIP to a folder of yur choice
 
+.. image:: win.jpg
+
 3. You can start Meshroom by clicking on the executable. No installation required.
 
 .. Note::
