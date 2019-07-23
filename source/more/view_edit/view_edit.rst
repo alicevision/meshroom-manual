@@ -150,18 +150,21 @@ why do we want to use it?
 It is a really fast auto-retopology solution and helps you create more accurate meshes
 
 
-.. image:: 10000000000001040000010308083D38A3F5C0BA.jpg
+.. image:: cco.jpg
 
 CloudCompare
 ------------
 
-open source
+3D point cloud and mesh processing software 
+
+Open Source Project
+
 `https://www.danielgm.net/cc/ <https://www.danielgm.net/cc/>`_
 
 `http://www.danielgm.net/cc/release/ <http://www.danielgm.net/cc/release/>`_
 
 
-tut
+tutorial
 
 
 http://www.danielgm.net/cc/tutorials.html

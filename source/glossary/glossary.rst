@@ -5,9 +5,14 @@ Glossary
 
     Alicevision
       Short description
+	  
+	CCTAG
+	  The CCTAG marker system can deliver sub-pixel precision while being largely robust to challenging shooting conditions. https://github.com/alicevision/CCTag
+
 
     SIFT
-      Short description
+      Meshroom uses PopSIFT, Scale-Invariant Feature Transform (SIFT).
+	  This library provides a GPU implementation of SIFT. https://github.com/alicevision/popsift
 	  
 	  
 	  
