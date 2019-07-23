@@ -1,2 +1,0 @@
-cli\cli-reference.rst
-node_reference\node_reference.rst

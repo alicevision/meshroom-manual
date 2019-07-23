@@ -9,7 +9,7 @@ Use this option when you compute externally after submission to a render farm fr
 This way, you can make use of external computing power. 
 If you can not compute GPU nodes locally (no cuda) you can still submit them.
 
-.. image:: renderman-tractor.png
+.. image:: renderman-tractor.jpg
 
 Available submitters:
 

@@ -35,7 +35,7 @@ See Github authors for the full list of contributors.
 This project has received funding from the European Union’s Horizon 2020 research and innovation programme, see `POPART <http://www.popartproject.eu/>`_, Project ID: 644874 and
 `LADIO <http://www.ladioproject.eu/>`_, project ID: 731970.
 
-.. image:: eu.png
+.. image:: eu.jpg
 
 Open Source
 -----------

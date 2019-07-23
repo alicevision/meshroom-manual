@@ -10,8 +10,8 @@ You can use this method for complex scenes with multiple objects
 
 .. note:: The groups will be merged using the ImageMatchingMultiSfM node. Read the node description for details
 
-.. image:: drag.png
+.. image:: drag.jpg
 
-.. image:: graph.png
+.. image:: graph.jpg
 
-.. image:: images.png
+.. image:: images.jpg

@@ -5,7 +5,7 @@ Drag-n-drop your images or your image folder into the **Images** pane on the lef
 
 You can preview the images in the **Image Viewer** pane. To display the image metadata click the (i) icon in the bottom right corner. For images with embedded GPS information an additional openstreetmap frame will be displayed.
 
-.. image:: view-metadata.png
+.. image:: view-metadata.jpg
 
 
 .. note:: 

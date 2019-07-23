@@ -19,4 +19,4 @@ Duplicate) and make changes on this copy. It should look like this:
 instead if you want to completely fill texture's blank space with
 plausible values.*
 
-.. |image| image:: 45146228-be57d880-b1c2-11e8-9f6f-e9f143b13966.png
+.. |image| image:: retopo.jpg

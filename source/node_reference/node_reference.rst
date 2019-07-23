@@ -255,7 +255,7 @@ ConvertSfMFormat
 
 **Input nodes: StructureFromMotion:output->input:ConvertSfMFormat**
 
-.. image:: convert_sfm_format.png
+.. image:: convert_sfm_format.jpg
 
 
 **Can I convert between Openmvg and alicevision SfM formats?**
@@ -297,7 +297,7 @@ DepthMap
 
 **default:**
 
-.. image:: depth_map.png
+.. image:: depth_map.jpg
 
 DepthMapFilter
 --------------
@@ -338,7 +338,7 @@ creates an Alembic  animatedCamera.abc file from SFMData (e.g. for use in 3D Com
   ``Input SfMData``, ``SfMData file containing a complete SfM``
   SfMData Filter,	A SfMData file use as filter
   Export Undistorted Images	,	Export Undistorted Images value=True
-  Undistort Image Format,	Image file format to use for undistorted images ``(*.jpg , *.png, *.tif, *.exr (half))``
+  Undistort Image Format,	Image file format to use for undistorted images ``(*.jpg , *.jpg, *.tif, *.exr (half))``
   Verbose Level,	Verbosity level ``(fatal, error, warning, info, debug, trace)``
   Output filepath,	Output filepath for the alembic animated camera
   Output Camera Filepath,	Output filename for the alembic animated camera  internalFolder + 'camera.abc'
@@ -363,7 +363,7 @@ The node "ExportMaya" exports the undistorted images. This node has nothing dedi
 
 ExportMaya: requires .sfm or .abc as input from ConvertSfMFormat
 
-.. image:: export_maya.png
+.. image:: export_maya.jpg
 
 FeatureExtraction
 -----------------
@@ -405,7 +405,7 @@ FeatureMatching
   Verbose Level,	verbosity level (fatal/ error, warning, info, debug, trace)
   Output Folder,	Path to a folder in which computed matches will be stored
 
-.. image:: feature_matching.png
+.. image:: feature_matching.jpg
 
 ImageMatching
 ---------------
@@ -428,7 +428,7 @@ ImageMatching
   Verbose Level	,	verbosity level (fatal, error, warning, info, debug, trace)
   Output List File	,	Filepath to the output file with the list of selected image pairs
 
-.. image:: image_matching.png
+.. image:: image_matching.jpg
 
 
 ImageMatchingMultiSfM
@@ -456,7 +456,7 @@ Used for **Live Reconstructin** and **Augmentation**
   Output List File	,	Filepath to the output file with the list of selected image pairs
   Output Combined SfM	,	Path for the combined SfMData file internalFolder + 'combineSfM.sfm
 
-.. image:: image_matching_multi.png
+.. image:: image_matching_multi.jpg
 
 KeyframeSelection
 -----------------
@@ -490,7 +490,7 @@ Simplify your mesh to reduce mesh size without changing visual appearance of the
   Verbose Level	,	verbosity level (fatal // error // warning // info // debug // trace)
   Output mesh	,	Output mesh (OBJ file format) internalFolder + 'mesh.obj
 
-.. image:: mesh_decimate.png
+.. image:: mesh_decimate.jpg
 
 or Meshing->MeshDecimate->MeshFiltering?
 
@@ -527,7 +527,7 @@ Mesh denoising: remove noises, feature-preserving
   Verbose Level, ``['fatal', 'error', 'warning', 'info', 'debug', 'trace']``
   Output, ``Output mesh (OBJ file format).``
 
-.. image:: mesh_denoising.png
+.. image:: mesh_denoising.jpg
 
 Mesh Update Method
 ``https://www.researchgate.net/publication/275104101_Poisson-driven_seamless_completion_of_triangular_meshes``
@@ -551,7 +551,7 @@ Filter out unwanted elements of your mesh
   Verbose Level, ``['fatal', 'error', 'warning', 'info', 'debug', 'trace']``
   Output mesh, Output mesh (OBJ file format) internalFolder + 'mesh.obj
 
-.. image:: mesh_filtering.png
+.. image:: mesh_filtering.jpg
 
 Note: "Keep Only The Largest Mesh". This is disabled by default in the 2019.1.0 release to avoid that the environment is being meshed, but not the object of interest. The largest Mesh is in some cases the reconstructed background. When the object of interest is not connected to the large background mesh it will be removed.
 You should place your object of interest on a well structured non transparent or reflecting surface (e.g. a newspaper).
@@ -581,7 +581,7 @@ Resampling ``https://users.cg.tuwien.ac.at/stef/seminar/MeshResamplingMerge1901.
   Verbose Level, ``['fatal', 'error', 'warning', 'info', 'debug', 'trace']``
   Output mesh, ``Output mesh (OBJ file format) internalFolder + mesh.obj``
 
-.. image:: mesh_resampling.png
+.. image:: mesh_resampling.jpg
 
 **Comparison MeshDecimate and MeshResampling**
 
@@ -603,7 +603,7 @@ none
   empty, empty
 
 
-.. image:: meshing.png
+.. image:: meshing.jpg
 
 
 PrepareDenseScene
@@ -620,7 +620,7 @@ PrepareDenseScene
   Verbose Level, ['fatal' // 'error' // 'warning' // 'info' // 'debug' // 'trace']
   Output, MVS Configuration file (desc.Node.internalFolder + 'mvs.ini)
 
-.. image:: prepare_dense_scene.png
+.. image:: prepare_dense_scene.jpg
 
 Publish
 -------
@@ -652,7 +652,7 @@ align SfM file to a scene
   Output, Aligned SfMData file internalFolder + 'alignedSfM.abc
 
 
-.. image:: sfm_align.png
+.. image:: sfm_align.jpg
 
 
 SfMTransform
@@ -668,7 +668,7 @@ You can rescale the scene based on the bounding box of CCTAG markers.
   empty, empty
 
 
-.. image:: sfm_transform.png
+.. image:: sfm_transform.jpg
 
 StructureFromMotion
 -------------------
@@ -683,7 +683,7 @@ none
 
 
 
-.. image:: sfm.png
+.. image:: sfm.jpg
 
 Texturing
 ---------
@@ -697,4 +697,4 @@ Texturing creates UVs and projects the textures change quality and size/ file ty
   empty, empty
 
 
-.. image:: texturing.png
+.. image:: texturing.jpg

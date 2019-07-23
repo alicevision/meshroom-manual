@@ -82,7 +82,7 @@ Welcome to Meshroom's documentation!
 
 
 
-.. image:: mr_logo.png
+.. image:: mr_logo.jpg
 
 **Documentation**
 

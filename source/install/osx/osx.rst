@@ -137,7 +137,7 @@ When you launch Meshroom
 *without*
 sudo, the temp path will be something like this:
 
-.. image:: cache-folder.png
+.. image:: cache-folder.jpg
 
 When starting with sudo, it will be /tmp/MeshroomCache by default
 

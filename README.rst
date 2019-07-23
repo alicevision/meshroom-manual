@@ -41,16 +41,22 @@ For other build methods read the sphinx documentation
 FAQ
 ===
 
-Why Github?
+**Why Github?**
 
 - easier to manage
 - less spam
 - accessible
 
-Why Restructured Text?
+**Why Restructured Text?**
 
 - can be converted to various formats, including html and pdf using Sphinx
 
-How to edit and preview Restructured Text?
+**How to edit and preview Restructured Text?**
 
 - You can use `Atom <https://atom.io/>`_ with the `RestructuredText Preview Pandoc <https://atom.io/packages/rst-preview-pandoc>`_ Plugin
+
+**Release versions**
+
+Format: v00.00.000
+
+Example: v19.02.001 doc for Meshroom 2019.2, update 001

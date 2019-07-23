@@ -18,11 +18,11 @@ This is for practical reasons. The point cloud will update in real time with new
 
 Once you complete the image capturing process, click **Stop** and disconnect the **PrepareDenseScene** node from the first **StructureFromMotion** node and connect it with the last **StructureFromMotion** node.
 
-.. image:: graph.png
+.. image:: graph.jpg
 
-.. image:: live-reconstruction.png
+.. image:: live-reconstruction.jpg
 
-.. image:: reconnect-graph.png
+.. image:: reconnect-graph.jpg
 
 .. note:: The groups will be merged using the **ImageMatchingMultiSfM** node. Read the node description for details.
 
