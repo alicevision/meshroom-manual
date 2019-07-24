@@ -1,5 +1,20 @@
-.. image:: https://travis-ci.org/natowi/meshroom_doc.svg?branch=master
-    :target: https://travis-ci.org/natowi/meshroom_doc
+.. image:: https://img.shields.io/badge/license-CC%20BY--SA%204.0-blue.svg?style=flat-square
+   :alt: License: CC BY-SA 4.0
+   :target: https://creativecommons.org/licenses/by-sa/4.0/
+.. image:: https://img.shields.io/badge/language-RST-black.svg?style=flat-square
+   :alt: language: restructuredtext
+.. image:: http://hits.dwyl.io/natowi/meshroom_doc.svg
+   :alt: HitCount
+.. image:: https://img.shields.io/github/downloads/natowi/meshroom_doc/total.svg?style=flat-square&color=success
+   :alt: GitHub All Releases
+   :target: https://github.com/natowi/meshroom_doc/releases/
+.. image:: https://img.shields.io/github/release-pre/natowi/meshroom_doc.svg?style=flat-square&color=yellow&label=pre-release
+   :alt: GitHub pre-release
+.. image:: https://img.shields.io/github/release/natowi/meshroom_doc.svg?style=flat-square&color=green&label=release
+   :alt: GitHub release
+.. image:: https://img.shields.io/travis/natowi/meshroom_doc.svg?style=flat-square
+   :alt: https://travis-ci.org/natowi/meshroom_doc
+
 
 About
 =====
@@ -17,15 +32,6 @@ How to contribute
 - make yourself familiar with Restructured Text and Sphinx
 - do not make any changes to the general structure (yet)
 - open an Issue for questions
-
-License
-=======
-
-.. image:: license.jpg
-
-`CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0/>`_
-
-
 
 
 How to build on windows
