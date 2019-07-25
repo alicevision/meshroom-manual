@@ -16,6 +16,6 @@ This image illustrates the default graph with node connections on the origin nod
 Draft Meshing
 -------------
 
-.. image:: draft-meshing node-graph.jpg
+.. image:: draft-meshing-node-graph.jpg
 
-.. image:: draft-meshing node-graph-color.jpg
+.. image:: draft-meshing-node-graph-color.jpg
