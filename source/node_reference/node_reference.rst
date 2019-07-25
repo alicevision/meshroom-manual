@@ -18,28 +18,29 @@ The internal camera parameters can be calibrated from multiple views of a checke
 [opencvCameraCalibration] http://docs.opencv.org/3.0-beta/doc/tutorials/calib3d/camera_calibration/camera_calibration.html
 
 .. csv-table:: settings
-   :header: Name, Description
+   :header: "Name", "Description"
+   :widths: 15, 30
 
-   Input,"Input images in one of the following form:
+   "Input", "Input images in one of the following form:
    -- folder containing images
    -- image sequence like ""/path/to/seq.@.jpg""
    -- video file"
-   Pattern,"Type of pattern (camera calibration patterns)
+   "Pattern", "Type of pattern (camera calibration patterns)
    - CHESSBOARD
    - CIRCLES
    - ASYMMETRIC_CIRCLES
    - ASYMMETRIC_CCTAG"
-   Size,(Size of the Pattern) - Number of inner corners per one of board dimension like Width Height
-   Square Size,Size of the grid's square cells (0-100mm)
-   Nb Distortion Coef,Number of distortion coefficient (0-5)
-   Max Frames,Maximal number of frames to extract from the video file (0-5)
-   Calib Grid Size,Define the number of cells per edge (0-50)
-   Max Calib Frames,Maximal number of frames to use to calibrate from the selected frames (0-1000)
-   Min Input Frames,Minimal number of frames to limit the refinement loop  (0-100)
-   Max Total Average Error,Max Total Average Error (0-1)
-   Debug Rejected Img Folder,Folder to export delete images during the refinement loop
-   Debug Selected Img Folder,Folder to export debug images
-   Output,Output filename for intrinsic [and extrinsic] parameters (default filename cameraCalibration.cal)
+   "Size", "(Size of the Pattern) - Number of inner corners per one of board dimension like Width Height"
+   "Square Size", "Size of the grid's square cells (0-100mm)"
+   "Nb Distortion Coef", "Number of distortion coefficient (0-5)"
+   "Max Frames", "Maximal number of frames to extract from the video file (0-5)"
+   "Calib Grid Size", "Define the number of cells per edge (0-50)"
+   "Max Calib Frames", "Maximal number of frames to use to calibrate from the selected frames (0-1000)"
+   "Min Input Frames", "Minimal number of frames to limit the refinement loop  (0-100)"
+   "Max Total Average Error", "Max Total Average Error (0-1)"
+   "Debug Rejected Img Folder", "Folder to export delete images during the refinement loop"
+   "Debug Selected Img Folder", "Folder to export debug images"
+   "Output", "Output filename for intrinsic [and extrinsic] parameters (default filename cameraCalibration.cal)"
 
 
 CameraInit
@@ -56,35 +57,37 @@ Note: In some cases, some image(s) have no serial number to identify the camera/
 The reconstruction will assume that only one device has been used, so if 2 images share the same focal length approximation they will share the same internal camera parameters.
 If you want to use multiple cameras, add a corresponding serialnumber to the EXIF data.
 
-.. csv-table:: settings
-  :header: Name, Description
 
-  Viewpoints Input viewpoints," (1 Element for each loaded image)
-	ID
-	Pose ID
-	Image Path
-	Intrinsic: Internal Camera Parameters (Intrinsic ID)
-	Rig (-1 - 200)
-	Rig Sub-Pose: Rig Sub-Pose Parameters (-1 - 200)
-	Image Metadata: (list of metadata elements)"
-  Intrinsic Camera Intrinsics,"(1 Element for each loaded image)
-  ID
-  Initial Focal Length: Initial Guess on the Focal Length
-  Focal Length: Known/Calibrated Focal Length
-  Camera Type: pinhole', 'radial1', 'radial3', 'brown', 'fisheye4'
-  #Make: Camera Make (not included in this build, commented out)
-  #Model: Camera Model
-  #Sensor Width: Camera Sensor Width
-  Width: Image Width (0-10000)
-  Height: Image Height (0-10000)
-  Serial Number: Device Serial Number (camera and lens combined)
-  Principal Point: X (0-10000) Y(0-10000)
-  DistortionParams: Distortion Parameters
-  Locked(True/False): If the camera has been calibrated, the internal camera parameters (intrinsics) can be locked. It should improve robustness and speedup the reconstruction."
-  Sensor Database,Camera sensor width database path
-  Default Field Of View,Empirical value for the field of view in degree 45° (0°-180°)
-  Verbose Level,"verbosity level (fatal, error, warning, info, debug, trace)"
-  Output SfMData File,.../cameraInit.sfm
+.. csv-table:: settings
+   :header: "Name", "Description"
+   :widths: 15, 30
+   
+   "Viewpoints Input", " viewpoints(1 Element for each loaded image)
+	- ID
+	- Pose ID
+	- Image Path
+	- Intrinsic: Internal Camera Parameters (Intrinsic ID)
+	- Rig (-1 - 200)
+	- Rig Sub-Pose: Rig Sub-Pose Parameters (-1 - 200)
+	- Image Metadata: (list of metadata elements)"
+  "Intrinsic Camera Intrinsics", "(1 Element for each loaded image)
+    - ID
+    - Initial Focal Length: Initial Guess on the Focal Length
+    - Focal Length: Known/Calibrated Focal Length
+    - Camera Type: pinhole', 'radial1', 'radial3', 'brown', 'fisheye4'
+    - #Make: Camera Make (not included in this build, commented out)
+    - #Model: Camera Model
+    - #Sensor Width: Camera Sensor Width
+    - Width: Image Width (0-10000)
+    - Height: Image Height (0-10000)
+    - Serial Number: Device Serial Number (camera and lens combined)
+    - Principal Point: X (0-10000) Y(0-10000)
+    - DistortionParams: Distortion Parameters
+	- Locked(True/False): If the camera has been calibrated, the internal camera parameters (intrinsics) can be  locked. It should improve robustness and speedup the reconstruction."
+  "Sensor Database", "Camera sensor width database path"
+  "Default Field Of View", "Empirical value for the field of view in degree 45° (0°-180°)"
+  "Verbose Level", "verbosity level (fatal, error, warning, info, debug, trace)"
+  "Output SfMData File", ".../cameraInit.sfm"
 
 **Notes**
 

@@ -22,12 +22,12 @@ Video File formats
 
 .. csv-table::
    :header: "Name", "Refernce", "Description"
+   :widths: 15, 10, 30
 
-
-   "Alembic (.abc)", `Alembic <http://www.alembic.io/>`_ , "cloud_and_poses Alembic is a format for storing information about animated scenes after programmatic elements have been applied."
-   "OBJ", ,OBJ is a very strict ASCII format for encoding vertices, points, faces and textures first introduced by Wavefront Technologies.
-   "PLY", `PLY <https://people.sc.fsu.edu/~jburkardt/data/ply/ply.html>`_ , "The Polygon File Format (or Stanford Triangle Format) has an ASCII representation and a binary representation. It is inspired by the OBJ format that allows the definition of arbitrary properties for every point. This allows an implementation to add arbitrary information to points including accuracy information, but not in any backward-compatible way. Camera information could be included in comments."
-   "SfM", ,
+   "Alembic (.abc)", "`Alembic <http://www.alembic.io/>`_ ", "cloud_and_poses Alembic is a format for storing information about animated scenes after programmatic elements have been applied."
+   "OBJ", "", "OBJ is a very strict ASCII format for encoding vertices, points, faces and textures first introduced by Wavefront Technologies."
+   "PLY", "`PLY <https://people.sc.fsu.edu/~jburkardt/data/ply/ply.html>`_ ", "The Polygon File Format (or Stanford Triangle Format) has an ASCII representation and a binary representation. It is inspired by the OBJ format that allows the definition of arbitrary properties for every point. This allows an implementation to add arbitrary information to points including accuracy information, but not in any backward-compatible way. Camera information could be included in comments."
+   "SfM", "", ""
 
 FBX support (paused) https://github.com/alicevision/AliceVision/pull/174
 

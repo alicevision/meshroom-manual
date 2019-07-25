@@ -1,13 +1,18 @@
 Test Meshroom
 =============
 
-For your first reconstruction in Meshroom, download the Monstree Image Dataset https://github.com/alicevision/dataset_monstree. You can preview the Monstree model on Sketchfab https://sketchfab.com/models/92468cb8a14a42f39c6ab93d24c55926.
+For your first reconstruction in Meshroom, download the `Monstree Image
+Dataset <https://github.com/alicevision/dataset_monstree>`__. You can
+preview the Monstree model on
+`Sketchfab <https://sketchfab.com/models/92468cb8a14a42f39c6ab93d24c55926>`__.
 
-The Monstree dataset is known to work, so there should be no errors or problems during the reconstruction. 
-This might be different when using your own image dataset.
+The Monstree dataset is known to work, so there should be no errors or
+problems during the reconstruction. This might be different when using
+your own image dataset.
 
-Import the images in Meshroom by dropping them in the Images pane. There are different folders in the Monstree dataset: 
-full (all images), mini6 (6 images) and mini3 (3 images) to test out.
+Import the images in Meshroom by dropping them in the Images pane. There
+are different folders in the Monstree dataset: full (all images), mini6
+(6 images) and mini3 (3 images) to test out.
 
 .. image:: monstree-1.jpg
 

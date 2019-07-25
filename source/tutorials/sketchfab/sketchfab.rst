@@ -3,8 +3,6 @@ Tutorial: Meshroom for Beginners
 
 https://sketchfab.com/blogs/community/tutorial-meshroom-for-beginners
 
-.. _header-n2:
-
 Goal
 ====
 
@@ -22,10 +20,9 @@ iteratively in Meshroom.
 Finally, we will give some tips about uploading your 3D models to
 Sketchfab and conclude with useful links for further information.
 
-.. _header-n5:
 
-Step 0 – System requirements and installation
-=============================================
+Step 0: System requirements and installation
+============================================
 
 Meshroom software releases are self-contained portable packages. They
 are uploaded on the `project’s GitHub
@@ -45,10 +42,9 @@ license <https://www.mozilla.org/en-US/MPL/2.0>`__, see `Meshroom
 COPYING <https://github.com/alicevision/meshroom/blob/develop/COPYING.md>`__
 for more information.
 
-.. _header-n9:
 
-Step 1 – Image acquisition
-==========================
+Step 1: Image acquisition
+=========================
 
 The shooting quality is the most important and challenging part of the
 process. It has dramatic impacts on the quality of the final mesh.
@@ -65,10 +61,10 @@ depth blur. So you should use tripods or fast shutter speed to avoid
 motion blur, reduce the aperture (high f-number) to have a large depth
 of field, and reduce the ISO to minimize the noise.
 
-.. _header-n14:
 
-Step 2 – Meshroom concept and UI overview
-=========================================
+
+Step 2: Meshroom concept and UI overview
+========================================
 
 Meshroom has been conceived to address two main use-cases:
 
@@ -88,10 +84,9 @@ modify anything.
 
 Meshroom User Interface
 
-.. _header-n24:
 
-Step 3 – Basic Workflow
-=======================
+Step 3: Basic Workflow
+======================
 
 For this first step, we will only use the high-level UI. Let’s save this
 new project on our disk using “File ``>`` Save As…”.
@@ -125,10 +120,10 @@ progress of each step in the process:
 
 -  red: is in error
 
-.. _header-n40:
 
-Step 4 – Visualize and Export the results
-=========================================
+
+Step 4: Visualize and Export the results
+========================================
 
 The generic photogrammetry pipeline can be seen as having two main
 steps:
@@ -216,8 +211,8 @@ on
 
 .. _header-n92:
 
-Step 5 – Post-processing: Mesh Simplification
-=============================================
+Step 5: Post-processing: Mesh Simplification
+============================================
 
 Let’s now see how the nodal system can be used to add a new process to
 this default pipeline. The goal of this step will be to create a
@@ -257,8 +252,8 @@ MeshDecimate node has been computed.
 
 .. _header-n106:
 
-Step 6 – Retexturing after Retopology
-=====================================
+Step 6: Retexturing after Retopology
+====================================
 
 Making a variation of the original, high-poly mesh is only the first
 step to creating a tailored 3D model. Now, let’s see how we can
@@ -308,8 +303,8 @@ Texturing also accepts path to external meshes
 
 .. _header-n126:
 
-Step 7 – Draft Meshing from SfM
-===============================
+Step 7: Draft Meshing from SfM
+==============================
 
 The MVS consists of creating depth maps for each camera, merging them
 together and using this huge amount of information to create a surface.
@@ -369,8 +364,8 @@ on
 
 .. _header-n153:
 
-Step 8 – Working Iteratively
-============================
+Step 8: Working Iteratively
+===========================
 
 We will now sum up by explaining how what we have learnt so far can be
 used to work iteratively and get the best results out of your datasets.
@@ -421,10 +416,10 @@ useful parameters to drive precision and performance for each step are
 detailed on the `Meshroom
 Wiki <https://github.com/alicevision/meshroom/wiki>`__.
 
-.. _header-n169:
 
-Step 9 – Upload results on Sketchfab
-====================================
+
+Step 9: Upload results on Sketchfab
+===================================
 
 Meshroom does not yet provide an export tool to Sketchfab, but results
 are all in standard file formats and can easily be uploaded using the
