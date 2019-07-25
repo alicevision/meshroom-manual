@@ -21,7 +21,7 @@ Things you can check/try:
 -  update/install latest NVIDIA drivers
 
 -  set your NVIDIA GPU as primary GPU for Meshroom. (NVIDIA Control
-   Panel->Manage 3D Settings)
+   Panel``->``Manage 3D Settings)
 
 -  Try the Meshroom 2018.1 release; when using windows 7 try the
    corresponding release (Meshroom 2019.1 has some problems with

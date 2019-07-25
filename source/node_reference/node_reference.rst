@@ -253,7 +253,7 @@ ConvertSfMFormat
   Verbose Level	,	verbosity level ``(fatal, error, warning, info, debug, trace)``
   Output	,	Path to the output SfM Data file. (desc.Node.internalFolder + 'sfm.{fileExtension})
 
-**Input nodes: StructureFromMotion:output->input:ConvertSfMFormat**
+**Input nodes: StructureFromMotion:output``->``input:ConvertSfMFormat**
 
 .. image:: convert_sfm_format.jpg
 
@@ -343,7 +343,7 @@ creates an Alembic  animatedCamera.abc file from SFMData (e.g. for use in 3D Com
   Output filepath,	Output filepath for the alembic animated camera
   Output Camera Filepath,	Output filename for the alembic animated camera  internalFolder + 'camera.abc'
 
-SFM->ExportAnimatedCamera
+SFM``->``ExportAnimatedCamera
 .. details https://www.youtube.com/watch?v=1dhdEmGLZhY
 
 ExportMaya
@@ -370,20 +370,14 @@ FeatureExtraction
 
 **Description**
 
-#########
 
-.. csv-table:: settings
-  :header: Name, Description
-  empty, empty
-
-#########
 
 FeatureMatching
 ---------------
 
 **Description**
 
-#########
+
 
 .. csv-table:: settings
   :header: Name, Description
@@ -465,11 +459,7 @@ KeyframeSelection
 Note: This is an experimental node for keyframe selection in a video, which removes too similar or too blurry images. This node is not yet provided in the binaries as it introduces many dependencies.
 So if you built it by yourself, you can test the KeyframeSelection node. It is not yet fully integrated into Meshroom, so you have to manually drag&drop the exported frames to launch the reconstruction (instead of just adding a connection in the graph) ``https://github.com/alicevision/meshroom/issues/232``
 
-.. csv-table:: settings
-  :header: Name, Description
-  empty, empty
 
-######
 
 MeshDecimate
 ------------
@@ -481,18 +471,18 @@ Simplify your mesh to reduce mesh size without changing visual appearance of the
 .. csv-table:: settings
   :header: Name, Description
 
-  Input Mesh (OBJ file format)	,
-  Simplification factor	,	Simplification factor 0.5 (0 - 1)
-  Fixed Number of Vertice	,	Fixed number of output vertices 0 (0 - 1 000 000)
-  Min Vertices	,	Min number of output vertices 0 (0 - 1 000 000)
-  Max Vertices	,	Max number of output vertices 0 (0 - 1 000 000)
-  Flip Normals	,	Option to flip face normals 'It can be needed as it depends on the vertices order in triangles and the convention change from one software to another. (True/False)
-  Verbose Level	,	verbosity level (fatal // error // warning // info // debug // trace)
-  Output mesh	,	Output mesh (OBJ file format) internalFolder + 'mesh.obj
+  Input Mesh (OBJ file format),
+  Simplification factor,	Simplification factor 0.5 (0 - 1)
+  Fixed Number of Vertice,	Fixed number of output vertices 0 (0 - 1 000 000)
+  Min Vertices,	Min number of output vertices 0 (0 - 1 000 000)
+  Max Vertices,	Max number of output vertices 0 (0 - 1 000 000)
+  Flip Normals,	Option to flip face normals 'It can be needed as it depends on the vertices order in triangles and the convention change from one software to another. (True/False)
+  Verbose Level,	verbosity level (fatal // error // warning // info // debug // trace)
+  Output mesh,	Output mesh (OBJ file format) internalFolder + 'mesh.obj
 
 .. image:: mesh_decimate.jpg
 
-or Meshing->MeshDecimate->MeshFiltering?
+or Meshing``->``MeshDecimate``->``MeshFiltering?
 
 **Comparison MeshDecimate and MeshResampling**
 
@@ -598,9 +588,6 @@ Meshing
 
 none
 
-.. csv-table:: settings
-  :header: Name, Description
-  empty, empty
 
 
 .. image:: meshing.jpg

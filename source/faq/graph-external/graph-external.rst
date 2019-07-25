@@ -13,11 +13,11 @@ So the buttons are greyed out because Meshroom is waiting for an external source
 Obviously, this won´t go anywhere.
 This behaviour can also occur, when you modify nodes in the advanced mode while the graph is being computed.
 
-To fix this problem, first try to 'Clear Submitted Status' by clicking on the bad node (right click->delete data).
+To fix this problem, first try to 'Clear Submitted Status' by clicking on the bad node (right click``->``delete data).
 
 .. image:: 56063594-feda8e80-5d6f-11e9-913a-d92b56427d00.JPG
 
-If this does not work, also clear the submitted statuses of the following nodes (right click->delete data >>>)
+If this does not work, also clear the submitted statuses of the following nodes (right click``->``delete data ``>>>``)
 
 .. image:: 56063565-ee2a1880-5d6f-11e9-9356-2907dc849ec7.JPG
 
