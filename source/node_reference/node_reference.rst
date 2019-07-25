@@ -617,7 +617,7 @@ PrepareDenseScene
   :header: Name, Description
 
   Input,  SfMData file
-  Verbose Level, ['fatal' // 'error' // 'warning' // 'info' // 'debug' // 'trace']
+  Verbose Level, ``['fatal', 'error', 'warning', 'info', 'debug', 'trace']``
   Output, MVS Configuration file (desc.Node.internalFolder + 'mvs.ini)
 
 .. image:: prepare_dense_scene.jpg
@@ -648,7 +648,7 @@ align SfM file to a scene
 
   Input,  SfMData file
   Reference, Path to the scene used as the reference coordinate system
-  Verbose Level, ['fatal' // 'error' // 'warning' // 'info' // 'debug' // 'trace']
+  Verbose Level, ``['fatal', 'error', 'warning',  'info', 'debug', 'trace']``
   Output, Aligned SfMData file internalFolder + 'alignedSfM.abc
 
 
@@ -663,10 +663,6 @@ SfMTransform
 Apply a given transformation camera as the origin of the coordinate system with the SfMTransform node. 
 You can rescale the scene based on the bounding box of CCTAG markers.
 
-.. csv-table:: settings
-  :header: Name, Description
-  empty, empty
-
 
 .. image:: sfm_transform.jpg
 
@@ -677,11 +673,6 @@ StructureFromMotion
 
 none
 
-.. csv-table:: settings
-  :header: Name, Description
-  empty, empty
-
-
 
 .. image:: sfm.jpg
 
@@ -691,10 +682,5 @@ Texturing
 **Description**
 
 Texturing creates UVs and projects the textures change quality and size/ file type of texture
-
-.. csv-table:: settings
-  :header: Name, Description
-  empty, empty
-
 
 .. image:: texturing.jpg
