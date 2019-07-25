@@ -94,7 +94,7 @@ Step 3 – Basic Workflow
 =======================
 
 For this first step, we will only use the high-level UI. Let’s save this
-new project on our disk using “File > Save As…”.
+new project on our disk using “File ``>`` Save As…”.
 
 All data computed by Meshroom will end up in a “MeshroomCache” folder
 next to this project file. Note that projects are portable: you can move
@@ -266,10 +266,10 @@ re-texture this geometry.
 
 Let’s head back to the Graph Editor and do the following operations:
 
--  **Right Click** on the Texturing node > **Duplicate**
+-  **Right Click** on the Texturing node ``>`` **Duplicate**
 
 -  **Right Click** on the connection MeshFiltering.output ⇒
-   Texturing2.inputMesh > **Remove**
+   Texturing2.inputMesh ``>`` **Remove**
 
 -  Create a connection from MeshDecimate.output to Texturing2.inputMesh
 
@@ -323,7 +323,7 @@ Let’s go back to the default pipeline and do the following operations:
 
 -  Right Click
 
-   on DepthMap >
+   on DepthMap ``>``
 
    Duplicate Nodes from Here
 
@@ -336,7 +336,7 @@ Let’s go back to the default pipeline and do the following operations:
 
    -  alternative: **Alt + Click** on the node
 
--  Select and remove (**Right Click** > **Remove Node** or **Del**)
+-  Select and remove (**Right Click** ``>`` **Remove Node** or **Del**)
    DepthMap and DepthMapFilter
 
 -  Connect PrepareDenseScene.input ⇒ Meshing.input
@@ -378,7 +378,7 @@ used to work iteratively and get the best results out of your datasets.
 **1. Computing and analyzing Structure-from-Motion first**
 
 This is the best way to check if the reconstruction is likely to be
-successful before starting the rest of the process (**Right click** >
+successful before starting the rest of the process (**Right click** ``>``
 **Compute** on the StructureFromMotion node). The number of
 reconstructed cameras and the aspect/density of the sparse point cloud
 are good indicators for that. Several strategies can help improve
