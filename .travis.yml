@@ -19,7 +19,8 @@ script:
   - make html
   - make latex
   - cd build/latex
-  - latex -interaction nonstopmode -halt-on-error -file-line-error  meshroom.tex
+  - LATEXNAME=Meshroom
+  - pdflatex -interaction nonstopmode -halt-on-error -file-line-error  ${LATEXNAME}.tex
 
   # in case there are other latex packages to install texliveonfly will do the
   # installation of the required packages automatically
@@ -43,7 +44,7 @@ before_deploy:
   - TARGET_NAME=pdf
   - TARGET_FULL_NAME=meshroom_doc-${TARGET_VERSION}
   - INSTALL_PDF_FILENAME=${TARGET_FULL_NAME}.pdf
-  - cp latex/meshroom.pdf ${INSTALL_PDF_FILENAME}
+  - cp latex/${LATEXNAME}.pdf ${INSTALL_PDF_FILENAME}
 
 deploy:
   provider: releases
