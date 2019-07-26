@@ -37,9 +37,9 @@ Welcome to Meshroom's documentation!
    :hidden:
    :caption: Feature Documentation
 
-   node_reference/connect-nodes/connect-nodes
-   node_reference/node_reference
-   supported_formats/supported_formats
+   node-reference/connect-nodes/connect-nodes
+   node-reference/node-reference
+   supported-formats/supported-formats
 
 .. toctree::
    :maxdepth: 2
