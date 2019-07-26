@@ -182,9 +182,3 @@ Baumann, Ryan. “AliceVision and Meshroom on Mac OS X.” *Ryan Baumann -
 /etc* (blog), 17 Aug 2018,
 https://ryanfb.github.io/etc/2018/08/17/alicevision\ *and*\ meshroom\ *on*\ mac\ *os*\ x.html
 (accessed 25 Jul 2019).
-
-|image0| This work is licensed under a `Creative Commons Attribution 4.0
-International License <http://creativecommons.org/licenses/by/4.0/>`__.
-
-.. |image0| image:: https://i.creativecommons.org/l/by/4.0/80x15.png
-   :target: http://creativecommons.org/licenses/by/4.0/
