@@ -20,7 +20,7 @@ script:
   - make latex
   - cd build/latex
   - LATEXNAME=Meshroom
-  - latex -interaction nonstopmode -halt-on-error -file-line-error  ${LATEXNAME}.tex
+  - pdflatex -interaction nonstopmode -halt-on-error -file-line-error  ${LATEXNAME}.tex
 
   # in case there are other latex packages to install texliveonfly will do the
   # installation of the required packages automatically
