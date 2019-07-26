@@ -7,11 +7,11 @@ DepthMap
 
 settings
 
-============================== ================================================================================================================
+============================== =================================================================================================================
 Name                           Description
-============================== ================================================================================================================
+============================== =================================================================================================================
 ``MVS Configuration File:``    SfMData file.
-Images Folder                  Use images from a specific folder instead of those specify in the SfMData file.Filename should be the image uid.
+Images Folder                  Use images from a specific folder instead of those specify in the SfMData file. Filename should be the image uid.
 Downscale                      Image downscale factor (1, 2, 4, 8, 16)
 Min View Angle                 Minimum angle between two views.(0.0 - 10.0)
 Max View Angle                 Maximum angle between two views. (10.0 - 120.0)
@@ -30,11 +30,11 @@ Refine: GammaP                 Refine: GammaP threshold. (0 - 30)
 Refine: Tc or Rc pixel size    Use minimum pixel size of neighbour cameras (Tc) or current camera pixel size (Rc)
 Verbose Level                  verbosity level (fatal, error, warning, info, debug, trace)
 Output                         Output folder for generated depth maps
-============================== ================================================================================================================
+============================== =================================================================================================================
 
 **default:**
 
 |image0|
 
-.. |image0| image:: depth_map.jpg
-   :target: depth_map.jpg
+.. |image0| image:: depth-map.jpg
+   :target: depth-map.jpg
