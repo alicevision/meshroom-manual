@@ -24,13 +24,13 @@ Output mesh                   Output mesh (OBJ file format) internalFolder + 'me
 
 .. Note::
 
-"Keep Only The Largest Mesh". This is disabled by default in the
-2019.1.0 release to avoid that the environment is being meshed, but not
-the object of interest. The largest Mesh is in some cases the
-reconstructed background. When the object of interest is not connected
-to the large background mesh it will be removed. You should place your
-object of interest on a well structured non transparent or reflecting
-surface (e.g. a newspaper).
+   "Keep Only The Largest Mesh". This is disabled by default in the
+   2019.1.0 release to avoid that the environment is being meshed, but not
+   the object of interest. The largest Mesh is in some cases the
+   reconstructed background. When the object of interest is not connected
+   to the large background mesh it will be removed. You should place your
+   object of interest on a well structured non transparent or reflecting
+   surface (e.g. a newspaper).
 
 .. |image0| image:: mesh-filtering.jpg
    :target: mesh-filtering.jpg
