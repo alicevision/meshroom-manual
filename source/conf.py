@@ -17,6 +17,8 @@
 
 # -- Project information -----------------------------------------------------
 
+import sphinx
+
 # The master toctree document.
 master_doc = 'index'
 
@@ -33,7 +35,13 @@ release = '0.1'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.pngmath']
+extensions = ['sphinx.ext.autodoc']
+sphinxVersion = sphinx.version_info
+if(sphinxVersion[0] <= 1 and sphinxVersion[1] <= 8) :
+	extensions.append('sphinx.ext.pngmath')
+else:
+	extensions.append('sphinx.ext.imgmath')
+
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
