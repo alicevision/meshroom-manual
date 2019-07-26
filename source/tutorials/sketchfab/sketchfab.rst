@@ -442,30 +442,17 @@ Don’t forget to tag your models with “alicevision” and “meshroom” if y
 want us to see your work!
 
 .. |image0| image:: image8-3.jpg
-   :target: image8-3.jpg
 .. |image1| image:: image5-3.jpg
-   :target: image5-3.jpg
 .. |image2| image:: image7-2.jpg
-   :target: image7-2.jpg
 .. |image3| image:: image6-3.jpg
-   :target: image6-3.jpg
 .. |image4| image:: image1-6.jpg
-   :target: image1-6.jpg
 .. |image5| image:: image2-2.jpg
-   :target: image2-2.jpg
 .. |image6| image:: image11-1.jpg
-   :target: image11-1.jpg
 .. |image7| image:: image10-2.jpg
-   :target: image10-2.jpg
 .. |image8| image:: image4-1.jpg
-   :target: image4-1.jpg
 .. |image9| image:: image3-5.jpg
-   :target: image3-5.jpg
 .. |image10| image:: 1.JPG
-   :target: 1.JPG
 .. |image11| image:: 2.JPG
-   :target: 2.JPG
 .. |image12| image:: 3.JPG
-   :target: 3.JPG
 .. |image13| image:: 4.JPG
-   :target: 4.JPG
+
