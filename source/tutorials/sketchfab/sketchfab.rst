@@ -263,7 +263,7 @@ Let’s head back to the Graph Editor and do the following operations:
 
 -  **Right Click** on the Texturing node ``>`` **Duplicate**
 
--  **Right Click** on the connection MeshFiltering.output ⇒
+-  **Right Click** on the connection MeshFiltering.output :math:`\Rightarrow`
    Texturing2.inputMesh ``>`` **Remove**
 
 -  Create a connection from MeshDecimate.output to Texturing2.inputMesh
@@ -334,9 +334,9 @@ Let’s go back to the default pipeline and do the following operations:
 -  Select and remove (**Right Click** ``>`` **Remove Node** or **Del**)
    DepthMap and DepthMapFilter
 
--  Connect PrepareDenseScene.input ⇒ Meshing.input
+-  Connect PrepareDenseScene.input :math:`\Rightarrow` Meshing.input
 
--  Connect PrepareDenseScene.output ⇒ Texturing.inputImages
+-  Connect PrepareDenseScene.output :math:`\Rightarrow` Texturing.inputImages
 
 |image8|
 
