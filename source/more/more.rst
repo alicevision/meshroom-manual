@@ -4,8 +4,8 @@ More
 .. toctree::
   :maxdepth: 1
 
-  view_edit/view_edit
+  view-edit/view-edit
   share/share
   print/print
   tethering/tethering
-  related_projects/related_projects
+  related-projects/related-projects

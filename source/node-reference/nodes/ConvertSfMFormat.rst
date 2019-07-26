@@ -37,7 +37,7 @@ Output Alembic         Filename for the SfMData export file (where camera poses 
 ====================== =========================================================================================================================================================================================
 
 **Input nodes:
-StructureFromMotion:output\ ``->``\ input:ConvertSfMFormat**
+StructureFromMotion:output\ :math:`\Rightarrow` \ input:ConvertSfMFormat**
 
 |image0|
 

@@ -79,7 +79,7 @@ Output File           The name of the file where to store the calibration data (
 
 
 **Voctree Weights**: http://www.ipol.im/pub/art/2018/199/ voctree
-(optional): For larger datasets (>200 images), greatly improves image
+(optional): For larger datasets (/>200 images), greatly improves image
 matching performances. It can be downloaded here.
 https://github.com/fragofer/voctree You need to specify the path to
 vlfeat_K80L3.SIFT.tree in **Voctree**.

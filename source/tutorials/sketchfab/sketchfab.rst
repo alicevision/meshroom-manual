@@ -89,7 +89,7 @@ Step 3: Basic Workflow
 ======================
 
 For this first step, we will only use the high-level UI. Let’s save this
-new project on our disk using “File ``>`` Save As…”.
+new project on our disk using “File :math:`\Rightarrow` Save As…”.
 
 All data computed by Meshroom will end up in a “MeshroomCache” folder
 next to this project file. Note that projects are portable: you can move
@@ -261,10 +261,10 @@ re-texture this geometry.
 
 Let’s head back to the Graph Editor and do the following operations:
 
--  **Right Click** on the Texturing node ``>`` **Duplicate**
+-  **Right Click** on the Texturing node :math:`\Rightarrow` **Duplicate**
 
 -  **Right Click** on the connection MeshFiltering.output :math:`\Rightarrow`
-   Texturing2.inputMesh ``>`` **Remove**
+   Texturing2.inputMesh :math:`\Rightarrow` **Remove**
 
 -  Create a connection from MeshDecimate.output to Texturing2.inputMesh
 
@@ -318,20 +318,20 @@ Let’s go back to the default pipeline and do the following operations:
 
 -  Right Click
 
-   on DepthMap ``>``
+   on DepthMap :math:`\Rightarrow`
 
    Duplicate Nodes from Here
 
    ( “
 
-   >>
+   :math:`\Rightarrow`
 
    ” icon) to create a branch in the graph and keep the previous result
    available.
 
    -  alternative: **Alt + Click** on the node
 
--  Select and remove (**Right Click** ``>`` **Remove Node** or **Del**)
+-  Select and remove (**Right Click** :math:`\Rightarrow` **Remove Node** or **Del**)
    DepthMap and DepthMapFilter
 
 -  Connect PrepareDenseScene.input :math:`\Rightarrow` Meshing.input

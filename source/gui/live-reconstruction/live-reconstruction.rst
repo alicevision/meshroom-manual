@@ -4,7 +4,7 @@ Live Reconstruction
 Live reconstruction is meant to be used along with a camera that can transfer images to a computer while shooting (using wifi, a wifi sd-card or Tethering). 
 Meshroom can watch a folder for new images and successively augment previous SfM (point clouds + cameras) after each {Min. Images} per Step. This allows to get an iterative preview during shooting, e.g to see which areas of the dataset requires more coverage.
 
-To enable **Live Reconstruction** go to the menu bar **View ``->`` Live Reconstruction**
+To enable **Live Reconstruction** go to the menu bar **View :math:`\Rightarrow` Live Reconstruction**
 A new **Live Reconstruction** pane will appear under the Images pane.
 
 For each new import, a new **Image Group** inside the **Images** pane will be created.

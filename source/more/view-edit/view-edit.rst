@@ -19,9 +19,9 @@ The first thing you want to do is to rotate your model and align it with the coo
 You can import the obj into
 `Meshlab <http://www.meshlab.net/#download>`_
 then go to
-**Filters ``>`` Normals, Curvatures **
+**Filters :math:`\Rightarrow` Normals, Curvatures **
 and
-**Orientation ``>`` Transform: Rotate**
+**Orientation :math:`\Rightarrow` Transform: Rotate**
 ** **
 and align it yourself from there.
 ** **
@@ -228,7 +228,7 @@ Use the Export to Maya node to export the Alembic ABC file
 
 *Import in Nuke/Mari*
 
-In menu "NukeMVG ``>`` Import Alembic" , .abc file can be loaded. The tool create the graph of camera projection. Result can be export to Mari via Nuke <-> Mari bridge.
+In menu "NukeMVG :math:`\Rightarrow` Import Alembic" , .abc file can be loaded. The tool create the graph of camera projection. Result can be export to Mari via Nuke + Mari bridge.
 
 .. image:: 1000000000000500000002D057790BC5AE108E3F.jpg
 

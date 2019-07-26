@@ -23,7 +23,7 @@ Output mesh                  Output mesh (OBJ file format) internalFolder + 'mes
 
 |image0|
 
-or Meshing\ ``->``\ MeshDecimate\ ``->``\ MeshFiltering?
+or Meshing\ :math:`\Rightarrow` \ MeshDecimate\ :math:`\Rightarrow` \ MeshFiltering?
 
 **Comparison MeshDecimate and MeshResampling**
 

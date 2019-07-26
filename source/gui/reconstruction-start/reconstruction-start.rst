@@ -10,7 +10,7 @@ To get a detailed progress log, open the **CommandLine** window
 or click on the **node** you are interested in and go to the Log tab in the properties pane of the **Graph Editor**.
 
 
-You can open the (Your-Project-Folder) ``->`` **MeshroomCache** to see the output of each node. (Shortcut: Icon and path at the bottom left side of the main window)
+You can open the (Your-Project-Folder) :math:`\Rightarrow` **MeshroomCache** to see the output of each node. (Shortcut: Icon and path at the bottom left side of the main window)
 
 A node folder contains the output of the node.
 By default Meshroom uses a unique id to name the output folders to prevent overwriting data and already computed results of the project can be reused.
