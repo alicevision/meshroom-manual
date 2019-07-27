@@ -3,7 +3,6 @@ FAQ from GH-Wiki
 
 .. toctree::
    :maxdepth: 1
-   :hidden:
    
    crashed-at-meshing/crashed-at-meshing
    depthmap-slow/depthmap-slow

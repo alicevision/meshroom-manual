@@ -1,6 +1,19 @@
 The Graphical User Interface (GUI)
 ==================================
 
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+   
+   add-images/add-images
+   reconstruction-start/reconstruction-start
+   3dviewer/3dviewer
+   augment-reconstruction/augment-reconstruction
+   live-reconstruction/live-reconstruction
+   external-reconstruction/external-reconstruction
+   advanced-node/advanced-node
+   import-old/import-old
+
 When you first start Meshroom, two windows open:
 
 the main graphical user interface with different panes

@@ -1,6 +1,12 @@
 Test Meshroom
 =============
 
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+   
+   reconstruction-eval/reconstruction-eval
+
 For your first reconstruction in Meshroom, download the `Monstree Image
 Dataset <https://github.com/alicevision/dataset_monstree>`__. You can
 preview the Monstree model on
