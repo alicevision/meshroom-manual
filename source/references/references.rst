@@ -5,6 +5,12 @@ References
 
 ...
 
+https://sketchfab.com/blogs/community/tutorial-meshroom-for-beginners/
+
+https://medium.com/realities-io/getting-started-with-photogrammetry-d0a6ee40cb72
+
+http://benvancitters.com/tag/photogrammetry/
+
 **Videos**
 
 Meshroom live reconstruction (LADIO project)
