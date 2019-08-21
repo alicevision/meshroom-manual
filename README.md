@@ -18,6 +18,8 @@ I am new to ReStructuredText and open to suggestions.
 The next big update is planned for October 2019
 + capturing images for photogrammetry chapters
 + MR2019.2 updates
++ improved layout
++ new pdf release
 
 # How to contribute
 
