@@ -14,6 +14,11 @@ See [Project ToDo](https://github.com/natowi/meshroom_doc/projects/1) for detail
 
 I am new to ReStructuredText and open to suggestions.
 
+# Next update
+The next big update is planned for October 2019
++ capturing images for photogrammetry chapters
++ MR2019.2 updates
+
 # How to contribute
 
 -   make yourself familiar with ReStructuredText and Sphinx
