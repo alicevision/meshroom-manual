@@ -27,6 +27,10 @@ The next big update is planned for October 2019
 -   do not make any changes to the general structure (yet)
 -   open an Issue for questions
 
+I could use some help with:
+- optimizing the formatting for pdf&html
+- anything listed here https://github.com/natowi/meshroom_doc/projects/1
+
 # How to build on windows
 
 -   (install pip)
