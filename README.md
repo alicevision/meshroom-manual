@@ -20,6 +20,7 @@ The next big update is planned for October 2019
 + MR2019.2 updates
 + improved layout
 + new pdf release
++ preperation for readthedocs release
 
 # How to contribute
 
