@@ -10,7 +10,7 @@
 
 **This is documentation is work in progress. Do not expect a polished document at this stage.**
 
-See [Project ToDo](https://github.com/natowi/meshroom_doc/projects/1) for details. Please do not fork at the moment, unless you would like to contribute.
+See [Project ToDo](https://github.com/alicevision/meshroom-manual/projects) for details. Please do not fork at the moment, unless you would like to contribute.
 
 I am new to ReStructuredText and open to suggestions.
 
@@ -30,7 +30,7 @@ The next big update is planned for October 2019
 
 I could use some help with:
 - optimizing the formatting for pdf&html
-- anything listed here https://github.com/natowi/meshroom_doc/projects/1
+- anything listed here https://github.com/alicevision/meshroom-manual/projects
 
 # How to build on windows
 
