@@ -5,6 +5,7 @@
 ![pre-release](https://img.shields.io/github/release-pre/natowi/meshroom_doc.svg?style=flat-square&color=yellow&label=pre-release)
 ![release](https://img.shields.io/github/release/natowi/meshroom_doc.svg?style=flat-square&color=green&label=release)
 [![Travis](https://img.shields.io/travis/natowi/meshroom_doc.svg?style=flat-square)](https://travis-ci.org/natowi/meshroom_doc)
+![Read the Docs](https://img.shields.io/readthedocs/meshroom-manual)
 
 # About
 
