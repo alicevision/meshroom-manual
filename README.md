@@ -12,8 +12,6 @@
 
 See [Project ToDo](https://github.com/alicevision/meshroom-manual/projects) for details. Please do not fork at the moment, unless you would like to contribute.
 
-I am new to ReStructuredText and open to suggestions.
-
 # Next update
 + capturing images for photogrammetry chapters
 + MR2019.2 updates
@@ -26,7 +24,7 @@ I am new to ReStructuredText and open to suggestions.
 -   do not make any changes to the general structure (yet)
 -   open an Issue for questions
 
-I could use some help with:
+We could use some help with:
 - optimizing the formatting for pdf&html
 - anything listed here https://github.com/alicevision/meshroom-manual/projects
 
