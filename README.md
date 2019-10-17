@@ -8,9 +8,9 @@
 
 # About
 
-**This is documentation is work in progress. Do not expect a polished document at this stage.**
+**This is documentation is work in progress.**
 
-See [Project ToDo](https://github.com/alicevision/meshroom-manual/projects) for details. Please do not fork at the moment, unless you would like to contribute.
+See [Project ToDo](https://github.com/alicevision/meshroom-manual/projects) for details.
 
 # Next update
 + capturing images for photogrammetry chapters
