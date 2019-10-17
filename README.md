@@ -15,12 +15,10 @@ See [Project ToDo](https://github.com/alicevision/meshroom-manual/projects) for 
 I am new to ReStructuredText and open to suggestions.
 
 # Next update
-The next big update is planned for October 2019
 + capturing images for photogrammetry chapters
 + MR2019.2 updates
 + improved layout
-+ new pdf release
-+ preperation for readthedocs release
++ readthedocs release (including pdf)
 
 # How to contribute
 
@@ -42,12 +40,6 @@ I could use some help with:
 For other build methods read the sphinx documentation
 
 # FAQ
-
-**Why Github?**
-
--   easier to manage
--   no spam
--   accessible
 
 **Why Restructured Text?**
 
