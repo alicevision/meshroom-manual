@@ -16,7 +16,7 @@ See [Project ToDo](https://github.com/alicevision/meshroom-manual/projects) for 
 + capturing images for photogrammetry chapters
 + MR2019.2 updates
 + improved layout
-+ readthedocs release (including pdf)
++ readthedocs release (including pdf) https://meshroom-manual.readthedocs.io/en/latest/
 
 # How to contribute
 
