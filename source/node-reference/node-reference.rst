@@ -12,8 +12,6 @@ List with all the nodes
    :hidden:
    :caption: Node Reference
    
-   connect-nodes/connect-nodes
-   
    nodes/CameraCalibration
    nodes/CameraInit
    nodes/CameraLocalization
