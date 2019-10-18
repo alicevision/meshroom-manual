@@ -1,5 +1,5 @@
 Windows
-~~~~~~~
+=======
 
 1. Download Meshroom
 

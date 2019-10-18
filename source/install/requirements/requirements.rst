@@ -1,30 +1,75 @@
 Requirements
-------------
+============
+
+Hardware Requirements
+~~~~~~~~~~~~~~~~~~~~~
+
+.. warning::
+  Meshroom requires an NVIDIA GPU card with a CUDA compute capability >= 2.0 for the MVS part. You can check your `CUDA Properties here <https://github.com/tpruvot/ccminer/wiki/Compatibility>`_ or on the `NVIDIA dev page <https://developer.nvidia.com/cuda-gpus>`_.
+
+  In case you do not have a CUDA GPU, you can use the draft meshing option which uses the CPU for meshing.
+
+Here are the minimum requirements for Meshroom:
+
++--------------------------------------------------------------------------+
+| Minimum requirements                                                     |
++===================+======================================================+
+| Operating systems | Windows x64, Linux, Mac OS X (some work required)    |
++-------------------+------------------------------------------------------+
+| CPU               | Recent Intel or AMD cpus                             |
++-------------------+------------------------------------------------------+
+| RAM Memory        | 8 GB                                                 |
++-------------------+------------------------------------------------------+
+| Hard Drive        | ~400MB for Meshroom + space for your data            |
++-------------------+------------------------------------------------------+
+| GPU               | NVIDIA CUDA-enabled GPU (compute capability >= 2.0)  |
++-------------------+------------------------------------------------------+
+
+To obtain better performances on a desktop/laptop machine the recommended requirements are:
+
++--------------------------------------------------------------------------+
+| Recommended requirements                                                 |
++===================+======================================================+
+| CPU               | Intel Core i7 or AMD Ryzen 7                         |
++-------------------+------------------------------------------------------+
+| RAM Memory        | 32 GB                                                |
++-------------------+------------------------------------------------------+
+| Hard Drive        | 20GB+ HDD or SDD                                     |
++-------------------+------------------------------------------------------+
+| GPU               | NVIDIA GeForce GTX 1070                              |
++-------------------+------------------------------------------------------+
 
 
-**Hardware:**
-NVIDIA CUDA-enabled GPU (compute capability >= 2.0).
+Software Requirements
+~~~~~~~~~~~~~~~~~~~~~
 
-You can check your `CUDA Properties here <https://github.com/tpruvot/ccminer/wiki/Compatibility>`_ or on the `NVIDIA dev page <https://developer.nvidia.com/cuda-gpus>`_.
+Meshroom is a python application and it relies  on the `AliceVision <https://github.com/alicevision/AliceVision>`_ framework.
+If you are using the pre-built binaries everything is shipped with the package, so you do not need to install anything else.
 
-Install the `latest NVIDIA drivers <https://www.nvidia.com/Download/index.aspx>`_.
+In case you are instead planning to use the sources, here are the software requirements.
 
-**Note**
-: If you do not have a CUDA GPU, you can use the
-draft meshing option
-which uses the CPU for meshing.
+Python Environment
+++++++++++++++++++
+
+The following versions of python are required:
+
+* Windows: Python 3 (>=3.5)
+
+* Linux / Mac OS X: Python 3 (>=3.5) or Python 2 (>= 2.7)
+
+.. note::
+  *No Python 2.7 support on Windows?*
+
+  Official Python 2.7 binary package is built with Visual Studio 2008, while PySide2/Qt is built using Visual Studio 2015/2017.
+  Therefore, in order to avoid mixing MSVC runtime libraries, Qt does not ship PySide2 wheels for Python 2.7 on Windows (as explained `here <https://wiki.qt.io/Qt_for_Python/Considerations#Missing_Windows_.2F_Python_2.7_release>`_).
+  Note that for using Meshroom in command line mode only (no UI), PySide2 is not required and Python 2.7 would be fine.
 
 
-**Minimum**
-: Ram: 8gb+, HDD: ~400MB Meshroom, 2gb+ for cache data and models
-
-CPU: not too old (~3 years and newer should be ok), NVIDIA GPU
+The pre-built binaries include the required python modules needed to run Meshroom.
 
 
-**Recommended**
-: CPU: i7/Ryzen 7 or better, 32gb+ Ram, HDD/SSD: 20GB+ , NVIDIA GTX1070+
-(reconstruction time for this setup: 1 minute per image)
+AliceVision
++++++++++++
 
-
-**Operating Systems:**
-Windows x64, Linux, OSX (some work is required)
+AliceVision library is included in the pre-built package.
+If you want to build AliceVision yourself, follow this `guide <https://github.com/alicevision/AliceVision/blob/develop/INSTALL.md>`_.
