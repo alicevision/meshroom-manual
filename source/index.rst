@@ -1,9 +1,7 @@
-Meshroom Documentation
-======================
+Meshroom Manual
+===============
 
 .. image:: mr_logo.jpg
-
-**Documentation**
 
 Meshroom is a free, open-source 3D Reconstruction Software based on the
 `AliceVision <https://github.com/alicevision/AliceVision>`_
