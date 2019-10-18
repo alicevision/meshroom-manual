@@ -1,11 +1,8 @@
 [![CC BY-SA 4.0](https://img.shields.io/badge/license-CC%20BY--SA%204.0-blue.svg?style=flat-square)](https://creativecommons.org/licenses/by-sa/4.0/)
 [![language: ReStructuredText](https://img.shields.io/badge/language-RST-black.svg?style=flat-square)](http://docutils.sourceforge.net/docs/user/rst/quickref.html)
 ![HitCount](http://hits.dwyl.io/natowi/meshroom_doc.svg)
-[![all releases](https://img.shields.io/github/downloads/natowi/meshroom_doc/total.svg?style=flat-square&color=success)](https://github.com/natowi/meshroom_doc/releases/)
-![pre-release](https://img.shields.io/github/release-pre/natowi/meshroom_doc.svg?style=flat-square&color=yellow&label=pre-release)
-![release](https://img.shields.io/github/release/natowi/meshroom_doc.svg?style=flat-square&color=green&label=release)
-[![Travis](https://img.shields.io/travis/natowi/meshroom_doc.svg?style=flat-square)](https://travis-ci.org/natowi/meshroom_doc)
-![Read the Docs](https://img.shields.io/readthedocs/meshroom-manual)
+[![all releases](https://img.shields.io/github/downloads/natowi/meshroom_doc/total.svg?style=flat-square&color=success)](https://readthedocs.org/projects/meshroom-manual/downloads/)
+![Read the Docs](https://img.shields.io/readthedocs/meshroom-manual.svg?style=flat-square&color=success)
 
 # About
 
