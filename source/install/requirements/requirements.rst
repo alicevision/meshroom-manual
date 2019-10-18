@@ -43,9 +43,10 @@ To obtain better performances on a desktop/laptop machine the recommended requir
 Software Requirements
 ~~~~~~~~~~~~~~~~~~~~~
 
-If you are using the pre-built binaries the only requirements is python.
-Meshroom also relies on `AliceVision <https://github.com/alicevision/AliceVision>`_ framework.
-AliceVision's binaries are shipped with the pre-built Meshroom package.
+Meshroom is a python application and it relies  on the `AliceVision <https://github.com/alicevision/AliceVision>`_ framework.
+If you are using the pre-built binaries everything is shipped with the package, so you do not need to install anything else.
+
+In case you are instead planning to use the sources, here are the software requirements.
 
 Python Environment
 ++++++++++++++++++
