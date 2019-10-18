@@ -59,7 +59,7 @@ Meshroom requires a build of AliceVision and need to have `AliceVision <https://
 
   You may need to adjust the folder ``/usr/lib/nvidia-340`` with the correct driver version (e.g. ``330``, ``350`` etc..).
 
-We suggest to create a bash executable ``meshroom.sh`` in the root of the to ease the task:
+We suggest to create a bash executable ``meshroom.sh`` in the root of the meshroom folder to ease the task:
 
 .. code-block:: bash
 
