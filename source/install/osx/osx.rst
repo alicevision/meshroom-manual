@@ -1,14 +1,12 @@
-Mac OS X
+macOS
 ========
 
-`AliceVision <https://alicevision.github.io/>`__ and its Meshroom
-program are an exciting new free and open-source pipeline for
-photogrammetry processing. Unfortunately, compiling and using either of
-these programs on Mac OS X is `not exactly
-straightforward <https://github.com/alicevision/AliceVision/issues/444>`__.
-As a result, I’ve compiled `a Homebrew
-tap <http://github.com/ryanfb/homebrew-alicevision>`__ which includes
-the necessary formulae, and will use this post to outline how to use
+Most of macOS workstations do not have any NVIDIA graphic boards, hence they cannot run CUDA, for MVS part.
+So compiling and using Meshroom is
+`not exactly straightforward <https://github.com/alicevision/AliceVision/issues/444>`__.
+However, Ryan Baumann has compiled his own
+`Homebrew tap <http://github.com/ryanfb/homebrew-alicevision>`__ which includes
+the necessary formulae, and you can use this post to get an idea of how to use
 them to get up and running. Note that this is intended as a first step
 for Mac users wishing to experiment with *and improve* the
 AliceVision/Meshroom software, and as a result these instructions may
@@ -20,12 +18,12 @@ become outdated with time.
 System Requirements
 ```````````````````
 
-First off, your Mac will currently need an nVidia GPU with a CUDA
+First off, your Mac will currently need some NVIDIA GPU with a CUDA
 compute capability of 2.0 or greater. This is probably a pretty small
-portion of all Macs sold, but you can check your GPU by looking in
+portion of all Macs available, but you can check your GPU by looking in
 “About This Mac” from the Apple icon in the top left corner of the
-screen, under “Graphics”. If you have an nVidia GPU listed there, you
-can check its compute capability on `the nVidia CUDA GPUs
+screen, under “Graphics”. If you have an NVIDIA GPU listed there, you
+can check its compute capability on `the NVIDIA CUDA GPUs
 page <https://developer.nvidia.com/cuda-gpus>`__.
 
 Second, you’re going to need to install `the latest CUDA
@@ -33,7 +31,7 @@ toolkit <https://developer.nvidia.com/cuda-downloads>`__. As of this
 writing, that’s CUDA 10.1, which is only officially compatible with OS X
 10.13 (High Sierra), so you may also need to upgrade to the latest
 version of High Sierra (but not Mojave!) if you haven’t already.
-Alongside this I would also suggest installing the latest nVida CUDA GPU
+Alongside this it is aloso suggested to instal the latest NVIDIA CUDA GPU
 webdriver, which as of this writing is
 `387.10.10.10.40.118 <https://www.nvidia.com/download/driverResults.aspx/142160/en-us>`__.
 
@@ -60,6 +58,7 @@ information. If it doesn’t build correctly (i.e. you see
 or ``deviceQuery`` errors or doesn’t list your GPU, you may need to look
 over the steps above and check that everything is up to date (you can
 also check the CUDA panel in System Preferences).
+
 .. image:: homebrew-inst.jpg
 
 The following instructions also assume a working
@@ -80,7 +79,7 @@ installing the AliceVision libraries/framework should be as easy as:
 Meshroom Installation & Usage
 `````````````````````````````
 
-I haven’t yet created a Homebrew formula for the `Meshroom package
+This tutorial does not provide a Homebrew formulae for the `Meshroom package
 itself <https://github.com/alicevision/meshroom>`__, as it’s all Python
 and doesn’t seem particularly difficult to install/use once AliceVision
 is installed and working correctly. Just follow the install instructions
@@ -94,12 +93,9 @@ instead of ``pip`` and ``python3`` instead of ``python``):
    cd meshroom-2019.1.0
    pip install -r requirements.txt
 
-One gotcha I ran into is that the CUDA-linked AliceVision binaries
-invoked by Meshroom don’t automatically find the CUDA libraries on the
-``DYLD_LIBRARY_PATH``, and setting the ``DYLD_LIBRARY_PATH`` from the
-shell launching Meshroom doesn’t seem to get the variable passed into
-the shell environment Meshroom uses to spawn commands. Without this,
-you’ll get an error like:
+.. note::
+
+    The CUDA-linked AliceVision binaries invoked by Meshroom don’t automatically find the CUDA libraries on the ``DYLD_LIBRARY_PATH``, and setting the ``DYLD_LIBRARY_PATH`` from the shell launching Meshroom doesn’t seem to get the variable passed into the shell environment Meshroom uses to spawn commands. Without this, you’ll get an error like:
 
 .. code::
 
