@@ -18,4 +18,4 @@ From the sources
 
 If you want to run the very latest version of Meshroom (or some custom developer version) you need to get the sources.
 
-Go to the :ref:`building`_ section.
+Go to the :ref:`building` section.

@@ -65,8 +65,8 @@ The following instructions also assume a working
 `Homebrew <https://brew.sh/>`__ install.
 
 
-Installation
-````````````
+macOS Installation
+``````````````````
 
 If you’ve followed all the above setup instructions and requirements,
 installing the AliceVision libraries/framework should be as easy as:

@@ -5,8 +5,8 @@ Building Meshroom
 
 If you want to run the very latest version of Meshroom or some custom developer version, you need to get the sources.
 
-Software Requirements
-~~~~~~~~~~~~~~~~~~~~~
+Software Environment
+~~~~~~~~~~~~~~~~~~~~
 
 Meshroom is a Python application and it relies on the `AliceVision <https://github.com/alicevision/AliceVision>`_ framework.
 
