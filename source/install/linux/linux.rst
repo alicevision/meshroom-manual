@@ -1,54 +1,37 @@
 Linux
 =====
 
-Pre-built binaries
-~~~~~~~~~~~~~~~~~~
+1. Download the binary from `Meshroom home page <https://alicevision.org/#meshroom>`_
 
-Download the binaries and unzip them in any folder.
-Open a terminal and from the folder run:
+.. image:: meshroom_lin_download.jpg
+
+2. Unzip it in any folder.
+
+.. image:: lin.jpg
+
+3. Open a terminal and from this folder run:
 
 .. code-block:: bash
 
   ./Meshroom
 
-to launch the gui.
+to launch the GUI.
+
 The pre-built binaries also contain the ``meshroom_compute`` and ``meshroom_photogrammetry`` to run and create pipelines from the command line.
-
-From the sources
-~~~~~~~~~~~~~~~~
-
-Get the project
-+++++++++++++++
-
-See `INSTALL.md <https://github.com/alicevision/meshroom/blob/develop/INSTALL.md>`_ to setup the project and prerequisites.
-
-Get the source code and install runtime requirements:
-
-.. code::
-
-  git clone --recursive git://github.com/alicevision/meshroom
-  cd meshroom
-  pip install -r requirements.txt
-
-
-Set up requirements
-+++++++++++++++++++
-
-The ``requirements.txt`` file includes the required modules.
-You can install them running:
-
-.. code-block:: bash
-
-  pip install -r requirements.txt -r dev_requirements.txt
-
-.. note:: ``dev_requirements`` is only related to testing and packaging.
-   It is not mandatory to run Meshroom.
 
 
 Set up environment
 ++++++++++++++++++
 
 Meshroom requires a build of AliceVision and need to have `AliceVision <https://github.com/alicevision/AliceVision>`_ installation in your ``PATH`` and ``LD_LIBRARY_PATH``.
+
+Your ``PATH`` should contain the folder where the AliveVision binaries can be found.
+Suppose ALICEVISION_INSTALL contains the directory where the library is installed, then
+
+.. code-block:: bash
+
+  PATH=$PATH:${ALICEVISION_INSTALL}/bin
+
 
 .. note::
   On some distributions (e.g Ubuntu), you may have conflicts between native drivers and mesa drivers, resulting in an empty black window. In that case, you need to force usage of native drivers by adding them to the ``LD_LIBRARY_PATH``:
