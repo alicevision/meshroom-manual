@@ -46,5 +46,5 @@ Software Requirements
 Meshroom is a Python application and it relies  on the `AliceVision <https://github.com/alicevision/AliceVision>`_ framework.
 If you are using the pre-built binaries everything is shipped with the package, so you do not need to install anything else.
 
-In case you are still planning to use the sources, see the paragraph *Software Requirements*
+In case you are still planning to use the sources, see the paragraph *Software Environment*
 in the :ref:`building` section
