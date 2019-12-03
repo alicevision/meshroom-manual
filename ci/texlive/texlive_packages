@@ -22,3 +22,5 @@ anyfontsize
 xcolor
 kvoptions
 pdftexcmds
+epstopdf
+epstopdf-pkg 
