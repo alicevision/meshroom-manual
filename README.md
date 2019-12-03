@@ -28,24 +28,13 @@ We could use some help with:
 
 # How to build on windows
 
--   (install pip)
--   **pip install sphinx**
-- pip install sphinx_rtd_theme
-- then in source/conf.py
+- install pip and the rtd theme
+```bash 
+pip install sphinx  sphinx_rtd_theme
+```
 
-*import sphinx_rtd_theme*
-
-*extensions = [
-    ...
-    "sphinx_rtd_theme",
-]*
-
-and then
-
-change *html_theme = default* to  *html_theme = sphinx_rtd_theme*
-
--   in your cli, navigate to the meshroom\_doc directory
--   type **make html** (this will re-/build the html doc)
+-   in your cli, navigate to the `meshroom_doc directory`
+-   type `make html` (this will re-/build the html doc)
 
 For other build methods read the sphinx documentation
 
