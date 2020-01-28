@@ -22,9 +22,12 @@ List with all the nodes
    nodes/DepthMapFilter
    nodes/ExportAnimatedCamera
    nodes/ExportColoredPointCloud
+   nodes/ExportMatches
    nodes/ExportMaya
    nodes/FeatureExtraction
    nodes/FeatureMatching
+   nodes/GlobalSfM
+   nodes/HDRIstitching
    nodes/ImageMatching
    nodes/ImageMatchingMultiSfM
    nodes/KeyframeSelection
