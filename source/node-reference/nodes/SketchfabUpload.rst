@@ -39,7 +39,7 @@ Verbose Level verbosity level (critical, error, warning, info, debug).
 |image2|
 
 .. |image1| image:: SketchfabUpload.jpg
-   :target: SketchfabUpload.jpg
+   :target: SketchfabUpload.JPG
    
 .. |image1| image:: SketchfabUpload.jpg
-   :target: SketchfabUpload2.jpg
+   :target: SketchfabUpload2.JPG
