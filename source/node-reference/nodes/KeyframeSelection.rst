@@ -1,7 +1,9 @@
 KeyframeSelection
 =================
 
-**Description** Note: This is a node for keyframe selection from video, which removes too similar or too blurry images.
+**Description** 
+
+This is a node for keyframe selection from video, which removes too similar or too blurry images.
 
 ``https://github.com/alicevision/meshroom/issues/232``
 
