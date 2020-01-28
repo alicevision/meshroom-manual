@@ -25,3 +25,4 @@ pdftexcmds
 epstopdf
 epstopdf-pkg 
 pdfescape
+letltxmacro
