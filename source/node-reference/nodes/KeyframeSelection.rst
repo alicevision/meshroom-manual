@@ -6,6 +6,7 @@ KeyframeSelection
 This is a node for keyframe selection from video, which removes too similar or too blurry images.
 
 Note: At the moment, KeyframeSelection can not be used as input for CameraInit.
+We cannot know in advance how many images will be extracted, but the total number of images is required for render farm submisson.
 To automatically add extracted frames to your project you can copy the output folder path of KeyframeExtraction and set it as the Live Reconsturuction Image Folder Path. Then start watching the folder and execute the graph.
 ``https://github.com/alicevision/meshroom/issues/232``
 Known supported file types: .mp4. ffmpeg can be used for video file conversion.
