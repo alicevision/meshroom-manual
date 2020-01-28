@@ -5,7 +5,7 @@ SketchfabUpload
 
 Sketchfab is a popular website to share and view 3D files,
 this provides a node to allow direct upload to Sketchfab from Meshroom.
-API key is provided by the user in the node settings.
+The API key is provided by the user in the node settings.
 
 MR version: 2020.x
 
