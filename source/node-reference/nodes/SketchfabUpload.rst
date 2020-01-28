@@ -25,10 +25,17 @@ License       'CC Attribution', 'CC Attribution-ShareAlike',
 Tag           Tag cannot be longer than 48 characters.
 Tags          Maximum of 42 separate tags.
 Category      Adding categories helps improve the discoverability of your
-              model.
+              model. ('none', 'animals-pets', 'architecture',
+              'art-abstract', 'cars-vehicles', 'characters-creatures',
+              'cultural-heritage-history', 'electronics-gadgets',
+              'fashion-style', 'food-drink', 'furniture-home',
+              'music', 'nature-plants', 'news-politics', 'people',
+              'places-travel', 'science-technology', 'sports-fitness',
+              'weapons-military')
 Publish       If the model is not published it will be saved as a draft.
-Inspectable   Allow 2D view in model inspector.
-Private       Requires a pro account.
+              (False)
+Inspectable   Allow 2D view in model inspector. (True)
+Private       Requires a pro account. (False)
 Password      Requires a pro account.
 Verbose Level verbosity level (critical, error, warning, info, debug).
 ============= ===========================================================
