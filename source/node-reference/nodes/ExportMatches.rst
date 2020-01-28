@@ -3,7 +3,7 @@ ExportMatches
 
 **Description** 
 
-Saves features and descriptors files (*.feat, *.desc) to folder
+Saves features and descriptors files (.feat, .desc) to folder
 
 
 settings
@@ -21,6 +21,5 @@ Matches Folder
 Matches Folders         Folder(s) in which computed matches are stored.
 
 Verbose Level           ['fatal', 'error', 'warning', 'info', 'debug', 'trace']
-Output                  Output path for the features and descriptors files (*.feat, *.desc). (internalFolder)
+Output                  Output path for the features and descriptors files (.feat, .desc). (internalFolder)
 ======================= =================================================================================================
-
