@@ -6,6 +6,9 @@
 
 # About
 
+Read the latest version on https://meshroom-manual.readthedocs.io/en/latest/ 
+download the PDF from https://readthedocs.org/projects/meshroom-manual/downloads/
+
 **This is documentation is work in progress.**
 
 See [Project ToDo](https://github.com/alicevision/meshroom-manual/projects) for details.
