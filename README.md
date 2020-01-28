@@ -10,12 +10,6 @@
 
 See [Project ToDo](https://github.com/alicevision/meshroom-manual/projects) for details.
 
-# Next update
-+ capturing images for photogrammetry chapters
-+ MR2019.2 updates
-+ improved layout
-+ readthedocs release (including pdf) https://meshroom-manual.readthedocs.io
-
 # How to contribute
 
 -   make yourself familiar with ReStructuredText and Sphinx
@@ -24,6 +18,7 @@ See [Project ToDo](https://github.com/alicevision/meshroom-manual/projects) for 
 
 We could use some help with:
 - optimizing the formatting for pdf&html
+- checking grammar and spelling, fixing typos
 - anything listed here https://github.com/alicevision/meshroom-manual/projects
 
 # How to build on windows
