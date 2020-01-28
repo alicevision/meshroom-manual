@@ -1,0 +1,22 @@
+PanoramaWarping
+===============
+
+**Description** 
+
+
+
+settings
+
+======================= =================================================================================================
+Name                    Description
+======================= =================================================================================================
+Input                   SfMData file
+Panorama Width          Panorama width (pixels). 0 For automatic size (0-50000, **10000**)
+Verbose Level           ['fatal', 'error', 'warning', 'info', 'debug', 'trace']
+======================= =================================================================================================
+
+|image0|
+
+
+.. |image0| image:: PanoramaWarping.jpg
+   :target: PanoramaWarping.jpg
