@@ -30,6 +30,7 @@ File Matching Pattern     Matching regular expression for the "from_cameras_file
                           * Match the filename suffix after "_": ".*\/.*(_.*?\.\w{3})"
                           
                           * Match the filename prefix before "_": ".*\/(.*?)_.*\.\w{3}"
+                          
 Metadata                  
 Metadata Matching List    List of metadata that should match to create the correspondences.
                           If the list is empty, the default value will
@@ -40,10 +41,3 @@ Verbose Level             verbosity level (fatal, error, warning, **info**, debu
 Output                    SfMData file.
 ========================= ===========================================================================================================
 
-
-**usage:**
-
-|image0|
-
-.. |image0| image:: SfMTransfer.jpg
-   :target: SfMTransfer.jpg
