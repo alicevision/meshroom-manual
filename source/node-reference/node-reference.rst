@@ -34,10 +34,16 @@ List with all the nodes
    nodes/MeshFiltering
    nodes/MeshResampling
    nodes/Meshing
+   nodes/PanoramaCompositing
+   nodes/PanoramaEstimation
+   nodes/PanoramaExternalInfo
+   nodes/PanoramaWarping
    nodes/PrepareDenseScene
    nodes/Publish
-   nodes/SfMAlingnment
+   nodes/SfMAlignment
+   nodes/SfMTransfer
    nodes/SfMTransform
+   nodes/SketchfabUpload
    nodes/StructureFromMotion
    nodes/Texturing
    
