@@ -1,7 +1,9 @@
 SfMAlignment
 ============
 
-**Description** align SfM file to a scene
+**Description** 
+
+Align SfM file to a scene
 
 settings
 
