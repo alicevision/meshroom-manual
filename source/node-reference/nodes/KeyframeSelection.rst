@@ -5,7 +5,7 @@ KeyframeSelection
 
 This is a node for keyframe selection from video, which removes too similar or too blurry images.
 
-Note: At the moment, KeyframeSelection can not be usedas input for CameraInit.
+Note: At the moment, KeyframeSelection can not be used as input for CameraInit.
 To automatically add extracted frames to your project you can copy the output folder path of KeyframeExtraction and set it as the Live Reconsturuction Image Folder Path. Then start watching the folder and execute the graph.
 ``https://github.com/alicevision/meshroom/issues/232``
 
