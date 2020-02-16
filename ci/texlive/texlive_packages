@@ -24,3 +24,4 @@ kvoptions
 pdftexcmds
 epstopdf
 epstopdf-pkg 
+pdfescape
