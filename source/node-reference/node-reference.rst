@@ -13,6 +13,7 @@ List with all the nodes
    :caption: Node Reference
    
    nodes/CameraCalibration
+   nodes/CameraDownscale
    nodes/CameraInit
    nodes/CameraLocalization
    nodes/CameraRigCalibration
