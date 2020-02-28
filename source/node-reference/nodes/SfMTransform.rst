@@ -39,15 +39,14 @@ Translation               Apply translation transformation.
 Verbose Level             verbosity level (fatal, error, warning, **info**, debug, trace).
 ========================= ===========================================================================================================
 
-
-**usage:**
-
 |image0|
 
 .. |image0| image:: sfm-transform.jpg
    :target: sfm-transform.jpg
-   
-   **Details:**
+
+**usage:**
+
+**Details:**
 
 **Transformation Method: transformation**
 
