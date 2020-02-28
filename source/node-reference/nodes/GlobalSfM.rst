@@ -40,3 +40,5 @@ Verbose Level                                   verbosity level (critical, error
 Output Folder                                   internalFolder
 Output SfMData File                             Path to the output sfmdata file (internalFolder + 'SfmData.abc')
 =============================================== ============================================================================================
+
+[Moulon2013] 	Global Fusion of Relative Motions for Robust, Accurate and Scalable Structure from Motion. Pierre Moulon, Pascal Monasse and Renaud Marlet. ICCV 2013
