@@ -46,3 +46,28 @@ Verbose Level             verbosity level (fatal, error, warning, **info**, debu
 
 .. |image0| image:: sfm-transform.jpg
    :target: sfm-transform.jpg
+   
+   **Details:**
+
+**Transformation Method: transformation**
+
+Align [X,Y,Z] to +Y-axis, rotate around Y by R deg, scale by S; syntax:
+X,Y,Z;R;S (all five parameters are required) This allows the user to
+align and scale the point cloud by explicitly specifying the scale and
+"up" vector [X,Y,Z] in the point cloud's reference system. The rotation
+is such that the specified [X,Y,Z] vector is aligned with [0,1,0] after
+the transformation.
+
+The use-case to allow the user to derive the desired rotation by
+interactive manipulation of the point cloud in a 3D program (Meshlab),
+read off the transformation parameters and transform the point cloud.
+https://github.com/alicevision/AliceVision/pull/206
+
+**Transformation Method: from\ single\ camera**
+
+Set a specific camera as origin. Provide Camera **UID** or **image
+filename** Applies correct orientation if possible.
+
+**Transformation Method: autofromlandmarks**
+
+Select Landmarks Describer Type CCTAG to apply a scale
