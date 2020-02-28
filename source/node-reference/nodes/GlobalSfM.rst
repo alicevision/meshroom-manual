@@ -42,3 +42,5 @@ Output SfMData File                             Path to the output sfmdata file 
 =============================================== ============================================================================================
 
 [Moulon2013] 	Global Fusion of Relative Motions for Robust, Accurate and Scalable Structure from Motion. Pierre Moulon, Pascal Monasse and Renaud Marlet. ICCV 2013
+
+GlobalSFM vs SequentialSFM https://github.com/openMVG/openMVG/issues/1037
