@@ -30,6 +30,10 @@ Verbose Level               verbosity level (fatal, error, warning, info, debug,
 Output SfMData File         .../cameraInit.sfm
 =========================== ========================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
 
+Details
+
+The UID is based on the metadata. If there is no metadata it falls back to images file paths.
+
 .. note::
 
    Issue: structure from motion reconstruction appears distorted, and has
@@ -40,3 +44,6 @@ Output SfMData File         .../cameraInit.sfm
    Length" to -1 if you are not sure of the value.
 
    https://github.com/alicevision/meshroom/issues/434
+   
+   
+   .. Default Field Of View: is this horizontal, vertical, or diagonal FOV?
