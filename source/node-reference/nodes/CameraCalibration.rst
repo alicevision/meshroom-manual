@@ -4,7 +4,8 @@ CameraCalibration
 **Description**
 
 .. Note:: 
-   This node requires AliceVision compiled with OpenCV.
+At the moment this node can not directly be connected to the SfM pipeline in the UI. That would be obviously a nice feature to have. The camera models and parameters can be manually copied to the CameraInit settings.
+This node just needs a bit more work before using it directly into the Meshroom graph. If someone is interested to contribute to this feature, we would be glad to provide assistance.
 
 The internal camera parameters can be calibrated from multiple views of a checkerboard. This allows to retrieve focal length, principal point and distortion parameters. A detailed explanation is presented in [opencvCameraCalibration].
 
