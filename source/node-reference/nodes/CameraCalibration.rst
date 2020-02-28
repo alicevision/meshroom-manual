@@ -28,3 +28,19 @@ Debug Rejected Img Folder Folder to export delete images during the refinement l
 Debug Selected Img Folder Folder to export debug images
 Output                    Output filename for intrinsic [and extrinsic] parameters (default filename cameraCalibration.cal)
 ========================= =============================================================================================================================
+
+**Details**
+
+**Patterns**
+
+CHESSBOARD https://github.com/artoolkit/artoolkit5/blob/master/doc/patterns/Calibration%20chessboard%20(A4).pdf 
+
+Chessboard calibration video sample https://vimeo.com/141414129
+
+CIRCLES
+
+ASYMMETRIC_CIRCLES https://nerian.com/support/resources/patterns/
+
+ASYMMETRIC_CCTAG https://github.com/alicevision/CCTag
+
+A list with other camera calibration tools and patterns can be found here https://github.com/natowi/CameraCalibTools
