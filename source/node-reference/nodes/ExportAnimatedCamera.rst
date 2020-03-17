@@ -3,7 +3,9 @@ ExportAnimatedCamera
 
 **Description**
 
-creates an Alembic animatedCamera.abc file from SFMData (e.g. for use in 3D Compositing software)
+ExportAnimatedCamera creates an Alembic animatedCamera.abc file from SFMData (e.g. for use in 3D Compositing software)
+
+The Animated Camera export feature is not optimized at the moment and requires a sequence of images with corresponding names (1-n) from the same folder. Unstructured images, naming conventions, folder structures... will not work or result in an error.
 
 settings
 
