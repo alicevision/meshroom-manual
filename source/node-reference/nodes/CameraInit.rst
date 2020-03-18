@@ -3,7 +3,7 @@ CameraInit
 
 **Description**
 
-CameraInit loads image metadata and sensor information. You can mix multiple cameras and focal lengths.
+CameraInit loads image metadata, sensor information and generates viewpoints.sfm and cameraInit.sfm. You can mix multiple cameras and focal lengths.
 The CameraInit will create groups of intrinsics based on the images metadata.
 It is still good to have multiple images with the same camera and same focal lengths as it adds constraints on the internal cameras parameters. But you can combine multiple groups of images, it will not decrease the quality of the final model.
 
