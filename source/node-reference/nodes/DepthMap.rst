@@ -1,9 +1,8 @@
 DepthMap
 ========
 
-note::
-
-This node requires CUDA
+.. note::
+   This node requires CUDA
 
 **Description**
 
