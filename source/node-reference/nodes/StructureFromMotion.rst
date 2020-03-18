@@ -67,8 +67,7 @@ As we have triangulated new points, we get more image candidates for next best v
 Many other approaches exists like Global [Moulon2013], Hierarchical
 [Havlena2010], [Toldo2015] or multi-stage [Shah2014] approaches.
 
-References
-==========
+**References**
 
 ============== =========================================================================================================================================================================
 [Cheng2014]    Fast and Accurate Image Matching with Cascade Hashing for 3D Reconstruction Jian Cheng, Cong Leng, Jiaxiang Wu, Hainan Cui, Hanqing Lu. CVPR 2014
