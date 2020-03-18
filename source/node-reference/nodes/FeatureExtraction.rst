@@ -17,6 +17,7 @@ Name                     Description
 **Output Folder**        Output path for the features and descriptors files (*.feat, \*.desc).
 ======================== ===========================================================================================================================================================================
 
+
 **Force CPU Extraction**
 
 Experimental feature. When disabled, GPU will be used. Speeds up
