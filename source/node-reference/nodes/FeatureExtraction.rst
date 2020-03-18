@@ -5,6 +5,8 @@ FeatureExtraction
 
 This step extracts features from the images, as well as descriptors for those features. It will change the file extension based on what type of feature you are extracting.
 
+.. from http://filmicworlds.com/blog/command-line-photogrammetry-with-alicevision/
+
 ======================== ===========================================================================================================================================================================
 Name                     Description
 ======================== ===========================================================================================================================================================================
@@ -44,3 +46,5 @@ As the number of extracted features may vary a lot due to the variability of tex
 [Li2015]           `A survey of recent advances in visual feature detection, Yali Li, Shengjin Wang, Qi Tian, Xiaoqing Ding, 2015 <https://www.researchgate.net/profile/Yali_Li3/publication/273841042_A_survey_of_recent_advances_in_visual_feature_detection/links/5707d38408ae2eb9421bda3e.pdf>`__
 [VLFEAT2008]       `VLFeat: An Open and Portable Library of Computer Vision Algorithms A. Vedaldi and B. Fulkerson, 2008 <http://www.vlfeat.org/>`__ `VLFeat SIFT detailed presentation <http://www.vlfeat.org/overview/sift.html>`__
 ================== ==================================================================================================================================================================================================================================================================================
+
+.. from https://alicevision.github.io/#photogrammetry
