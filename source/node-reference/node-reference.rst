@@ -5,7 +5,11 @@ List with all the nodes
 
 .. note::
    
-   Some parameters are exposed for development purposes and are not supported/implemented in the current release.
+   Some *experimental/debug/advanced* parameters are only visible with "Advanced Attributes" enabled.
+   To enable "Advanced Attributes", click on the three vertical dots in the upper right corner of the node settings and activate the check box.
+
+   
+ 
 
 .. toctree::
    :maxdepth: 1
