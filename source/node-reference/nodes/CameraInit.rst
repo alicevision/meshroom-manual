@@ -3,20 +3,12 @@ CameraInit
 
 **Description**
 
--load image metadata and sensor information You can mix multiple cameras
-and focal lengths. The CameraInit will create groups of intrinsics based
-on the images metadata. It is still good to have multiple images with
-the same camera and same focal lengths as it adds constraints on the
-internal cameras parameters. But you can combine multiple groups of
-images, it will not decrease the quality of the final model.1
+CameraInit loads image metadata and sensor information. You can mix multiple cameras and focal lengths.
+The CameraInit will create groups of intrinsics based on the images metadata.
+It is still good to have multiple images with the same camera and same focal lengths as it adds constraints on the internal cameras parameters. But you can combine multiple groups of images, it will not decrease the quality of the final model.
 
-Note: In some cases, some image(s) have no serial number to identify the
-camera/lens device. This makes it impossible to correctly group the
-images by device if you have used multiple identical (same model) camera
-devices. The reconstruction will assume that only one device has been
-used, so if 2 images share the same focal length approximation they will
-share the same internal camera parameters. If you want to use multiple
-cameras, add a corresponding serialnumber to the EXIF data.
+.. Note::
+   In some cases, some image(s) have no serial number to identify the camera/lens device. This makes it impossible to correctly group the images by device if you have used multiple identical (same model) camera devices. The reconstruction will assume that only one device has been used, so if two images share the same focal length approximation they will share the same internal camera parameters. If you want to use multiple cameras, add a corresponding serialnumber to the EXIF data.
 
 =========================== ========================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
 Viewpoints Input            viewpoints (1 Element for each loaded image) - ID - Pose ID - Image Path - Intrinsic: Internal Camera Parameters (Intrinsic ID) - Rig (-1 - 200) - Rig Sub-Pose: Rig Sub-Pose Parameters (-1 - 200) - Image Metadata: (list of metadata elements)
