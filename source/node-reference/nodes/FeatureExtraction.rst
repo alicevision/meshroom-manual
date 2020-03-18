@@ -5,6 +5,24 @@ FeatureExtraction
 
 This step extracts features from the images, as well as descriptors for those features. It will change the file extension based on what type of feature you are extracting.
 
+======================== ===========================================================================================================================================================================
+Name                     Description
+======================== ===========================================================================================================================================================================
+**Input**                SfMData file.
+**Describer Types**      Describer types used to describe an image. **'sift'**, 'sift*float', 'sift*\ upright', 'akaze', 'akaze*liop', 'akaze*\ mldb', 'cctag3', 'cctag4', 'sift*ocv', 'akaze*\ ocv'
+**Describer Preset**     Control the ImageDescriber configuration (low, medium, **normal**, high, ultra). Configuration "ultra" can take long time !
+**Force CPU Extraction** Use only CPU feature extraction.
+**Max Nb Threads**       Specifies the maximum number of threads to run simultaneously (0 for automatic mode). (0-24) **0**
+**Verbose Level**        verbosity level (fatal, error, warning, info, debug, trace).
+**Output Folder**        Output path for the features and descriptors files (*.feat, \*.desc).
+======================== ===========================================================================================================================================================================
+
+**Force CPU Extraction**
+
+Experimental feature. When disabled, GPU will be used. Speeds up
+computation. Requires CUDA CC3+.
+
+
 **Detailed description**
 
 The objective of this step is to extract distinctive groups of pixels that are, to some extent, invariant to changing camera viewpoints during image acquisition. Hence, a feature in the scene should have similar feature descriptions in all images.
