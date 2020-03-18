@@ -26,6 +26,7 @@ Undistorted images        List of undistorted images.
 .. |image0| image:: prepare-dense-scene.jpg
    :target: prepare-dense-scene.jpg
 
+
 **ImagesFolders**
 
 ImagesFolders option allows to override input images. This enables to use images with light patterns projected for SfM and MVS parts and do the Texturing with another set of images.
