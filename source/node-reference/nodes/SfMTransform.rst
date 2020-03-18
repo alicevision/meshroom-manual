@@ -62,10 +62,10 @@ interactive manipulation of the point cloud in a 3D program (Meshlab),
 read off the transformation parameters and transform the point cloud.
 https://github.com/alicevision/AliceVision/pull/206
 
-**Transformation Method: from\ single\ camera**
+**Transformation Method: from single camera**
 
-Set a specific camera as origin. Provide Camera **UID** or **image
-filename** Applies correct orientation if possible.
+Sets a specific camera as origin and applies correct orientation if possible
+Provide Camera **UID** or **image filename** 
 
 **Transformation Method: autofromlandmarks**
 
