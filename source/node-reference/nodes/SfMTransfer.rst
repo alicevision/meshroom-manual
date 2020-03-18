@@ -20,6 +20,7 @@ Matching Method           Matching Method:
                 
                           * from_metadata: Align cameras with matching metadata, using 'metadataMatchingList'
                           (**from_viewid**, from_filepath, from_metadata)
+                          
 File Matching Pattern     Matching regular expression for the "from_cameras_filepath" method.
                           You should capture specific parts of the filepath with parenthesis to define matching elements.
                           
