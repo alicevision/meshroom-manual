@@ -24,10 +24,8 @@ Basics
 
 
 
-Details
--------
+**Details**
 
 
-Tutorials
----------
+**Tutorials**
 
