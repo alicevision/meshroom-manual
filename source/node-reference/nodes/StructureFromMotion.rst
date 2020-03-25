@@ -13,6 +13,7 @@ Features Folder                                Folder(s) containing the extracte
 Matches Folders                                Folder(s) in which computed matches are stored.
 Describer Types                                Describer types used to describe an image. '**sift**', 'sift*float', 'sift*\ upright', 'akaze', 'akaze*liop', 'akaze*\ mldb', 'cctag3', 'cctag4', \**'sift\ *ocv', 'akaze*\ ocv'
 Localizer Estimator                            Estimator type used to localize cameras (**acransac**, ransac, lsmeds, loransac, maxconsensus).
+Observation Constraint                         Observation contraint mode used in the optimization: **Basic**: Use standard reprojection error in pixel coordinates, Scale: Use reprojection error in pixel coordinates but relative to the feature scale
 Localizer Max Ransac Iterations                Maximum number of iterations allowed in ransac step. (1-20000) **4096**
 Localizer Max Ransac Error                     Maximum error (in pixels) allowed for camera localization (resectioning). If set to 0, it will select a threshold according to the localizer estimator used (if ACRansac, it will analyze the input data to select the optimal value). (0.0-100-0) **0.0**
 Lock Scene Previously Reconstructed            This option is useful for SfM augmentation. Lock previously reconstructed poses and intrinsics.
