@@ -19,3 +19,9 @@ How to use Draft Meshing
 .. image:: draft-meshing-node-graph.jpg
 
 .. image:: draft-meshing-node-graph-color.jpg
+
+
+Panorama graph
+------------------------
+
+.. image:: panorama-node-graph.JPG
