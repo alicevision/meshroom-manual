@@ -1,3 +1,5 @@
+.. _live-reconstruction:
+
 Live Reconstruction
 ===================
 
