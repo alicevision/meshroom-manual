@@ -5,9 +5,9 @@ ImageMatchingMultiSfM
 
 This node can combine image matching between two input SfMData.
 
-Used for **Live Reconstructin** and **Augmentation**
+Used for :ref:`live-reconstruction` and :ref:`augment-reconstruction`.
 
-settings
+Settings
 
 ======================== ===========================================================================================================================================
 Name                     Description

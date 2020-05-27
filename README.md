@@ -6,15 +6,12 @@
 
 # About
 
+Read the latest version on https://meshroom-manual.readthedocs.io/en/latest/ 
+download the PDF from https://readthedocs.org/projects/meshroom-manual/downloads/
+
 **This is documentation is work in progress.**
 
 See [Project ToDo](https://github.com/alicevision/meshroom-manual/projects) for details.
-
-# Next update
-+ capturing images for photogrammetry chapters
-+ MR2019.2 updates
-+ improved layout
-+ readthedocs release (including pdf) https://meshroom-manual.readthedocs.io
 
 # How to contribute
 
@@ -24,6 +21,7 @@ See [Project ToDo](https://github.com/alicevision/meshroom-manual/projects) for 
 
 We could use some help with:
 - optimizing the formatting for pdf&html
+- checking grammar and spelling, fixing typos
 - anything listed here https://github.com/alicevision/meshroom-manual/projects
 
 # How to Build
