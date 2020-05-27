@@ -26,7 +26,7 @@ import sphinx_rtd_theme
 master_doc = 'index'
 
 project = 'Meshroom'
-copyright = '2019, Meshroom Contributors'
+copyright = '2020. This work is licensed under a CC-BY-SA 4.0 International license.'
 author = 'Meshroom Contributors'
 
 # The full version, including alpha/beta/rc tags
