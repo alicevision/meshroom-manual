@@ -26,17 +26,19 @@ We could use some help with:
 - optimizing the formatting for pdf&html
 - anything listed here https://github.com/alicevision/meshroom-manual/projects
 
-# How to build on windows
+# How to Build
 
+- install Python 3
+- install a latex package
 - install pip and the rtd theme
 ```bash 
-pip install sphinx  sphinx_rtd_theme
+pip install -r requirements.txt
 ```
 
--   in your cli, navigate to the `meshroom_doc directory`
+-   in your cli, navigate to the `meshroom-manual` directory
 -   type `make html` (this will re-/build the html doc)
 
-For other build methods read the sphinx documentation
+For other build methods read the sphinx documentation.
 
 # FAQ
 
@@ -47,6 +49,8 @@ For other build methods read the sphinx documentation
 **How to edit and preview Restructured Text?**
 
 -   You can use [Atom](https://atom.io/) with the [RestructuredText Preview Pandoc](https://atom.io/packages/rst-preview-pandoc) Plugin
+-   [Typora](https://www.typora.io) is a friendly editor
+-   [Visual Studio Code](https://code.visualstudio.com) with the [reStructuredText](https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext) extension 
 
 **Release versions**
 
