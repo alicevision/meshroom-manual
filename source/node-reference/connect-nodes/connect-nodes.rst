@@ -13,9 +13,13 @@ This image illustrates the default graph with node connections on the origin nod
 .. image:: default-node-graph-color.jpg
 
 
-Draft Meshing
--------------
-
-.. image:: draft-meshing-node-graph.jpg
+How to use Draft Meshing
+------------------------
 
 .. image:: draft-meshing-node-graph-color.jpg
+
+
+Panorama graph
+------------------------
+
+.. image:: panorama-node-graph.JPG
