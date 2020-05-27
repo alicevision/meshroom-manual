@@ -72,3 +72,46 @@ html_static_path = []
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
 # html_logo = "mr_logo.png"
+
+# Latex/PDF generation Config
+# Based on hints from:
+# - https://stackoverflow.com/questions/54147210/how-to-add-copyright-notice-to-sphinx-generated-latex-documentation
+# - https://www.sphinx-doc.org/en/master/latex.html
+# - https://stackoverflow.com/questions/9745854/sphinx-pdf-themes
+# - https://digitalsuperpowers.com/blog/2019-02-16-publishing-ebook.html
+# - https://github.com/sphinx-doc/sphinx/pull/5850
+
+latex_contents = r'''
+    \setupHeadFootForFrontMatter
+    \formattoc
+    \maketitle
+    \signaturepage
+    \revisionhistory
+    \tableofcontents
+    \clearpage
+    \listoffigures
+    \clearpage
+    \listoftables
+    \clearpage
+    \setupHeadFootForText
+    \pagenumbering{arabic}
+    \pagestyle{plain}
+'''
+
+
+latex_elements = {
+    'preamble': r'''
+\newcommand\sphinxbackoftitlepage{%
+\vspace*{\fill}
+\begin{center}
+''' + u"\u00A9 " + copyright + r''' \\
+Revision: ''' + release + r''' \\
+\url{https://alicevision.org}
+\end{center}
+\vspace*{\fill}
+}
+'''
+}
+
+
+latex_show_urls = 'footnote'
