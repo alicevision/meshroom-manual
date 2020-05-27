@@ -100,6 +100,9 @@ latex_contents = r'''
 
 
 latex_elements = {
+    'fontpkg': r'''
+\usepackage{lmodern}
+''',
     'preamble': r'''
 \newcommand\sphinxbackoftitlepage{%
 \vspace*{\fill}

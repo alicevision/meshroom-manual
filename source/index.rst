@@ -67,3 +67,5 @@ AliceVision is a Photogrammetric Computer Vision Framework which provides 3D Rec
    :caption: About
 
    about/about
+   copyright
+   
