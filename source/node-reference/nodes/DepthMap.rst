@@ -46,7 +46,7 @@ Output                         Output folder for generated depth maps
 
 **Detailed description**
 
-For all cameras that have been resolved by SfM, we want to retrieve the depth value of each pixel. Many approaches exist, like Block Matching, Semi-Global Matching (SGM) :cite:`Hirschmüller2005`, :cite:`Hirschmüller2008` or ADCensus :cite:`Xing2011`. We will focus on the SGM method implemented in AliceVision.
+For all cameras that have been resolved by SfM, we want to retrieve the depth value of each pixel. Many approaches exist, like Block Matching, Semi-Global Matching (SGM) :cite:`Hirschmüller2005`, :cite:`Hirschmüller2008` or ADCensus :cite:`Mei2011`. We will focus on the SGM method implemented in AliceVision.
 
 For each image, we select the N best/closest cameras around. We select fronto-parallel planes based on the intersection of the optical axis with the pixels of the selected neighboring cameras. This creates a volume W, H, Z with many depth candidates per pixel. We estimate the similarity for all of them. The similarity is computed by the Zero Mean Normalized Cross-Correlation (ZNCC) of a small patch in the main image reprojected into the other camera. This create a volume of similarities. For each neighboring image, we accumulate similarities into this volume. This volume is very noisy. We apply a filtering step along X and Y axes which accumulates local costs which drastically reduce the score of isolated high values. We finally select the local minima and replace the selected plane index with the depth value stored into a depth map. This depth map has banding artifacts as it is based on the original selection of depth values. So a refine step is applied to get depth values with sub-pixel accuracy.
 
