@@ -38,7 +38,7 @@ release = '19.02.003'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.autosectionlabel', 'sphinx_rtd_theme']
+extensions = ['sphinx.ext.autodoc', 'sphinx.ext.autosectionlabel', 'sphinx_rtd_theme', 'sphinxcontrib.bibtex']
 sphinxVersion = sphinx.version_info
 if(sphinxVersion[0] <= 1 and sphinxVersion[1] <= 8) :
 	extensions.append('sphinx.ext.pngmath')

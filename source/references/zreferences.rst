@@ -1,6 +1,11 @@
 References
 ==========
 
+**Bibliography**
+
+.. bibliography:: ../refs.bib
+
+
 **Text publications**
 
 ...
