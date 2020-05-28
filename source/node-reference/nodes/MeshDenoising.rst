@@ -34,10 +34,10 @@ Wang et al.
 ``https://dl.acm.org/citation.cfm?id=2818068``
 
 .. |image0| image:: mesh-denoising.jpg
-   :target: mesh-denoising.jpg
+  :target: mesh-denoising.jpg
    
- **Detailed Description**
+**Detailed Description**
  
- A larger value of Lambda or Eta leads to a smoother filtering result.
+A larger value of Lambda or Eta leads to a smoother filtering result.
  
- From: "Static/Dynamic Filtering for Mesh Geometry" by Zhang Et al. https://arxiv.org/pdf/1712.03574.pdf
+From: "Static/Dynamic Filtering for Mesh Geometry" by Zhang Et al. https://arxiv.org/pdf/1712.03574.pdf

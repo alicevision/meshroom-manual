@@ -36,9 +36,10 @@ https://www.researchgate.net/publication/327513182\ *Camera*\ Rig\ *Extrinsic*\ 
 
 https://alicevision.github.io/#photogrammetry/localization
 
-[Kneip2011] A Novel Parametrization of the Perspective-Three-Point
-Problem for a Direct Computation of Absolute Camera Position and
-Orientation. L. Kneip, D. Scaramuzza, R. Siegwart. June 2011
+
+**References**
+
+:cite:`Kneip2011`
 
 [Kneip2013] Using Multi-Camera Systems in Robotics: Efficient Solutions
 to the NPnP ProblemL. Kneip, P. Furgale, R. Siegwart. May 2013
@@ -49,7 +50,7 @@ calibrated geometric vision, L. Kneip, P. Furgale. May 2014.
 [Kneip2014] Efficient Computation of Relative Pose for Multi-Camera
 Systems. L. Kneip, H. Li. June 2014
 
-settings
+**Settings**
 
 ===================== ======================================================================================================================================================================================
 Name                  Description
@@ -83,3 +84,5 @@ Output File           The name of the file where to store the calibration data (
 matching performances. It can be downloaded here.
 https://github.com/fragofer/voctree You need to specify the path to
 vlfeat_K80L3.SIFT.tree in **Voctree**.
+
+

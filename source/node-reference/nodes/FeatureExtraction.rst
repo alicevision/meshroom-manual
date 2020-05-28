@@ -10,13 +10,13 @@ This step extracts features from the images, as well as descriptors for those fe
 ======================== ===========================================================================================================================================================================
 Name                     Description
 ======================== ===========================================================================================================================================================================
-Input                SfMData file.
-Describer Types      Describer types used to describe an image. **'sift'**, 'sift*float', 'sift*\ upright', 'akaze', 'akaze*liop', 'akaze*\ mldb', 'cctag3', 'cctag4', 'sift*ocv', 'akaze*\ ocv'
-Describer Preset     Control the ImageDescriber configuration (low, medium, **normal**, high, ultra). Configuration "ultra" can take long time !
-Force CPU Extraction Use only CPU feature extraction.
-Max Nb Threads       Specifies the maximum number of threads to run simultaneously (0 for automatic mode). (0-24) **0**
-Verbose Level        verbosity level (fatal, error, warning, info, debug, trace).
-Output Folder        Output path for the features and descriptors files (*.feat, \*.desc).
+Input                    SfMData file.
+Describer Types          Describer types used to describe an image. **'sift'**, 'sift*float', 'sift*\ upright', 'akaze', 'akaze*liop', 'akaze*\ mldb', 'cctag3', 'cctag4', 'sift*ocv', 'akaze*\ ocv'
+Describer Preset         Control the ImageDescriber configuration (low, medium, **normal**, high, ultra). Configuration "ultra" can take long time !
+Force CPU Extraction     Use only CPU feature extraction.
+Max Nb Threads           Specifies the maximum number of threads to run simultaneously (0 for automatic mode). (0-24) **0**
+Verbose Level            verbosity level (fatal, error, warning, info, debug, trace).
+Output Folder            Output path for the features and descriptors files (\*.feat, \*.desc).
 ======================== ===========================================================================================================================================================================
 
 
