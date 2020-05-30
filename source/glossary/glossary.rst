@@ -4,10 +4,12 @@ Glossary
 .. glossary::
 
     Alicevision
+      a Photogrammetric Computer Vision Framework
 	
-	AKAZE
+    AKAZE
+      Accelerated-KAZE, a fast multiscale feature detection and description algorithm :cite:`AKAZE2013`
 	  
-	CCTAG
+    CCTAG
 
     SIFT
 	  
