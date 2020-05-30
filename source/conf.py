@@ -30,7 +30,8 @@ copyright = '2020. This work is licensed under a CC-BY-SA 4.0 International lice
 author = 'Meshroom Contributors'
 
 # The full version, including alpha/beta/rc tags
-release = '19.02.003'
+version = 'v2020.1'
+release = 'v2020.1.0'
 
 
 # -- General configuration ---------------------------------------------------
