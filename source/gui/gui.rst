@@ -16,8 +16,9 @@ The Graphical User Interface (GUI)
 
 When you first start Meshroom, two windows open:
 
-the main graphical user interface with different panes
-and in the background the Command-line interface window.
+* the Command-line interface window (You can ignore or minimize this window. Do not close this window or Meshroom will terminate).
+* the main Graphical User Interface (GUI) with different panes:
+
 
 .. |01| image:: 01.jpg
 .. |02| image:: 02.jpg

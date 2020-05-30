@@ -18,4 +18,12 @@ upquote
 varwidth
 varwidth
 wrapfig
+anyfontsize
 xcolor
+kvoptions
+pdftexcmds
+epstopdf
+epstopdf-pkg 
+pdfescape
+letltxmacro
+bitset

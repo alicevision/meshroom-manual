@@ -12,8 +12,8 @@ In 2009, the CMP research team from CTU started Michal Jancosek’s PhD thesis s
 
 In 2009, INPT, INRIA and Duran Duboi started a French ANR project to create a model based Camera Tracking solution based on natural features and a new marker design called CCTag.
 
-In 2015, Simula, INPT and Mikros Image joined their efforts in the EU project `POPART <http://www.popartproject.eu/>`_ to create a Previz system. In 2017, CTU joined the team in the EU project
-`LADIO <http://www.ladioproject.eu/>`_ to create a central hub with structured access to all data generated on set.
+In 2015, Simula, INPT and Mikros Image joined their efforts in the EU project `POPART <http://www.alicevision.org/popart>`_ to create a Previz system. In 2017, CTU joined the team in the EU project
+`LADIO <http://www.alicevision.org/ladio>`_ to create a central hub with structured access to all data generated on set.
 
 Partners
 --------
@@ -30,10 +30,10 @@ Partners
 
 `Quine <http://www.quine.no/>`_ in Oslo, Norway
 
-See Github authors for the full list of contributors.
+See `AliceVision Contributors <https://github.com/alicevision/AliceVision/blob/develop/CONTRIBUTORS.md>`_ for the full list of contributors.
 
-This project has received funding from the European Union’s Horizon 2020 research and innovation programme, see `POPART <http://www.popartproject.eu/>`_, Project ID: 644874 and
-`LADIO <http://www.ladioproject.eu/>`_, project ID: 731970.
+This project has received funding from the European Union’s Horizon 2020 research and innovation programme, see `POPART <http://www.alicevision.org/popart>`_, Project ID: 644874 and
+`LADIO <http://www.alicevision.org/ladio>`_, project ID: 731970.
 
 .. image:: eu.jpg
 

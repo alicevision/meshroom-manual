@@ -1,22 +1,17 @@
 [![CC BY-SA 4.0](https://img.shields.io/badge/license-CC%20BY--SA%204.0-blue.svg?style=flat-square)](https://creativecommons.org/licenses/by-sa/4.0/)
 [![language: ReStructuredText](https://img.shields.io/badge/language-RST-black.svg?style=flat-square)](http://docutils.sourceforge.net/docs/user/rst/quickref.html)
 ![HitCount](http://hits.dwyl.io/natowi/meshroom_doc.svg)
-[![all releases](https://img.shields.io/github/downloads/natowi/meshroom_doc/total.svg?style=flat-square&color=success)](https://github.com/natowi/meshroom_doc/releases/)
-![pre-release](https://img.shields.io/github/release-pre/natowi/meshroom_doc.svg?style=flat-square&color=yellow&label=pre-release)
-![release](https://img.shields.io/github/release/natowi/meshroom_doc.svg?style=flat-square&color=green&label=release)
-[![Travis](https://img.shields.io/travis/natowi/meshroom_doc.svg?style=flat-square)](https://travis-ci.org/natowi/meshroom_doc)
+[![all releases](https://img.shields.io/github/downloads/natowi/meshroom_doc/total.svg?style=flat-square&color=success)](https://readthedocs.org/projects/meshroom-manual/downloads/)
+![Read the Docs](https://img.shields.io/readthedocs/meshroom-manual.svg?style=flat-square&color=success)
 
 # About
+
+Read the latest version on https://meshroom-manual.readthedocs.io/en/latest/ 
+download the PDF from https://readthedocs.org/projects/meshroom-manual/downloads/
 
 **This is documentation is work in progress.**
 
 See [Project ToDo](https://github.com/alicevision/meshroom-manual/projects) for details.
-
-# Next update
-+ capturing images for photogrammetry chapters
-+ MR2019.2 updates
-+ improved layout
-+ readthedocs release (including pdf)
 
 # How to contribute
 
@@ -26,16 +21,22 @@ See [Project ToDo](https://github.com/alicevision/meshroom-manual/projects) for 
 
 We could use some help with:
 - optimizing the formatting for pdf&html
+- checking grammar and spelling, fixing typos
 - anything listed here https://github.com/alicevision/meshroom-manual/projects
 
-# How to build on windows
+# How to Build
 
--   (install pip)
--   **pip install sphinx**
--   in your cli, navigate to the meshroom\_doc directory
--   type **make html** (this will re-/build the html doc)
+- install Python 3
+- install a latex package
+- install pip and the rtd theme
+```bash 
+pip install -r requirements.txt
+```
 
-For other build methods read the sphinx documentation
+-   in your cli, navigate to the `meshroom-manual` directory
+-   type `make html` (this will re-/build the html doc)
+
+For other build methods read the sphinx documentation.
 
 # FAQ
 
@@ -46,6 +47,8 @@ For other build methods read the sphinx documentation
 **How to edit and preview Restructured Text?**
 
 -   You can use [Atom](https://atom.io/) with the [RestructuredText Preview Pandoc](https://atom.io/packages/rst-preview-pandoc) Plugin
+-   [Typora](https://www.typora.io) is a friendly editor
+-   [Visual Studio Code](https://code.visualstudio.com) with the [reStructuredText](https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext) extension 
 
 **Release versions**
 

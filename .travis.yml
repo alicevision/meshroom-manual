@@ -6,7 +6,7 @@ python:
   - 3.5
 
 install:
-  - pip install sphinx
+  - pip install -r requirements.txt
   - source ./ci/texlive/texlive_install.sh
 
 cache:
@@ -20,7 +20,9 @@ script:
   - make latex
   - cd build/latex
   - LATEXNAME=meshroom
-  - pdflatex -interaction nonstopmode -halt-on-error -file-line-error  ${LATEXNAME}.tex
+  #- pdflatex -interaction nonstopmode -halt-on-error -file-line-error  ${LATEXNAME}.tex
+  - pdflatex -interaction nonstopmode -file-line-error  ${LATEXNAME}.tex
+
 
   # in case there are other latex packages to install texliveonfly will do the
   # installation of the required packages automatically

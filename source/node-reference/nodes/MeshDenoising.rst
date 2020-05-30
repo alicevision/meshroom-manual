@@ -20,7 +20,7 @@ Lambda                       ``Regularization weight. (0.0 // 10.0 // 0.01) 2``
 Eta                          Gaussian standard deviation for spatial weight, scaled by the average distance between adjacent face centroids. Must be positive.(0.0 - 20) (1.5)
 \                            Gaussian standard deviation for guidance weight (0.0-10) (1.5)
 \                            Gaussian standard deviation for signal weight. (0.0-5) (0.3)
-Mesh Update Mesh             Mesh Update Method \* ITERATIVE\ *UPDATE (default): ShapeUp styled iterative solver \* POISSON*\ UPDATE: Poisson-based update from [Want et al. 2015] (0, 1)
+Mesh Update Mesh             Mesh Update Method \* ITERATIVE\ *UPDATE (default): ShapeUp styled iterative solver \* POISSON*\ UPDATE: Poisson-based update from [Wang et al. 2015] (0, 1)
 Verbose Level                ['fatal', 'error', 'warning', 'info', 'debug', 'trace']
 Output                       ``Output mesh (OBJ file format).``
 ============================ ============================================================================================================================================================
@@ -30,5 +30,14 @@ Output                       ``Output mesh (OBJ file format).``
 Mesh Update Method
 ``https://www.researchgate.net/publication/275104101_Poisson-driven_seamless_completion_of_triangular_meshes``
 
+Wang et al.
+``https://dl.acm.org/citation.cfm?id=2818068``
+
 .. |image0| image:: mesh-denoising.jpg
-   :target: mesh-denoising.jpg
+  :target: mesh-denoising.jpg
+   
+**Detailed Description**
+ 
+A larger value of Lambda or Eta leads to a smoother filtering result.
+ 
+From: "Static/Dynamic Filtering for Mesh Geometry" by Zhang Et al. https://arxiv.org/pdf/1712.03574.pdf

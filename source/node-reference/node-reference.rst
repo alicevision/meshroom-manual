@@ -5,16 +5,19 @@ List with all the nodes
 
 .. note::
    
-   Some parameters are exposed for development purposes and are not supported/implemented in the current release.
+   Some *experimental/debug/advanced* parameters are only visible with "Advanced Attributes" enabled.
+   To enable "Advanced Attributes", click on the three vertical dots in the upper right corner of the node settings and activate the check box. Some features, settings and nodes are only available in the latest build or developer version.
+
+   
+ 
 
 .. toctree::
    :maxdepth: 1
    :hidden:
    :caption: Node Reference
    
-   connect-nodes/connect-nodes
-   
    nodes/CameraCalibration
+   nodes/CameraDownscale
    nodes/CameraInit
    nodes/CameraLocalization
    nodes/CameraRigCalibration
@@ -24,9 +27,12 @@ List with all the nodes
    nodes/DepthMapFilter
    nodes/ExportAnimatedCamera
    nodes/ExportColoredPointCloud
+   nodes/ExportMatches
    nodes/ExportMaya
    nodes/FeatureExtraction
    nodes/FeatureMatching
+   nodes/GlobalSfM
+   nodes/HDRIstitching
    nodes/ImageMatching
    nodes/ImageMatchingMultiSfM
    nodes/KeyframeSelection
@@ -36,10 +42,16 @@ List with all the nodes
    nodes/MeshFiltering
    nodes/MeshResampling
    nodes/Meshing
+   nodes/PanoramaCompositing
+   nodes/PanoramaEstimation
+   nodes/PanoramaExternalInfo
+   nodes/PanoramaWarping
    nodes/PrepareDenseScene
    nodes/Publish
-   nodes/SfMAlingnment
+   nodes/SfMAlignment
+   nodes/SfMTransfer
    nodes/SfMTransform
+   nodes/SketchfabUpload
    nodes/StructureFromMotion
    nodes/Texturing
    

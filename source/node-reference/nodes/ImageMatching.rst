@@ -3,7 +3,8 @@ ImageMatching
 
 **Description**
 
---------------
+This is a preprocessing step which figures out which images make sense to match to each other.
+
 
 settings
 
@@ -25,3 +26,13 @@ Output List File         Filepath to the output file with the list of selected i
 
 .. |image0| image:: image-matching.jpg
    :target: image-matching.jpg
+   
+**Detailed descriptioin**
+
+The objective of this part is to find images that are looking to the same areas of the scene. For that, we use the image retrieval techniques to find images that share some content without the cost of resolving all feature matches in details. The ambition is to simplify the image in a compact image descriptor which allows to compute the distance between all images descriptors efficiently.
+
+One of the most common method to generate this image descriptor is the vocabulary tree approach. By passing all extracted features descriptors into it, it makes a classification by comparing their descriptors to the ones on each node of this tree. Each feature descriptor ends up in one leaf, which can be stored by a simple index: the index of this leaf in the tree. The image descriptor is then represented by this collection of used leaves indices.
+
+It is now possible to see if different images share the same content by comparing these image descriptors.
+
+[Nister2006] 	Scalable Recognition with a Vocabulary Tree, David Nister and Henrik Stewenius, CVPR 2006

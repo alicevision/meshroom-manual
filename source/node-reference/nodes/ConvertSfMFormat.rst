@@ -3,7 +3,11 @@ ConvertSfMFormat
 
 **Description**
 
--  creates abc', 'sfm', 'json', 'ply', 'baf SfM File from SfMData file
+-  creates abc', 'sfm', 'json', 'ply', 'baf SfM File from SfMData file including the selected Describer Types
+
+This node can be used to convert the sparse point cloud sfm.abc from StructureFromMotion node or the dense point cloud densePointCloud.abc from the Meshing node. 
+To convert pointclouds to abc, sfm, json, ply, baf, *disable SIFT* and enable the *unknown* Describer Type.
+
 
 settings
 
@@ -12,7 +16,7 @@ Name                   Description
 ====================== =========================================================================================================================================================================================
 Input                  ``SfMData file``
 SfM File Format        SfM File Format \ (output file extension: abc', 'sfm', 'json', 'ply', 'baf)`\`
-Describer Types        Describer types to keep.\ ``'sift', 'sift_float', 'sift_upright', 'akaze', 'akaze_liop', 'akaze_mldb', 'cctag3', 'cctag4', 'sift_ocv', 'akaze_ocv'``
+Describer Types        Describer types to keep.\ ``'sift', 'sift_float', 'sift_upright', 'akaze', 'akaze_liop', 'akaze_mldb', 'cctag3', 'cctag4', 'sift_ocv', 'akaze_ocv', 'unknown'``
 Image id               Image id
 Image White List       image white list (uids or image paths).
 Views                  Export views

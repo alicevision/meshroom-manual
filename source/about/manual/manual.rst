@@ -1,19 +1,10 @@
 About the manual
 ================
 
-This manual is a compilation of the resources found on alicevision.github.io, breadcrumbs of information collected from github issues, other web resources and new content, created for this manual.
-
-WORK IN PROGRESS! 
-(last update 03.06.19)
-
-
-
-
-You want to help? Missing something?
+This manual is a compilation of the resources found on alicevision.github.io, information collected from github issues, other web resources and new content, created for this manual. This manual is work in progress.
 
 You are welcome to comment and contribute. 
-This document is in “Suggest edits” mode.
-
+Check out https://github.com/alicevision/meshroom-manual/ for details.
 
 
 This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.

@@ -4,7 +4,7 @@ Tutorial: Meshroom for Beginners
 https://sketchfab.com/blogs/community/tutorial-meshroom-for-beginners
 
 Goal
-====
+----
 
 In this tutorial, we will explain how to use Meshroom to automatically
 create 3D models from a set of photographs. After specifying system
@@ -22,7 +22,7 @@ Sketchfab and conclude with useful links for further information.
 
 
 Step 0: System requirements and installation
-============================================
+--------------------------------------------
 
 Meshroom software releases are self-contained portable packages. They
 are uploaded on the `project’s GitHub
@@ -44,7 +44,7 @@ for more information.
 
 
 Step 1: Image acquisition
-=========================
+-------------------------
 
 The shooting quality is the most important and challenging part of the
 process. It has dramatic impacts on the quality of the final mesh.
@@ -64,7 +64,7 @@ of field, and reduce the ISO to minimize the noise.
 
 
 Step 2: Meshroom concept and UI overview
-========================================
+----------------------------------------
 
 Meshroom has been conceived to address two main use-cases:
 
@@ -86,7 +86,7 @@ Meshroom User Interface
 
 
 Step 3: Basic Workflow
-======================
+----------------------
 
 For this first step, we will only use the high-level UI. Let’s save this
 new project on our disk using “File :math:`\Rightarrow` Save As…”.
@@ -123,7 +123,7 @@ progress of each step in the process:
 
 
 Step 4: Visualize and Export the results
-========================================
+----------------------------------------
 
 The generic photogrammetry pipeline can be seen as having two main
 steps:
@@ -209,10 +209,9 @@ by
 on
 `Sketchfab <https://sketchfab.com?utm_campaign=65ed60e8d72645ce83017d848611be32&utm_medium=embed&utm_source=oembed>`__
 
-.. _header-n92:
 
 Step 5: Post-processing: Mesh Simplification
-============================================
+--------------------------------------------
 
 Let’s now see how the nodal system can be used to add a new process to
 this default pipeline. The goal of this step will be to create a
@@ -250,10 +249,9 @@ MeshDecimate node has been computed.
 
 -
 
-.. _header-n106:
 
 Step 6: Retexturing after Retopology
-====================================
+------------------------------------
 
 Making a variation of the original, high-poly mesh is only the first
 step to creating a tailored 3D model. Now, let’s see how we can
@@ -301,10 +299,9 @@ will be used. Otherwise it will generate new UVs based on the chosen
 
 Texturing also accepts path to external meshes
 
-.. _header-n126:
 
 Step 7: Draft Meshing from SfM
-==============================
+------------------------------
 
 The MVS consists of creating depth maps for each camera, merging them
 together and using this huge amount of information to create a surface.
@@ -365,7 +362,7 @@ on
 .. _header-n153:
 
 Step 8: Working Iteratively
-===========================
+---------------------------
 
 We will now sum up by explaining how what we have learnt so far can be
 used to work iteratively and get the best results out of your datasets.
@@ -419,11 +416,12 @@ Wiki <https://github.com/alicevision/meshroom/wiki>`__.
 
 
 Step 9: Upload results on Sketchfab
-===================================
+-----------------------------------
 
-Meshroom does not yet provide an export tool to Sketchfab, but results
-are all in standard file formats and can easily be uploaded using the
-Sketchfab web interface. Our workflow mainly consists of these steps:
+Results can be uploaded using the Sketchfab web interface,
+but Meshroom also provides an export tool to Sketchfab.
+
+Our workflow mainly consists of these steps:
 
 -  Decimate the mesh within Meshroom to reduce the number of polygons
 
@@ -434,9 +432,10 @@ Sketchfab web interface. Our workflow mainly consists of these steps:
 
 -  Upload model and textures to Sketchfab
 
+-  To directly publish your model from Meshroom, create a new SketchfabUpload node and connect it to the Texturing node.
+
 You can see some 3D scans from the community
-`here <https://sketchfab.com/AliceVision/likes>`__ and on our
-**Sketchfab page**.
+`here <https://sketchfab.com/AliceVision/likes>`__ and on our **Sketchfab page**.
 
 Don’t forget to tag your models with “alicevision” and “meshroom” if you
 want us to see your work!

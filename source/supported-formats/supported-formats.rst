@@ -16,6 +16,12 @@ can be imported to Meshroom. However there might be some unexpected behaviour wh
 Video File formats
 ------------------
 
+.avi', '.mov', '.qt', '.mkv', '.webm', '.mp4', '.mpg', '.mpeg', '.m2v', '.m4v', '.wmv', '.ogv', '.ogg', '.mxf'
+
+Panoramas
+---------
+
+panoramaInfoExtensions: '.xml'
 
 3D File formats
 ---------------

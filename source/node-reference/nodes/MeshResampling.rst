@@ -33,6 +33,9 @@ Output mesh                       Output mesh (OBJ file format) ``internalFolder
 
 |image1|
 
+MeshDecimate kills vertices to reduce the density, so the vertices at the end already exist in the original mesh.
+MeshResampling will recreate vertices on the surface with a uniform density, so there is no common vertice with the original mesh.
+
 **Flip Normals**
 
 |image2|

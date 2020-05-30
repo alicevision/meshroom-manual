@@ -1,3 +1,5 @@
+.. _augment-reconstruction:
+
 Augment Reconstruction
 ======================
 
