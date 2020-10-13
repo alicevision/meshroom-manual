@@ -67,3 +67,13 @@ Method to unwrap input mesh if it does not have UV coordinates.
 
 .. |image0| image:: texturing.jpg
    :target: texturing.jpg
+
+The approach is based on a generalization of the multi-band blending in [Burt1983] applied to 3D texturing with weighting strategies based on visibility and varying resolution. It is in the same spirit than [Baumberg2002] and [Allene2008].
+
+**References**
+
+============== =========================================================================================================================================================================
+[Burt1983]      `A Multiresolution Spline with Application to Image Mosaics. P. J. Burt and E. H. Adelson. ACM Trans. Graph. 1983 <https://doi.org/10.1145/245.247>`__
+[Baumberg2002]  `Blending images for texturing 3D models. A. Baumberg. BMVC 2002 <http://www.bmva.org/bmvc/2002/papers/49/full_49.pdf>`__
+[Allene2008]    `Seamless image-based texture atlases using multi-band blending. C. Allene and J. Pons and R. Keriven. ICPR 2008 <https://doi.org/10.1109/ICPR.2008.4761913>`__
+============== =========================================================================================================================================================================
