@@ -31,7 +31,7 @@ author = 'Meshroom Contributors'
 
 # The full version, including alpha/beta/rc tags
 version = 'v2020.1'
-release = 'v2020.1.0'
+release = 'v2020.1.1'
 
 
 # -- General configuration ---------------------------------------------------
