@@ -4,18 +4,15 @@ Node Reference
 List with all the nodes
 
 .. note::
-   
+
    Some *experimental/debug/advanced* parameters are only visible with "Advanced Attributes" enabled.
    To enable "Advanced Attributes", click on the three vertical dots in the upper right corner of the node settings and activate the check box. Some features, settings and nodes are only available in the latest build or developer version.
-
-   
- 
 
 .. toctree::
    :maxdepth: 1
    :hidden:
    :caption: Node Reference
-   
+
    CameraCalibration.rst
    CameraDownscale.rst
    CameraInit.rst
@@ -35,6 +32,7 @@ List with all the nodes
    HDRIstitching.rst
    ImageMatching.rst
    ImageMatchingMultiSfM.rst
+   ImageProcessing.rst
    KeyframeSelection.rst
    LDRToHDR.rst
    LdrToHdrCalibration.rst
@@ -43,12 +41,13 @@ List with all the nodes
    MeshDecimate.rst
    MeshDenoising.rst
    MeshFiltering.rst
-   MeshResampling.rst
    Meshing.rst
+   MeshResampling.rst
    PanoramaCompositing.rst
    PanoramaEstimation.rst
    PanoramaExternalInfo.rst
    PanoramaInit.rst
+   PanoramaPrepareImages.rst
    PanoramaWarping.rst
    PrepareDenseScene.rst
    Publish.rst
@@ -58,6 +57,3 @@ List with all the nodes
    SketchfabUpload.rst
    StructureFromMotion.rst
    Texturing.rst
-   
-   
-   
