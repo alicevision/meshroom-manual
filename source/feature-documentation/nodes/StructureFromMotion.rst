@@ -41,6 +41,11 @@ Output SfMData File                            Path to the output sfmdata file w
 Output Folder                                  Folder for intermediate reconstruction files and additional reconstruction information files.
 ============================================== ==========================================================================================================================================================================================================================================================
 
+**Point cloud density**
+
+Based on the number of features extracted from :doc:`feature extraction </feature-documentation/nodes/FeatureExtraction>`
+and then matched in :doc:`feature matching </feature-documentation/nodes/FeatureMatching>`.
+
 **Use Rig Constraint**
 Add support for rig of cameras. This information is used as a new constraint in the SfM. 
 This option can now be combined with localBA.

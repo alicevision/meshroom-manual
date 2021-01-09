@@ -15,6 +15,8 @@ Add node menu: right mouse
 
 Fit: key f
 
+Delete selected node: key delete
+
 Nodes
 +++++
 

@@ -19,6 +19,10 @@ Verbose Level            verbosity level (fatal, error, warning, info, debug, tr
 Output Folder            Output path for the features and descriptors files (\*.feat, \*.desc).
 ======================== ===========================================================================================================================================================================
 
+**Increase number of features**
+
+* add more describer types (akaze)
+* increase describer preset
 
 **Force CPU Extraction**
 

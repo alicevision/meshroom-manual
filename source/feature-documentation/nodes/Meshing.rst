@@ -38,6 +38,11 @@ Output Mesh                                         Output mesh (OBJ file format
 Output Dense Point Cloud                            Output dense point cloud with visibilities (SfMData file format). densePointCloud.abc
 =================================================== ==============================================================================================================================================================================================================================================
 
+**Draft meshing**
+
+A meshing node without a connection to the depth maps folder attribute will create a mesh based on the :doc:`structure from motion </feature-documentation/nodes/StructureFromMotion>` point cloud.
+This is much faster than using depth maps but the result is low quality.
+
 **Detailed description**
 
 The objective of this step is to create a dense geometric surface representation of the scene.

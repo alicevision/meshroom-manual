@@ -4,7 +4,7 @@ Requirements
 .. warning::
   Meshroom requires an NVIDIA GPU card with a CUDA compute capability >= 3.0 for the MVS part. You can check your CUDA Properties `here <https://github.com/tpruvot/ccminer/wiki/Compatibility>`_ or on the `NVIDIA dev page <https://developer.nvidia.com/cuda-gpus#compute>`_.
 
-  In case you do not have a CUDA GPU, you can use the draft meshing option which uses the CPU for meshing.
+  In case you do not have a CUDA GPU, you can use the :doc:`draft meshing </feature-documentation/nodes/Meshing>` option which uses the CPU for meshing.
 
 Here are the minimum requirements for Meshroom:
 
