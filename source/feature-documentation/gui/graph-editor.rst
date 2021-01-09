@@ -25,6 +25,9 @@ The output of a node can be viewed by double-clicking on it
 (either in the image viewer or the 3D viewer depending on the node).
 Right-clicking on a node opens a menu.
 
+For information on how nodes work, see the
+:doc:`core documentation </feature-documentation/core/nodes>`.
+
 Edges
 +++++
 

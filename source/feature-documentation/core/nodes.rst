@@ -275,3 +275,9 @@ For ``desc.Node`` the logging is handled through ``chunk.logManager`` and ``chun
             finally:
                 # required to unlock log file so that it can be deleted if required
                 chunk.logManager.end()
+
+Examples
+########
+
+https://github.com/alicevision/meshroom/blob/develop/meshroom/nodes/aliceVision/Publish.py
+https://github.com/alicevision/meshroom/blob/develop/meshroom/nodes/aliceVision/SketchfabUpload.py

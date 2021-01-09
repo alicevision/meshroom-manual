@@ -1,5 +1,5 @@
 LdrToHdrSampling
-============
+================
 
 **Description**
 

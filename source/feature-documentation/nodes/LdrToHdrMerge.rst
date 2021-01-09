@@ -1,5 +1,5 @@
 LdrToHdrMerge
-============
+=============
 
 **Description**
 
