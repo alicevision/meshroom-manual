@@ -1,6 +1,8 @@
 ``meshroom_newNodeType``
 ========================
 
+not included in binary release
+
 Create a new Node Type
 
 .. list-table:: arguments

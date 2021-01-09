@@ -1,7 +1,7 @@
 Start Reconstruction
 =====================
 
-Click the green **Start** button to start processing. 
+Click the green **Start** button to start processing.
 To stop/pause click the **Stop** button. The progress will be kept.
 
 There are two progress bars: the line below the **menu bar** indicating the overall progress
@@ -18,3 +18,22 @@ By default Meshroom uses a unique id to name the output folders to prevent overw
 **Example**: You are not satisfied with your first result and make changes to the **StructureFromMotion** node. The new output will be placed under a different name inside the  **StructureFromMotion** Folder.
 
 You can change the **name of the output folders** of your nodes by clicking on the node and changing the **Output Folder** name in the **Attributes tab** of the **Graph Editor** Properties pane.
+
+External Reconstruction
++++++++++++++++++++++++
+
+.. image:: /images/gui/start/submit.jpg
+
+Use this option when you compute externally after submission to a render farm from meshroom.
+(need to have access to a renderfarm and need the corresponding submitter).
+
+This way, you can make use of external computing power.
+If you can not compute GPU nodes locally (no cuda) you can still submit them.
+
+.. image:: /images/gui/start/renderman-tractor.jpg
+
+Available submitters:
+
+- Pixar Renderman Tractor
+- [WIP] Fireworks (https://materialsproject.github.io/fireworks/)
+- [WIP] OpenCue (https://www.opencue.io/)

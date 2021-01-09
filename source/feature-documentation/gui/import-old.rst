@@ -9,6 +9,6 @@ Projects created in an older version of Meshroom can be imported.
 
 - Projects created in a newer version may become incompatible with an older version.
 
-.. image:: compatibility.jpg
+.. image:: /images/gui/import-old/compatibility.jpg
 
-.. image:: warning.jpg
+.. image:: /images/gui/import-old/warning.jpg

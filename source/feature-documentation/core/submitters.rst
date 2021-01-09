@@ -29,7 +29,7 @@ API
       - list (meshroom.core.node.Node)
       - All of the nodes that need to be submitted
     * - ``edges``
-      - collections.defaultdict (meshroom.core.node.Node: meshroom.core.node.Node)
+      - set (meshroom.core.node.Node: meshroom.core.node.Node)
       - {A: B} A depends on B
     * - ``filepath``
       - string

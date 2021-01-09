@@ -1,6 +1,8 @@
 ``meshroom_statistics``
 =======================
 
+not included in binary release
+
 Query the status of nodes in a Graph of processes.
 
 .. list-table:: arguments

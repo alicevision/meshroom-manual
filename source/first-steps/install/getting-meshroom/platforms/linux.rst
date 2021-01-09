@@ -17,15 +17,18 @@ Linux
 
 to launch the GUI.
 
-From the AUR
-++++++++++++
+From The Arch User Repository
++++++++++++++++++++++++++++++
 
 .. code-block:: bash
+
+  yay --needed -S popsift uncertainty-framework cuda
 
   yay -S meshroom
 
   Meshroom
 
+See the `AUR page <https://aur.archlinux.org/packages/alice-vision/>`_ for more information.
 
 Set up environment
 ++++++++++++++++++

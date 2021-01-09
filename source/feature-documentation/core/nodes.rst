@@ -273,4 +273,5 @@ For ``desc.Node`` the logging is handled through ``chunk.logManager`` and ``chun
                 chunk.logger.error(e)
                 raise RuntimeError()
             finally:
+                # required to unlock log file so that it can be deleted if required
                 chunk.logManager.end()

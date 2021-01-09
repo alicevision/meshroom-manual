@@ -1,5 +1,3 @@
-.. _live-reconstruction:
-
 Live Reconstruction
 ===================
 
@@ -20,11 +18,11 @@ This is for practical reasons. The point cloud will update in real time with new
 
 Once you complete the image capturing process, click **Stop** and disconnect the **PrepareDenseScene** node from the first **StructureFromMotion** node and connect it with the last **StructureFromMotion** node.
 
-.. image:: graph.jpg
+.. image:: /images/gui/image-gallery/live_graph.jpg
 
-.. image:: live-reconstruction.jpg
+.. image:: /images/gui/image-gallery/live_reconstruction.jpg
 
-.. image:: reconnect-graph.jpg
+.. image:: /images/gui/image-gallery/live_reconnect_graph.jpg
 
 .. note:: The groups will be merged using the **ImageMatchingMultiSfM** node. Read the node description for details.
 

@@ -1,6 +1,8 @@
 ``meshroom_submit``
 ===================
 
+not included in binary release
+
 Submit a Graph of processes on renderfarm.
 
 .. list-table:: arguments
