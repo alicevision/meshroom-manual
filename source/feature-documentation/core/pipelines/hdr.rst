@@ -1,7 +1,11 @@
-HDR Pipeline
-============
+HDR Panorama Pipeline
+=====================
 
-
+* fusion of multi-bracketing LDR images into HDR
+* alignment of panorama images
+* support for fisheye optics
+* automatically estimate fisheye circle or manually edit it
+* take advantage of motorized-head file
 
 Nodes
 +++++
