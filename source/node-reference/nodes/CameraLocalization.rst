@@ -8,9 +8,7 @@ retrieve the motion of an animated camera in the scene of the 3D
 reconstruction. This is very useful for doing texture reprojection in
 other software as part of a texture clean up pipeline. Could also be
 used to leverage Meshroom as a 3D camera tracker as part of a VFX
-pipeline.
-
-https://alicevision.github.io/#photogrammetry/localization
+pipeline. :cite:`AVCameraLocalization`
 
 settings
 
