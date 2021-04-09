@@ -1,7 +1,5 @@
 [![CC BY-SA 4.0](https://img.shields.io/badge/license-CC%20BY--SA%204.0-blue.svg?style=flat-square)](https://creativecommons.org/licenses/by-sa/4.0/)
 [![language: ReStructuredText](https://img.shields.io/badge/language-RST-black.svg?style=flat-square)](http://docutils.sourceforge.net/docs/user/rst/quickref.html)
-[![all releases](https://img.shields.io/github/downloads/natowi/meshroom_doc/total.svg?style=flat-square&color=success)](https://readthedocs.org/projects/meshroom-manual/downloads/)
-![Read the Docs](https://img.shields.io/readthedocs/meshroom-manual.svg?style=flat-square&color=success)
 
 # About
 
