@@ -30,8 +30,8 @@ copyright = '2021. This work is licensed under a CC-BY-SA 4.0 International lice
 author = 'Meshroom Contributors'
 
 # The full version, including alpha/beta/rc tags
-version = 'v2021.1'
-release = 'v2021.1.1'
+version = 'v2021.0'
+release = 'v2021.0.1'
 
 
 # -- General configuration ---------------------------------------------------
