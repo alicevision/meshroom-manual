@@ -26,12 +26,12 @@ import sphinx_rtd_theme
 master_doc = 'index'
 
 project = 'Meshroom'
-copyright = '2020. This work is licensed under a CC-BY-SA 4.0 International license.'
+copyright = '2021. This work is licensed under a CC-BY-SA 4.0 International license.'
 author = 'Meshroom Contributors'
 
 # The full version, including alpha/beta/rc tags
-version = 'v2020.1'
-release = 'v2020.1.1'
+version = 'v2021.1'
+release = 'v2021.1.1'
 
 
 # -- General configuration ---------------------------------------------------
