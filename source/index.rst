@@ -16,9 +16,8 @@ AliceVision is a Photogrammetric Computer Vision Framework which provides 3D Rec
    :hidden:
    :caption: First Steps
 
-   install/install
-   gui/gui
-   test/test
+   first-steps/install/index.rst
+   first-steps/test/index.rst
 
 
 .. toctree::
@@ -26,9 +25,10 @@ AliceVision is a Photogrammetric Computer Vision Framework which provides 3D Rec
    :hidden:
    :caption: Feature Documentation
 
-   node-reference/connect-nodes/connect-nodes
-   node-reference/node-reference
-   supported-formats/supported-formats
+   feature-documentation/core/index.rst
+   feature-documentation/gui/index.rst
+   feature-documentation/cmd/index.rst
+   feature-documentation/nodes/index.rst
 
 .. toctree::
    :maxdepth: 2
@@ -68,4 +68,4 @@ AliceVision is a Photogrammetric Computer Vision Framework which provides 3D Rec
 
    about/about
    copyright
-   
+

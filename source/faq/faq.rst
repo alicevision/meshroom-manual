@@ -6,7 +6,6 @@ FAQ from GH-Wiki
    
    crashed-at-meshing/crashed-at-meshing
    depthmap-slow/depthmap-slow
-   draft-meshing/draft-meshing
    graph-external/graph-external
    image-import-problem/image-import-problem
    large-dataset/large-dataset

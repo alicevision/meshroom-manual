@@ -1,2 +1,6 @@
 # exclude the build folder
 build/
+source/_build/
+
+# IDE configs
+.vscode/
