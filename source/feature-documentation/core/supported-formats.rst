@@ -27,7 +27,7 @@ panoramaInfoExtensions: '.xml'
 ---------------
 
 .. csv-table::
-   :header: "Name", "Refernce", "Description"
+   :header: "Name", "Reference", "Description"
    :widths: 15, 10, 30
 
    "Alembic (.abc)", "`Alembic <http://www.alembic.io/>`_ ", "cloud_and_poses Alembic is a format for storing information about animated scenes after programmatic elements have been applied."
