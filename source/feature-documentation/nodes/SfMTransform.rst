@@ -23,6 +23,9 @@ Transformation Method     Transformation method:
                           * from_single_camera: Use a specific camera as the origin of the coordinate system
                       
                           * from_markers: Align specific markers to custom coordinates
+                          
+                          * from_gps: Align using the gps metadata (EXIF)
+                          
 Transformation            Required only for 'transformation' and 'from_single_camera' methods:
                       
                           * transformation: Align [X,Y,Z] to +Y-axis, rotate around Y by R deg, scale by S; syntax: X,Y,Z;R;S
