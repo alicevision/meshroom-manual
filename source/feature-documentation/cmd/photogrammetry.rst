@@ -1,4 +1,4 @@
-``meshroom_photogrammetry``
+``meshroom_batch (formerly meshroom_photogrammetry)``
 ===========================
 
 Launch the full photogrammetry or panorama HDR pipeline.
