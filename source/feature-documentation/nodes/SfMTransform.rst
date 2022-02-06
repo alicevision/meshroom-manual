@@ -1,12 +1,14 @@
 SfMTransform
 ============
 
-**Description**
+Description
+-----------
 
 Transform/Scale SfM using given transformation, cameras, landmarks, markers.
 Can be used to scale SfM to real-world size.
 
-settings
+Settings
+--------
 
 ========================= ===========================================================================================================
 Name                      Description
@@ -18,11 +20,14 @@ Transformation Method     Transformation method:
                       
                           * auto_from_cameras: Use cameras
                       
-                          * **auto_from_landmarks**: Use landmarks
-                      
+                          * **auto_from_landmarks**: Fit all landmarks into a box [-1,1]
+
                           * from_single_camera: Use a specific camera as the origin of the coordinate system
                       
                           * from_markers: Align specific markers to custom coordinates
+                          
+                          * from_gps: Align using the gps metadata (EXIF)
+                          
 Transformation            Required only for 'transformation' and 'from_single_camera' methods:
                       
                           * transformation: Align [X,Y,Z] to +Y-axis, rotate around Y by R deg, scale by S; syntax: X,Y,Z;R;S
@@ -39,29 +44,28 @@ Translation               Apply translation transformation.
 Verbose Level             verbosity level (fatal, error, warning, **info**, debug, trace).
 ========================= ===========================================================================================================
 
-**usage:**
 
-**Details:**
+Details
+--------
 
-**Transformation Method: transformation**
+Transformation Method: transformation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Align [X,Y,Z] to +Y-axis, rotate around Y by R deg, scale by S; syntax:
-X,Y,Z;R;S (all five parameters are required) This allows the user to
-align and scale the point cloud by explicitly specifying the scale and
-"up" vector [X,Y,Z] in the point cloud's reference system. The rotation
-is such that the specified [X,Y,Z] vector is aligned with [0,1,0] after
-the transformation.
+* ``transformation`` as ``X,Y,Z;R;S``
+    Align ``[X,Y,Z]`` to +Y-axis, rotate around ``Y`` by ``R`` deg, scale by ``S``.
+    It aligns and scales the point cloud by explicitly specifying the scale and
+    "up" vector [X,Y,Z] in the point cloud's reference system.
+    The rotation is computed such that the specified [X,Y,Z] vector is aligned with [0,1,0] after
+    the transformation.
 
-The use-case to allow the user to derive the desired rotation by
-interactive manipulation of the point cloud in a 3D program (Meshlab),
-read off the transformation parameters and transform the point cloud.
-https://github.com/alicevision/AliceVision/pull/206
+    The use-case to allow the user to derive the desired rotation by
+    interactive manipulation of the point cloud in a 3D program (Meshlab),
+    read off the transformation parameters and transform the point cloud.
+    https://github.com/alicevision/AliceVision/pull/206
 
-**Transformation Method: from single camera**
+* ``from single camera`` as ``UID`` or ``image filename``
+    Sets a specific camera as origin and applies correct orientation if possible
+    Provide Camera **UID** or **image filename**
 
-Sets a specific camera as origin and applies correct orientation if possible
-Provide Camera **UID** or **image filename** 
-
-**Transformation Method: autofromlandmarks**
-
-Select Landmarks Describer Type CCTAG to apply a scale
+* ``auto_from_landmarks`` as DescriberType(s)
+    Compute the scale that brings all the selected landmarks type in a the unit box [-1, 1]
