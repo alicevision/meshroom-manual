@@ -9,6 +9,8 @@ CameraCalibration
    This node just needs a bit more work before using it directly into the Meshroom graph. If someone is interested to contribute to this
    feature, we would be glad to provide assistance.
 
+
+
 The internal camera parameters can be calibrated from multiple views of a checkerboard. This allows to retrieve focal length, principal point and distortion parameters. A detailed explanation is presented in [opencvCameraCalibration].
 
 [opencvCameraCalibration] http://docs.opencv.org/3.0-beta/doc/tutorials/calib3d/camera_calibration/camera_calibration.html
@@ -32,6 +34,56 @@ Output                    Output filename for intrinsic [and extrinsic] paramete
 ========================= =============================================================================================================================
 
 **Details**
+
+
+**Sensor Calibration**
+
+To calibrate a sensor a multistep process is required but can be completed from within Meshroom. Ensure that the camera settings, lens, and zoom settings remain consistent or the calibration will be different as these parameters chance. You may want to calibrate your camera setup if your sensor is not in the predefined database. To calibrate we will need a well lit flat surface or display and some somewhat accurate measuring tool or printer.
+
+-   Generate a checkerboard calibration grid or use the grid from art toolkit github here: https://github.com/artoolkit/artoolkit5/blob/master/doc/patterns/Calibration%20chessboard%20%28A4%29.pdf
+-   If using a display and measuring tool simply display the grid pattern full screen on your display. Measure the width of one of the grids in millimeters and keep this value handy.
+-   If printing and using a flat surface ensure the page is not curling or distorted in any way as this will adversely affect calibration.
+-   Record a video, or a set of still pictures with the checkerboard in many different angles and locations within the sensor. To get an idea of what this looks like there is an example video: https://vimeo.com/141414129.
+-   Create a new node by right clicking within the empty space in the Graph Editor. Utils > CameraCalibration. Verify the following attributes:
+
+
+Size of the pattern: This is the number of corners IE one less than the total number of squares counting both colors.
+
+Size of the square in millimeters: If using the printed version 20mm squares is the default, verify size or measure directly.
+
+Note the output folder or set your desired output path
+
+
+- Open cameraCalibration.cal.txt from the output folder. The format of the file is:
+
+// int #image width
+
+// int #image height
+
+// double #focal length
+
+// double #ppx principal point x-coord
+
+// double #ppy principal point y-coord
+
+//DistortionParams:
+
+// double #k0
+
+// double #k1
+
+// double #k2
+
+
+-   Delete the CameraCalibration node as its outputs cannot be used in the Graph Editor at this time.
+-   Verify Advanced Attributes are checked. By clicking the 3 dots in the top right of the attributes panel.
+-   Set CameraInit > Attributes > Intrinsics > InitalizationMode to Calibrated
+-   Set CameraInit > Attributes > Intrinsics > Distortion Params to the K0,K1,K2 values.
+-   Validate CameraInit > Attributes > Initial Focal Length
+-   Validate CameraInit > Attributes > Focal Length
+-   Validate CameraInit > Attributes > Sensor Width
+-   Validate CameraInit > Attributes > Sensor Height
+-   Validate CameraInit > Attributes > Principal Point
 
 **Patterns**
 
