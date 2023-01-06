@@ -5,9 +5,9 @@ Linux
 
 .. code-block:: bash
 
-  tar -xf Meshroom-2021.1.0-linux-cuda10.tar.gz
+  tar -xf Meshroom-20XX.Y.Z-linux-cudaCC.tar.gz
 
-  cd Meshroom-2021.1.0
+  cd Meshroom-20XX.Y.Z
 
 2. From this folder run:
 
