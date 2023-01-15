@@ -47,7 +47,7 @@ To calibrate a sensor a multistep process is required but can be completed from 
 -   Create a new node by right clicking within the empty space in the Graph Editor. Utils > CameraCalibration. Verify the following attributes:
 
 
-Size of the pattern: This is the number of corners IE one less than the total number of squares counting both colors.
+Size of the pattern: This is the number of corners, in other words it is one less than the total number of squares counting both colors.
 
 Size of the square in millimeters: If using the printed version 20mm squares is the default, verify size or measure directly.
 
@@ -75,7 +75,7 @@ Note the output folder or set your desired output path
 // double #k2
 
 
--   Delete the CameraCalibration node as its outputs cannot be used in the Graph Editor at this time.
+-   Remove the CameraCalibration node as its outputs cannot be used in the Graph Editor at this time (v.2021.1).
 -   Verify Advanced Attributes are checked. By clicking the 3 dots in the top right of the attributes panel.
 -   Set CameraInit > Attributes > Intrinsics > InitalizationMode to Calibrated
 -   Set CameraInit > Attributes > Intrinsics > Distortion Params to the K0,K1,K2 values.
