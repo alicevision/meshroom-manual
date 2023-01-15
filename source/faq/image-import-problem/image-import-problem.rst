@@ -1,6 +1,9 @@
 Images cannot be imported
 =========================
 
+If you have recently installed Meshroom and you are sure that images are
+not corrupted then install `Microsoft Visual C++ Update 3`.
+
 The import module from AliceVision has problems parsing corrupted image
 files. Some mobile phone cameras and action cams/small cameras like the
 CGO3+ from Yuneec produce images which are not valid. Most image viewers
@@ -30,6 +33,7 @@ Windows disables drag and drop on applications being run as admin.
 Note: avoid special characters/non-ASCII characters in Meshroom and
 images file paths (`#209`_)
 
+.. _Microsoft Visual C++ Update 3: https://www.microsoft.com/ru-ru/download/details.aspx?id=53840
 .. _Bad Peggy: https://www.coderslagoon.com/
 .. _check for errors: http://openpreservation.org/blog/2016/11/29/jpegvalidation/
 .. _#149: https://github.com/alicevision/meshroom/issues/149
