@@ -11,9 +11,7 @@ CameraCalibration
 
 
 
-The internal camera parameters can be calibrated from multiple views of a checkerboard. This allows to retrieve focal length, principal point and distortion parameters. A detailed explanation is presented in [opencvCameraCalibration].
-
-[opencvCameraCalibration] http://docs.opencv.org/3.0-beta/doc/tutorials/calib3d/camera_calibration/camera_calibration.html
+The internal camera parameters can be calibrated from multiple views of a checkerboard. This allows to retrieve focal length, principal point and distortion parameters. 
 
 ========================= =============================================================================================================================
 Name                      Description
@@ -98,3 +96,5 @@ ASYMMETRIC_CIRCLES https://nerian.com/support/resources/patterns/
 ASYMMETRIC_CCTAG https://github.com/alicevision/CCTag
 
 A list with other camera calibration tools and patterns can be found here https://github.com/natowi/CameraCalibTools
+
+Here you can read some more on the theory on camera calibration in general: http://docs.opencv.org/3.0-beta/doc/tutorials/calib3d/camera_calibration/camera_calibration.html
