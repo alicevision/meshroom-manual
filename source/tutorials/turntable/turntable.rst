@@ -1,38 +1,13 @@
 Turntable
 =========
 
-It is possible to use a turntable. To improve the results it might be
-useful to mask the images.
+To use a turntable, you should:
+- On the FeatureMatching node, set the "Minimal 2D Motion" to a value of 2 pixels to avoid matching feature points that are exactly at the same location between 2 images.
+- Add an ImageMasking node to make a color keying of the background.
+The Input from the ImageMasking connects to CameraInit. The output of the ImageMasking node can be connected to the FeatureExtraction Masking Input and to the PrepareDenseScene Masking Input (applies the undistort to the mask and combines it with the RGB into an RGBA image, so the dense geometry will be computed only on the selected pixels).
+If your background is not a uniform color, you can experiment with the ImageSegmentation node to segment the background, but it will less reliable that a color keying.
 
-Currently, Meshroom does not support masking but you can see
-`#188 <https://github.com/alicevision/meshroom/issues/188>`__ for a
-decent workaround.
+More details on the ImageMasking node: https://github.com/alicevision/Meshroom/wiki/New-Features-in-Meshroom-2023.1#1-image-masking
 
-Essentially, the software is detecting features on both the foreground
-and background. On a turntable, the subject is moving but the background
-is not. This confuses it.
-
-So you have 2 choices: make the background completely white and same
-lighting so that no features can be extracted from this region, or mask
-your images - that is basically covering the background artificially to
-stop the region being used in the pipeline, or both.
-
-*Another approach entirely would be to just keep the scene the same but
-you move the camera instead, which is usually the best way to go about
-things anyway, this what I would most recommend.*
-
--  without masking, the object on the turntable will become blurry/only
-   partially reconstructed and the background will be reconstructed fine
-
--  we use a blank background to easily mask it
-
-Simply using your white wallpaper will not work as it has too many
-recognizable features you should use a clean and smooth background that
-will not allow any feature detection use the "Scale for Small-Object
-Photogrammetry" by Samantha Porter
-
-http://www.stporter.com/resources/
-
-https://conservancy.umn.edu/handle/11299/172480?show=full
-
-or create your own.
+You can put markers in the scene to automatically scale the scene to real world coordinates:
+See https://github.com/alicevision/Meshroom/wiki/CCTAG-scaling
