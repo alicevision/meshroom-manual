@@ -11,5 +11,5 @@ To execute the docker image:
 
 .. code-block:: bash
 
-  docker pull alicevision:meshroom
+  docker pull alicevision/meshroom
   docker run -it --runtime=nvidia meshroom
