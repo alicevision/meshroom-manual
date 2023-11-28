@@ -4,7 +4,7 @@ Capturing
 If this is the first time you are using photogrammetry software, read the following chapter on how to take good photos for your project.
 
 **Basics**
-------
+----------
 
 - Your scene/object should be well lit. 
 - Avoid shadows, reflections, and transparent objects.
