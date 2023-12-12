@@ -39,6 +39,13 @@ These allow the progress and performance of the process to be monitored.
 API
 +++
 
+You can create custom nodes in python and make them available in Meshroom using the ``MESHROOM_NODES_PATH`` environment variable. 
+
+In a standard precompiled version of Meshroom, you can also directly add custom nodes in ``lib/meshroom/nodes``. 
+If the nodes are placed in a custom folder there should be a Python module (an ``__init__.py`` file is needed) in the folder for the nodes to be recognized by Meshroom, .
+
+To add a new node, you need to create a Python class that inherits from ``desc.Node`` or ``desc.CommandLineNode``.
+
 Naming
 ######
 

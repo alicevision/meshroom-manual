@@ -40,6 +40,7 @@ release = 'v2021.0.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = ['sphinx.ext.autodoc', 'sphinx.ext.autosectionlabel', 'sphinx_rtd_theme', 'sphinxcontrib.bibtex']
+bibtex_bibfiles = ['refs.bib']
 sphinxVersion = sphinx.version_info
 if(sphinxVersion[0] <= 1 and sphinxVersion[1] <= 8) :
 	extensions.append('sphinx.ext.pngmath')
