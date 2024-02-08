@@ -24,11 +24,11 @@ From The Arch User Repository
 
   yay --needed -S popsift uncertainty-framework cuda
 
-  yay -S meshroom
+  yay -S meshroom-bin
 
   Meshroom
 
-See the `AUR page <https://aur.archlinux.org/packages/alice-vision/>`_ for more information.
+See the `AUR page <https://aur.archlinux.org/packages/meshroom-bin/>`_ for more information.
 
 Set up environment
 ++++++++++++++++++
